@@ -1,5 +1,8 @@
 window.onload = initAll;
 
+//Author Abdulaziz Ameri
+//
+
 var req = new XMLHttpRequest();
 
 var username = new Array ("");
