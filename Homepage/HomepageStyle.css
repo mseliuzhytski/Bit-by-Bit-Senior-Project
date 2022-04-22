@@ -63,8 +63,8 @@ h2{
 }
 .image{
     margin-top: auto;
-    margin-left: 30%;
-    margin-right: auto;
+    margin-left: center;
+    margin-right: center;
 }
 .block{
     background-color: white;
@@ -91,7 +91,6 @@ h2{
 }
 .blockPart2{
     background-color: white;
-    float: none;
     margin-top: 20px;
 
 }
@@ -129,6 +128,7 @@ h2{
     width: 100px;
     height: 50px;
     text-align: center;
+    margin-right: 0%;
 }
 .blockPart2 a:hover {
     background-color: white;
