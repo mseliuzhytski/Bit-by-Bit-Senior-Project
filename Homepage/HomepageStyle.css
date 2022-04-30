@@ -134,3 +134,22 @@ h2{
     background-color: white;
     color: black;
 }
+.botnav{
+    background-color: lightcoral;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.botnav a{
+    color: black;
+    float: left;
+    display: flex;
+    text-align: center;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.botnav a:hover {
+    background-color: white;
+    color: black;
+  }
