@@ -1,1 +1,58 @@
+DROP DATABASE IF EXISTS AUTO_SALES;
+CREATE DATABASE AUTO_SALES;
 
+USE AUTO_SALES;
+
+CREATE TABLE DEPARTMENT(
+DEP_ID INT PRIMARY KEY NOT NULL,
+DEP_NAME VARCHAR(20)
+);
+
+
+CREATE TABLE INVENTORY (
+CAR_Stock_Num INT PRIMARY KEY NOT NULL,
+Car_Name varchar(20),
+Car_Type varchar(20),
+Car_Price int
+);
+
+CREATE TABLE LOGIN (
+Login_ID INT PRIMARY KEY NOT NULL,
+Login_Username varchar(50),
+User_Password varchar(10)
+);
+
+CREATE TABLE EMPLOYEE(
+Emp_ID INT PRIMARY KEY NOT NULL,
+Emp_Name VARCHAR(20),
+Emp_email varchar(30),
+Emp_phone INT,
+Emp_Dep INT,
+Login_ID INT,
+FOREIGN KEY (Emp_Dep) REFERENCES Department (Dep_ID),
+FOREIGN KEY (Login_ID) REFERENCES LOGIN (Login_ID)
+);
+
+CREATE TABLE CUSTOMER(
+Cust_ID INT PRIMARY KEY NOT NULL,
+Cust_Name VARCHAR(20),
+Cust_email VARCHAR(30),
+Cust_Phone INT,
+Cust_Address VARCHAR(20)
+);
+
+CREATE TABLE BUYS(
+CUST_ID INT NOT NULL,
+Car_Stock_Num INT NOT NULL,
+PRIMARY KEY (Cust_ID, Car_Stock_Num),
+FOREIGN KEY (Cust_ID) REFERENCES Customer (Cust_ID),
+FOREIGN KEY (Car_Stock_Num) REFERENCES Inventory (Car_Stock_Num)
+);
+
+CREATE TABLE Manage_Customer (
+Employee_ID INT NOT NULL,
+Cust_ID INT NOT NULL,
+PRIMARY KEY (Employee_ID, Cust_ID ),
+FOREIGN KEY (Employee_ID) REFERENCES Employee (Emp_ID),
+FOREIGN KEY (Cust_ID) REFERENCES Customer (Cust_ID)
+)
