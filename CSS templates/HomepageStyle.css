@@ -17,7 +17,7 @@ h1{
     padding-top: 30px;
     padding-bottom: 30px;
 }
-ul {
+.ulForDir {
     list-style-type: none;
     text-align: center;
     margin: 20px;
@@ -28,13 +28,24 @@ ul {
     top: 0;
     font-size: 20px;
 }
+.navi li {
+    float: left;
+    width: 20%;
+}
 .navi {
     position: relative;
     overflow: hidden;
     background-color: white;
+    text-align: center;
+}
+.navi-centered {
+    display: inline-block;  
 }
 .navi a {
-    float: left;
+
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
     color: black;
     text-align: center;
     padding: 20px 70px;
@@ -45,12 +56,7 @@ ul {
     background-color: lightcoral;
     color: black;
 }  
-.navi-centered a {
-    float: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} 
+
 h2{
     text-align: center;
     float: center;
@@ -62,22 +68,30 @@ h2{
     margin-right: auto;
 }
 .image{
-    margin-top: auto;
-    margin-left: center;
-    margin-right: center;
+    display: flex;
+    justify-content: center; 
+    align-items :center;
 }
-.block{
-    background-color: white;
-    float: none;
+.block {
     margin-top: 150px;
-    margin-left: 100px;
+    background-color: white;
+}
+.ulBlock {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.block li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
 }
 .block a {
+    display: inline-block;
     background-color: lightgray;
     color: black;
     text-align: center;
-    margin-left: 220px;
-    padding-left: auto;
+
     padding-top: 70px;
     padding-bottom: 30px;
     padding-left: 50px;
@@ -94,12 +108,22 @@ h2{
     margin-top: 20px;
 
 }
-.blockPart2 a1{
+.ulBlockPart2 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ulBlockPart2 li {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+}
+.blockPart2 a1 {
+    display: block;
     background-color: lightcoral;
     color: black;
     float: left;
     text-align: center;
-    padding-left: auto;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
@@ -108,11 +132,10 @@ h2{
     font-size: 18px;
 }
 .blockPart2 a2{
+    display: inline-block;
     background-color: lightcoral;
     color: black;
-    margin-left: 20%;
     text-align: center;
-    padding-left: auto;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
@@ -121,19 +144,20 @@ h2{
     font-size: 18px;
 }
 .blockPart2 a{
+    float: right;
+    display: block;
     background-color: lightcoral;
     color: black;
-    float: right;
     font-size: 18px;
     width: 100px;
     height: 50px;
     text-align: center;
-    margin-right: 0%;
 }
 .blockPart2 a:hover {
     background-color: white;
     color: black;
 }
+
 .botnav{
     background-color: lightcoral;
     position: relative;
