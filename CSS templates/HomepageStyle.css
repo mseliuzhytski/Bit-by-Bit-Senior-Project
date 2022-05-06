@@ -160,9 +160,10 @@ h2{
 
 .botnav{
     background-color: lightcoral;
-    position: relative;
+    position: fixed;
     overflow: hidden;
     width: 100%;
+    bottom: 0;
 }
 .botnav a{
     color: black;
@@ -176,4 +177,10 @@ h2{
 .botnav a:hover {
     background-color: white;
     color: black;
-  }
+}
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    font-size: 15pt;
+}
