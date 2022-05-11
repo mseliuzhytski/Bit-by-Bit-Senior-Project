@@ -1,8 +1,38 @@
-# Bit-by-Bit-Senior-Project
- Create a web application for a car dealership company.
+# Okaidi Auto Sales
 
- Project introduction 
- In this project, we will create a user-friendly web application for the customer with the ability to log in, add/remove items from inventory, set details for each item, add items to the available list for sale, show the company location on google map, and some other features.
- 
- Scope of the project
- Ability to add/remove items in inventory(database) for the Admin, ability to log in, the ability for the users to see all available items with details.
+# Project introduction 
+In this project, we will create a user-friendly web application for Okaidi Auto Sales. Visitors will be able to view featured vehicles, search vehicles and filter seach results.
+Visitors will also be able to find the location of the dealership via an embedded google maps API. Employees will be able to login from the homepage, be able to manage inventory, and manage featured vehicles.
+
+# Features
+* Featured vehicles
+* Search vehicles
+* Search filtering such as by make, model, year, type, price, or color
+* Authenticated login for employees
+* Employee management of inventory such as adding, removing, or editing inventory
+* Employee management of featured vehicle
+* Administration specific account to manage site quickly
+
+# Milestones
+This project is to be completed by December 2022.
+* Create Contact Us page
+* Create Financing page
+* Create Search Vehicles page
+* Create filtering for Searching page
+* Create Featured Vehicles
+* Link social media
+* Create Shopping Cart
+* Create Checkout
+* Create Reviews
+* Host website
+* Connect database to website
+
+# Completed Milestones
+* ~Create Homepage~
+* ~Create About Us page~
+* ~Create Login for dealers~
+* ~Create Administration account to manage dealers~
+* ~Embedded google maps of the dealership~
+
+# Credits
+ The web application for Okadi Auto Sales is being developed by senior project team Bit by Bit at California State University - Sacramento.
