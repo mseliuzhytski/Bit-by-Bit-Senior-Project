@@ -1,4 +1,5 @@
 # Okaidi Auto Sales
+![alt text](https://cdn07.carsforsale.com/dealerlogos/1018648/Logo289489.edc4a636.png)
 
 # Project introduction 
 In this project, we will create a user-friendly web application for Okaidi Auto Sales. Visitors will be able to view featured vehicles, search vehicles and filter seach results.
