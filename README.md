@@ -37,4 +37,4 @@ This project is to be completed by December 2022.
 
 # Credits
  The web application for Okadi Auto Sales is being developed by senior project team Bit by Bit at California State University - Sacramento.
- ![alt text](https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/california_state_u_sacramento-1/standard.png?1548463834)
+ ![alt text](https://micefa.org/wp-content/uploads/2017/09/CSUS-Logo-300x141.jpg)
