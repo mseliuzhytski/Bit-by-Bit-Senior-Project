@@ -115,7 +115,7 @@ h2{
 }
 .ulBlockPart2 li {
     float: left;
-    width: 33.33333%;
+    width: 31.5%;
     text-align: center;
 }
 .blockPart2 a1 {
@@ -148,31 +148,31 @@ h2{
     display: block;
     background-color: lightcoral;
     color: black;
-    font-size: 18px;
+    font-size: 20px;
     width: 100px;
     height: 50px;
     text-align: center;
+    padding-bottom: 150px;
 }
-.blockPart2 a:hover {
+/*.blockPart2 a:hover {
     background-color: white;
     color: black;
-}
-
+}*/
 .botnav{
     background-color: lightcoral;
-    position: fixed;
+    position: relative;
     overflow: hidden;
     width: 100%;
     bottom: 0;
 }
 .botnav a{
     color: black;
-    float: left;
+    float: right;
     display: flex;
     text-align: center;
     padding: 10px 50px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 13px;
 }
 .botnav a:hover {
     background-color: white;
