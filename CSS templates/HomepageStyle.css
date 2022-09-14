@@ -154,10 +154,6 @@ h2{
     text-align: center;
     padding-bottom: 150px;
 }
-/*.blockPart2 a:hover {
-    background-color: white;
-    color: black;
-}*/
 .botnav{
     background-color: lightcoral;
     position: relative;
@@ -183,4 +179,11 @@ P.blocktext {
     margin-right: auto;
     width: 1000px;
     font-size: 15pt;
+}
+.social-icons{
+  width: 10px;
+}
+.social-icons:hover{
+    opacity: 0.7;
+    background-color: aqua;
 }
