@@ -1,0 +1,62 @@
+<!--Contact Us-->
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../CSS templates/ContactUsStyle.css">
+</head>    
+<body>
+    <div class="header">
+        <nav id="navbar">
+            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" class="logo">
+            <ul id="menu">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Search.html">Search</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+                <li><a href="ApplyNow.html">Apply Now</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+      <form action="#">
+        <label for="fname">First Name<br></label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+    
+        <label for="lname">Last Name<br></label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+    
+        <label for="contact">Contact Information<br></label>
+        <select id="contact" name="contact">
+          <option value="usa">USA</option>
+        </select><br>
+    
+        <label for="subject">Subject<br></label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+    
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="footer">
+        <div class="col-1">
+            <h1>
+                <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" style="width:120px;height:70px;"><br>
+                2400 FULTON AVE-B, SACRAMENTO, CA 95825<br>
+                916-750-9099<br>
+            </h1>
+        </div>
+    </div>
+    <script>
+        var navbar = document.getElementById("navbar");
+        var menu = document.getElementById("menu");
+        window.onscroll = function(){
+            if(window.pageYOffset >= menu.offsetTop){
+                navbar.classList.add("sticky");
+            }
+            else{
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>    
+</html>  
