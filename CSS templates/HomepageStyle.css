@@ -1,189 +1,183 @@
 body  
 {  
     margin: 0;  
-    padding: 0;  
-    background-color:white;  
+    padding: 0;   
     font-family: 'New Times Roman';  
 }
-h1{
-    text-align: center;
-    float: center;
-    width: 200px;
+.text-line-top-box {
+    width: 100%;
+    padding: 0;
+}
+.text-line-top {
     background-color: lightcoral;
-    font-size: 25px;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-.ulForDir {
-    list-style-type: none;
+    color: rgb(100, 100, 100);
     text-align: center;
-    margin: 20px;
-    padding: 10px;
-    overflow: hidden;
-    background-color: clear;
-    position: sticky;
-    top: 0;
-    font-size: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 4px;
 }
-.navi li {
-    float: left;
-    width: 20%;
+.top-logo-center-box {
+    text-align: center;
+    background-color: rgb(255, 245, 245);
+}
+.top-logo-center img{
+    padding: 3%;
+    height: 250px;
 }
 .navi {
-    position: relative;
     overflow: hidden;
-    background-color: white;
     text-align: center;
+    background-color: rgb(255, 245, 245);
 }
 .navi-centered {
-    display: inline-block;  
+    display: inline-block;
+}
+.ulForDir {
+    display: flex;
+    justify-content: center; 
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}  
+.navi-li-here {
+    background-color: red;
+}
+.logo{
+    width: 120px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 .navi a {
-
+    background-color: rgb(255, 245, 245);
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    color: black;
-    text-align: center;
-    padding: 20px 70px;
+    color: rgb(75, 75, 75);
     text-decoration: none;
-    font-size: 18px;
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
 }
 .navi a:hover {
-    background-color: lightcoral;
     color: black;
-}  
-
-h2{
-    text-align: center;
-    float: center;
     background-color: lightcoral;
-    font-size: 18px;
-    padding: 10px;
-    margin: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.image{
+}  
+nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: center; 
-    align-items :center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 245);
 }
-.block {
-    margin-top: 150px;
-    background-color: white;
+nav.sticky a:hover {
+    background-color: rgb(255, 245, 245);
+}
+.text-line-body-1-box {
+    width: 100%;
+    padding: 0;
+}
+.text-line-body-1 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    background-color: lightcoral;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.block-body-box {
+    overflow: hidden;
+    text-align: center;
+
+    background-image: url("https://www.autoinfluence.com/wp-content/uploads/2020/07/Local-Car-Dealerships-SUVs-and-Cars.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.block-body-empty {
+    display: block;
+    height: 400px;
+}
+.block-body-bot {
+    display: block;
+    height: 100px;
+}
+.block-body {
+    width: 100%
 }
 .ulBlock {
-    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    overflow: hidden;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.block li {
-    float: left;
-    width: 33.33%;
-    text-align: center;
+.ulBlock li {
+    padding: 10px;
 }
-.block a {
-    display: inline-block;
+.block-body-box a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
     background-color: lightgray;
     color: black;
     text-align: center;
 
-    padding-top: 70px;
-    padding-bottom: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    height: 75px;
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: 700;
 }
-.block a:hover {
-    background-color: lightcoral;
-    color: black;
-}
-.blockPart2{
-    background-color: white;
+.block-body-box h3 {
     margin-top: 20px;
-
 }
-.ulBlockPart2 {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.ulBlock img {
+    transform: translateY(-13px);
 }
-.ulBlockPart2 li {
-    float: left;
-    width: 31.5%;
-    text-align: center;
-}
-.blockPart2 a1 {
-    display: block;
+.block-body-box a:hover {
     background-color: lightcoral;
     color: black;
-    float: left;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-decoration: none;
-    font-size: 18px;
 }
-.blockPart2 a2{
-    display: inline-block;
-    background-color: lightcoral;
-    color: black;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-decoration: none;
-    font-size: 18px;
+.blockPart2-box {
+    background-color: red;
 }
-.blockPart2 a{
-    float: right;
-    display: block;
-    background-color: lightcoral;
-    color: black;
-    font-size: 20px;
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    padding-bottom: 150px;
-}
-.botnav{
-    background-color: lightcoral;
-    position: relative;
-    overflow: hidden;
+.footer{
     width: 100%;
-    bottom: 0;
+    background: lightcoral;
 }
-.botnav a{
-    color: black;
-    float: right;
-    display: flex;
+.footer div{
     text-align: center;
-    padding: 10px 50px;
-    text-decoration: none;
+    margin: 0 auto;
+}
+.footer div h1{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin: 0;
+}
+.bottom{
+    width: 100%;
+    background-color: lightcoral;
     font-size: 13px;
+    text-align: right;
+    margin-right: 150px;
+    margin-bottom: 0%;
 }
-.botnav a:hover {
-    background-color: white;
-    color: black;
-}
-P.blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-    font-size: 15pt;
-}
-.social-icons{
-  width: 10px;
-}
-.social-icons:hover{
-    opacity: 0.7;
-    background-color: aqua;
+.bottom a{
+    margin-right: 50px;
+    margin-bottom: 50px;
 }
