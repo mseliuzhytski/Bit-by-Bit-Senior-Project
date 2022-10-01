@@ -2,7 +2,7 @@
 ![alt text](https://github.com/mseliuzhytski/Bit-by-Bit-Senior-Project/blob/fbd8cb8ee96a87125e2968e7167817c0e99fa191/Images/Logo.png)
 
 # Project introduction 
-In this project, we will create a user-friendly web application for Okaidi Auto Sales. Visitors will be able to view featured vehicles, search vehicles and filter seach results.
+In this project, we will create a user-friendly web application for Okaidi Auto Sales. Visitors will be able to view featured vehicles, search vehicles and filter search results.
 Visitors will also be able to find the location of the dealership via an embedded google maps API. Employees will be able to login from the homepage, be able to manage inventory, and manage featured vehicles.
 
 # Features
