@@ -1,0 +1,67 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:white;  
+    font-family: 'New Times Roman';  
+}
+h1{
+    text-align: center;
+    float: center;
+    width: 200px;
+    background-color: lightcoral;
+    font-size: 25px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.ulForDir {
+    list-style-type: none;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: clear;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+}
+.navi li {
+    float: left;
+    width: 20%;
+}
+.navi {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+}
+.navi-centered {
+    display: inline-block;  
+}
+.navi a {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    padding: 20px 70px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.navi a:hover {
+    background-color: lightcoral;
+    color: black;
+}
+h2{
+    text-align: center;
+    float: center;
+    background-color: lightcoral;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
