@@ -55,13 +55,13 @@ h1{
     background-color: lightcoral;
     color: black;
 }
-h2{
+  .temp-title{
     text-align: center;
     float: center;
     background-color: lightcoral;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
     margin-left: auto;
     margin-right: auto;
 }
