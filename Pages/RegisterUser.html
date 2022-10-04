@@ -1,0 +1,66 @@
+<!--Register User Page-->
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Admin</title>    
+    <link rel="stylesheet" href="../CSS templates/RegisterUserStyle.css"> 
+</head>    
+<body>
+    <div class="header">
+        <nav id="navbar">
+            <a href="Homepage.html">
+            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" class="logo">
+            <ul id="menu">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Search.html">Search</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+                <li><a href="ApplyNow.html">Apply Now</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="login">    
+
+      <center> <h2> Register New User </h2> </center>  
+    <form id="loginForm" action="/register" method="POST">   
+        <div class="container">     
+            <fieldset>
+                <label>Username</label>
+                <input type="text" placeholder="Enter Username" name="username"  id="username" required>  
+                <br><br>
+
+                <!-- Password is set to meet the requirements above -->
+                <label>Password</label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" 
+                required>    
+                <br><br>
+
+                <button type="submit" id="register">Register</button> 
+            </fieldset>      
+        </div>   
+    </form>   
+    </div> 
+    <div class="footer">
+        <div class="col-1">
+            <h1>
+                <a href="Homepage.html">
+                <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" style="width:120px;height:70px;"><br>
+                2400 FULTON AVE-B, SACRAMENTO, CA 95825<br>
+                916-750-9099<br>
+            </h1>
+        </div>
+    </div> 
+    <script>
+        var navbar = document.getElementById("navbar");
+        var menu = document.getElementById("menu");
+        window.onscroll = function(){
+            if(window.pageYOffset >= menu.offsetTop){
+                navbar.classList.add("sticky");
+            }
+            else{
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>  
+</body>    
+</html> 

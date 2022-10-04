@@ -5,6 +5,98 @@ body
     background-color:white;  
     font-family: 'New Times Roman';  
 }  
+
+.header{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  .ulForDir {
+    list-style-type: none;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: clear;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+  }
+  .logo{
+    width: 120px;
+    margin: 5px 0;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+  .paragraph{
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    margin-right: 50px;
+    text-align: left;
+    text-indent: 30%;
+  }
+  input[type=text], select, textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: lightcoral;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: lightcoral;
+  }
+  nav{
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+  }
+  nav ul{
+    background: white;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 20px 30px;
+    color: white;
+  }
+  nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding 1s;
+  }
+  nav.sticky ul{
+    width: auto;
+  }
+  nav ul a {
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: auto;
+  }
 .login{  
         width: 400px;  
         overflow: hidden;  
@@ -49,22 +141,7 @@ label{
     padding-left: 8px;
     border-style: solid;   
 }  
-#Pass{  
-    width: 300px;  
-    height: 30px;  
-    border: 1px;  
-    border-radius: 3px;  
-    padding-left: 8px;
-    border-style: solid;    
-}  
-#log{  
-    width: 300px;  
-    height: 30px;  
-    border-radius: none;  
-    padding-left: 7px;  
-    color: black; 
-    text-align: center;   
-}
+
 button{
     border-radius: 5px;
     background-color: lightcoral;
@@ -79,7 +156,23 @@ span{
     color: grey;  
     font-size: 17px;  
 }
-
+.footer{
+    margin-top: 150px;
+    width: 100%;
+    padding: 20px;
+    background: lightcoral;
+    display: flex;
+  }
+  .footer div{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .footer div h1{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+  
 /*
 CSS for Username and Password on Login
 */
@@ -91,22 +184,3 @@ input[type=text], input[type=password] {
     border: 2px solid rgb(0, 0, 0);   
     box-sizing: border-box;   
 }  
-
-/*
-CSS for Create Account, Forgot Password, and Forgot Username
-*/
-a{    
-    background-color: white; 
-    text-align: center;
-    font-size: 17px;
-    padding: 8px 5px;
-}
-h3{
-    text-align: center;
-    font-size: 17px;
-    background-color: lightcoral;
-    padding: 8px 5px;
-    width: 250px;
-    height: 100px;
-
-} 
