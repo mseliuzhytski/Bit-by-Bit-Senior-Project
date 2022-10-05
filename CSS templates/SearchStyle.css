@@ -64,4 +64,31 @@ h1{
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+      
+      /*
+A comment
+which stretches
+over several
+lines
+*/
+      
+#filters {
+    width: 15%;
+    border-style: groove;
+    text-align: center;
+        
+}
+
+.input{
+    width: 80%;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    
+}
+.input:focus {
+    background-color: lightblue;
+}
+
+      
 }
