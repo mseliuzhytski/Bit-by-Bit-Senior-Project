@@ -12,12 +12,12 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const http = require('http');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 // variable declaration section
 const app = express();
 const router = express.Router();
 const server = http.createServer(app);
-
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
@@ -79,6 +79,45 @@ app.post('/register', async (req, res)=> {
          res.sendFile(path.join(__dirname+'/Pages/Homepage.html'))
     }catch{
         res.sendFile(path.join(__dirname+'/Pages/RegisterUser.html'))
+    }
+});
+
+app.post('/submitForm', (req, res)=> {
+    try {
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastname;
+        const contactPreference = req.body.contactPreference;
+        const contactInfo = req.body.contactInfo;
+        const subject = req.body.subject;
+
+        var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'youremail@gmail.com',
+            pass: 'yourpassword'
+        }
+        });
+
+        var mailOptions = {
+        from: 'youremail@gmail.com',
+        to: 'youremail@gmail.com',
+        subject: 'OKAIDI VEHICLE INQUIRY',
+        text: 'Name: ' + firstName + ' ' + lastname + ' \n' + 
+                'Contact preference: ' + ' ' + contactPreference + ' \n' + 
+                'Contact info: ' + ' ' + contactInfo + ' \n\n' + 
+                'Subject: ' + ' ' + subject
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            res.status(500).send('Unable to send contact form.')
+        } else {
+            res.status(200).send('Email sent: ' + info.response)
+        }
+        }); 
+
+    } catch {
+        res.sendFile(path.join(__dirname+'/Pages/ContactUs.html'))
     }
 });
 
