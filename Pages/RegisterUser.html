@@ -6,18 +6,9 @@
     <link rel="stylesheet" href="../CSS templates/RegisterUserStyle.css"> 
 </head>    
 <body>
-    <div class="header">
-        <nav id="navbar">
-            <a href="Homepage.html">
-            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" class="logo">
-            <ul id="menu">
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Search.html">Search</a></li>
-                <li><a href="Aboutus.html">About Us</a></li>
-                <li><a href="ContactUs.html">Contact Us</a></li>
-                <li><a href="ApplyNow.html">Apply Now</a></li>
-            </ul>
-        </nav>
+    <div class="image">
+        <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Images/Logo.png"
+            alt="Okaidi Auto Sales" width="50%" height="10%">
     </div>
     <div class="login">    
 
@@ -44,23 +35,24 @@
         <div class="col-1">
             <h1>
                 <a href="Homepage.html">
-                <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" style="width:120px;height:70px;"><br>
-                2400 FULTON AVE-B, SACRAMENTO, CA 95825<br>
-                916-750-9099<br>
+                    <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
+                        style="width:120px;height:70px;">
+                </a>
+                <div class="footer-info">
+                    <br>
+                    2400 FULTON AVE-B,<br> SACRAMENTO, CA 95825<br>
+                    916-750-9099<br>
+                </div>
             </h1>
+            <div class="footer-facebook-box">
+                <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
+                    <img src="https://www.seville.michlibrary.org/site-assets/images/facebook-icon.png/@@images/image.png"
+                        width="50px" height="50px">
+                </a>
+            </div>
         </div>
-    </div> 
-    <script>
-        var navbar = document.getElementById("navbar");
-        var menu = document.getElementById("menu");
-        window.onscroll = function(){
-            if(window.pageYOffset >= menu.offsetTop){
-                navbar.classList.add("sticky");
-            }
-            else{
-                navbar.classList.remove("sticky");
-            }
-        }
-    </script>  
+        <hr class="footer-hr">
+        <div class="footer-end"></div>
+    </div>
 </body>    
 </html> 
