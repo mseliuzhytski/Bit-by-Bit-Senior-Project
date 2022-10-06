@@ -1,102 +1,22 @@
-body  
-{  
-    margin: 0;  
-    padding: 0;  
-    background-color:white;  
-    font-family: 'New Times Roman';  
-}  
-
+body{
+  margin: 0;  
+  padding: 0;  
+  background-color:white;  
+  font-family: 'New Times Roman'; 
+}
 .header{
-    width: 100%;
-    height: 100%;
-    background-color: white;
-  }
-  .ulForDir {
-    list-style-type: none;
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    overflow: hidden;
-    background-color: clear;
-    position: sticky;
-    top: 0;
-    font-size: 20px;
-  }
-  .logo{
-    width: 120px;
-    margin: 5px 0;
-    margin-left: 50px;
-    cursor: pointer;
-  }
-  .paragraph{
-    font-size: 15px;
-    font-family: 'Times New Roman';
-    margin-right: 50px;
-    text-align: left;
-    text-indent: 30%;
-  }
-  input[type=text], select, textarea {
-    width: 50%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    margin-left: auto;
-    resize: vertical;
-  }
-  
-  input[type=submit] {
-    background-color: lightcoral;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+width: 100%;
+height: 100%;
+background-color: white;
+}
+.image{
+display: flex;
+justify-content: center; 
+align-items :center;
+}
   input[type=submit]:hover {
     background-color: lightcoral;
-  }
-  nav{
-    width: 100%;
-    padding: 5px 0;
-    text-align: center;
-  }
-  nav ul{
-    background: white;
-    width: 100%;
-    margin-top: 10px;
-  }
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 20px 30px;
-    color: white;
-  }
-  nav.sticky{
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 2px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: padding 1s;
-  }
-  nav.sticky ul{
-    width: auto;
-  }
-  nav ul a {
-    color: black;
-    text-align: center;
-    padding: 5px 5px;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: auto;
-  }
+}
 .login{  
         width: 400px;  
         overflow: hidden;  
@@ -142,7 +62,7 @@ label{
     border-style: solid;   
 }  
 
-button{
+.button-cont{
     border-radius: 5px;
     background-color: lightcoral;
     color: black;
@@ -152,9 +72,38 @@ button{
     cursor: pointer;
     width: 100%;
 }
-span{  
-    color: grey;  
-    font-size: 17px;  
+.nav-admin{
+  overflow: hidden;
+  text-align: center;
+}
+.admin-dropdown{
+  display: inline-block;
+  overflow: hidden;
+  min-width: 160px;
+}
+.admin-button{
+  padding: 12px 16px;
+  text-decoration: none;
+  background-color: lightcoral;
+}
+.admin-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.admin-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.admin-dropdown:hover .admin-content {
+  display: block;
 }
 .footer{
     margin-top: 150px;
@@ -183,4 +132,4 @@ input[type=text], input[type=password] {
     display: inline-block;   
     border: 2px solid rgb(0, 0, 0);   
     box-sizing: border-box;   
-}  
+}
