@@ -4,25 +4,31 @@ body
     padding: 0;   
     font-family: 'New Times Roman';  
 }
-.text-line-top-box {
-    width: 100%;
-    padding: 0;
-}
-.text-line-top {
-    background-color: lightcoral;
-    color: rgb(100, 100, 100);
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 18px;
-    padding: 4px;
-}
 .top-logo-center-box {
-    text-align: center;
     background-color: rgb(255, 245, 245);
 }
 .top-logo-center img{
-    padding: 3%;
-    height: 250px;
+    justify-content: center; 
+    align-items :center;
+}
+.ulForDir {
+    display: flex;
+    justify-content: center; 
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+} 
+.ulForDir li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.navi-li-here {
+    background-color:lightcoral;
+}
+.logo{
+    width: 120px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 .image{
     display: flex;
@@ -37,22 +43,6 @@ body
 .navi-centered {
     display: inline-block;
 }
-.ulForDir {
-    display: flex;
-    justify-content: center; 
-    list-style-type: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}  
-.navi-li-here {
-    background-color: red;
-}
-.logo{
-    width: 120px;
-    padding-top: 10px;
-    padding-right: 10px;
-}
 .navi a {
     background-color: rgb(255, 245, 245);
     display: inline-block;
@@ -60,10 +50,10 @@ body
     overflow: hidden;
     color: rgb(75, 75, 75);
     text-decoration: none;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
 }
 .navi a:hover {
     color: black;
@@ -81,6 +71,8 @@ nav.sticky{
 }
 nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
+    color: black;
+    background-color: lightcoral;
 }
 .text-line-body-1-box {
     width: 100%;
@@ -90,8 +82,8 @@ nav.sticky a:hover {
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: white;
     background-color: lightcoral;
     padding-left: 4px;
@@ -102,22 +94,23 @@ nav.sticky a:hover {
 .block-body-box {
     overflow: hidden;
     text-align: center;
-
-    background-image: url("https://www.autoinfluence.com/wp-content/uploads/2020/07/Local-Car-Dealerships-SUVs-and-Cars.jpg");
+    background-color: white;
     background-position: center;
     background-size: cover;
     height: 100%;
 }
 .block-body-empty {
     display: block;
-    height: 400px;
+    height: 500px;
 }
 .block-body-bot {
     display: block;
     height: 100px;
 }
 .block-body {
-    width: 100%
+    width: 100%;
+    background-color: grey;
+    height: 350px;
 }
 .ulBlock {
     display: flex;
@@ -137,25 +130,49 @@ nav.sticky a:hover {
     overflow: hidden;
     text-decoration: none;
     text-align: center;
-    background-color: lightgray;
+    background-color: white;
     color: black;
-    text-align: center;
-
-    width: 300px;
-    height: 75px;
+    width: 600px;
+    height: 60px;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 25px;
-    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 30px;
 }
 .block-body-box h3 {
-    margin-top: 20px;
+    text-align: center;
 }
-.ulBlock img {
-    transform: translateY(-13px);
+.block-body-box h4 {
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 50px;
+    margin-bottom: 0%;
+}
+.block-body-box hr{
+    text-align: left;
+    margin-left: 7%;
+    height: 2px;
+    width: 350px;
+    color: white;
+    background-color: white;
+}
+.block-body-box h5 {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: left;
+    font-weight: 400;
+    margin-left: 7%;
+    margin-top: 0;
+    width: 87%;
 }
 .block-body-box a:hover {
-    background-color: lightcoral;
+    background-color: lightgrey;
     color: black;
 }
 .blockPart2-box {
@@ -164,6 +181,8 @@ nav.sticky a:hover {
 .footer{
     width: 100%;
     background: lightcoral;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .footer div{
     text-align: center;
@@ -174,15 +193,20 @@ nav.sticky a:hover {
     font-size: 15px;
     margin: 0;
 }
+.footer a{
+    width: 90px;
+    height: 90px;
+}
 .bottom{
     width: 100%;
     background-color: lightcoral;
     font-size: 13px;
     text-align: right;
-    margin-right: 150px;
+    margin-right: 100px;
     margin-bottom: 0%;
 }
 .bottom a{
-    margin-right: 50px;
+    margin-right: 20px;
     margin-bottom: 50px;
+    margin-left: 10px;
 }
