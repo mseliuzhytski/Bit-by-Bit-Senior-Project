@@ -24,6 +24,11 @@ body
     padding: 3%;
     height: 250px;
 }
+.image{
+    display: flex;
+    justify-content: center; 
+    align-items :center;
+}
 .navi {
     overflow: hidden;
     text-align: center;
