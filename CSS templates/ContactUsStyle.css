@@ -1,126 +1,164 @@
 body{
-    margin: 0;  
-    padding: 0;  
-    background-color:white;  
-    font-family: 'New Times Roman'; 
+  margin: 0;  
+  padding: 0;  
+  background-color:white;  
+  font-family: 'New Times Roman'; 
 }
 .header{
-  width: 100%;
-  height: 100%;
-  background-color: white;
+width: 100%;
+height: 100%;
+background-color: white;
+}
+.image{
+display: flex;
+justify-content: center; 
+align-items :center;
+}
+.nav-text{
+  display: none;
 }
 .ulForDir {
-  list-style-type: none;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  overflow: hidden;
-  background-color: clear;
-  position: sticky;
-  top: 0;
-  font-size: 20px;
+display: flex;
+justify-content: center; 
+list-style-type: none;
+overflow: hidden;
+margin: 0;
+padding: 5px;
+} 
+.ulForDir li{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.logo{
-  width: 120px;
-  margin: 5px 0;
-  margin-left: 50px;
-  cursor: pointer;
+.navi-li-here {
+background-color:lightcoral;
 }
-.paragraph{
-  font-size: 15px;
-  font-family: 'Times New Roman';
-  margin-right: 50px;
-  text-align: left;
-  text-indent: 30%;
+/* Use a media query to add a breakpoint at 720px: */
+@media screen and (max-width: 720px) {
+  .image img{
+    width: 100%;
+  }
+  .navi-centered{
+    width: 100%;
+  }
+  .nav-menu{
+    width: 100%;
+  }
+  .nav-text{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+  }
+  .navList{
+    height: 0;
+    overflow: hidden;
+  }
+  .openNav{
+    height: auto;
+  }
+  .hiddenNavIcon{
+    display: none;
+  }
+  .ulForDir{
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type=text]{
+    width: 100%;
+  }
 }
+
 input[type=text], select, textarea {
-  width: 50%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  margin-left: auto;
-  resize: vertical;
+width: 50%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+margin-left: auto;
+resize: vertical;
 }
 
 input[type=submit] {
-  background-color: lightcoral;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+background-color: lightcoral;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: lightcoral;
+background-color: lightcoral;
 }
-nav{
-  width: 100%;
-  padding: 5px 0;
-  text-align: center;
+.navi {
+overflow: hidden;
+text-align: center;
+background-color: rgb(255, 245, 245);
 }
-nav ul{
-  background: white;
-  width: 100%;
-  margin-top: 10px;
+.navi-centered {
+display: inline-block;
 }
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 20px 30px;
-  color: white;
+.navi a {
+background-color: rgb(255, 245, 245);
+display: inline-block;
+white-space: nowrap;
+overflow: hidden;
+color: rgb(75, 75, 75);
+text-decoration: none;
+padding: 20px;
+text-align: center;
+font-size: 20px;
+font-weight: 600;
 }
+.navi a:hover {
+color: black;
+background-color: lightcoral;
+}  
 nav.sticky{
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 2px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: padding 1s;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(255, 245, 245);
 }
-nav.sticky ul{
-  width: auto;
-}
-nav ul a {
-  color: black;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-  font-size: 18px;
-  margin-right: auto;
-}
-nav ul a:hover {
-  background-color: lightcoral;
-  color: black;
+.nav.sticky a:hover {
+background-color: rgb(255, 245, 245);
+color: black;
+background-color: lightcoral;
 }
 .container {
-  border-radius: 5px;
-  background-color: white;
-  padding: 10px;
-  margin-left: 35%;
+border-radius: 5px;
+background-color: white;
+padding: 10px;
+margin-top: 50px;
+margin-left: 35%;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 16px;
+font-weight: 300;
+}
+.blockPart2-box {
+margin-top: 100px;
+background-color: lightcoral;
 }
 .footer{
-  width: 100%;
-  background: lightcoral;
-  padding-top: 20px;
-  padding-bottom: 20px;
+width: 100%;
+background: lightcoral;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 .footer div{
-  text-align: center;
-  margin: 0 auto;
+text-align: center;
+margin: 0 auto;
 }
 .footer div h1{
-  letter-spacing: 1px;
-  font-size: 15px;
-  margin: 0;
+letter-spacing: 1px;
+font-size: 15px;
+margin: 0;
 }
 .footer a{
-  width: 90px;
-  height: 90px;
+width: 90px;
+height: 90px;
 }
