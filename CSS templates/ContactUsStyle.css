@@ -146,10 +146,6 @@ background-color: lightcoral;
 .footer{
 width: 100%;
 background: lightcoral;
-padding-top: 20px;
-padding-bottom: 20px;
-}
-.footer div{
 text-align: center;
 margin: 0 auto;
 }
@@ -158,7 +154,21 @@ letter-spacing: 1px;
 font-size: 15px;
 margin: 0;
 }
-.footer a{
-width: 90px;
-height: 90px;
+.footer-info{
+  display: block;
+  padding-bottom: 20px;
+}
+.footer-facebook-box{
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer-hr{
+  color: rgb(75, 75, 75);
+  width: 95%;
+  height: 1px;
+}
+.footer-end{
+  display: block;
+  height: 35px;
 }
