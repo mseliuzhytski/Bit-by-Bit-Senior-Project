@@ -5,55 +5,119 @@ body
     background-color:white;  
     font-family: 'New Times Roman';  
 }
-h1{
-    text-align: center;
-    float: center;
-    width: 200px;
-    background-color: lightcoral;
-    font-size: 25px;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.nav-text {
+    display: none;
+}
+
 .ulForDir {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
     overflow: hidden;
-    background-color: clear;
-    position: sticky;
-    top: 0;
-    font-size: 20px;
+    margin: 0;
+    padding: 5px;
 }
-.navi li {
-    float: left;
-    width: 20%;
+
+.ulForDir li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.navi-li-here {
+    background-color: lightcoral;
+}
+
+/* Use a media query to add a breakpoint at 720px: */
+@media screen and (max-width: 720px) {
+    .image img {
+        width: 100%;
+    }
+
+    .navi-centered {
+        width: 100%;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+
+    .nav-text {
+        display: flex;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .navList {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .openNav {
+        height: auto;
+    }
+
+    .hiddenNavIcon {
+        display: none;
+    }
+
+    .ulForDir {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type=text] {
+        width: 100%;
+    }
+}
+
 .navi {
-    position: relative;
     overflow: hidden;
-    background-color: white;
     text-align: center;
+    background-color: rgb(255, 245, 245);
 }
+
 .navi-centered {
-    display: inline-block;  
+    display: inline-block;
 }
+
 .navi a {
+    background-color: rgb(255, 245, 245);
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    color: black;
-    text-align: center;
-    padding: 20px 70px;
+    color: rgb(75, 75, 75);
     text-decoration: none;
-    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
 }
+
 .navi a:hover {
-    background-color: lightcoral;
     color: black;
+    background-color: lightcoral;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 245);
+}
+
+.nav.sticky a:hover {
+    background-color: rgb(255, 245, 245);
+    color: black;
+    background-color: lightcoral;
 }
   .temp-title{
     text-align: center;
@@ -64,6 +128,7 @@ h1{
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+  }
       
       /*
 A comment
@@ -90,5 +155,38 @@ lines
     background-color: lightblue;
 }
 
-      
+.footer {
+    width: 100%;
+    background: lightcoral;
+    text-align: center;
+    margin: 0 auto;
 }
+
+.footer div h1 {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin: 0;
+}
+
+.footer-info {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.footer-facebook-box {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-hr {
+    color: rgb(75, 75, 75);
+    width: 95%;
+    height: 1px;
+}
+
+.footer-end {
+    display: block;
+    height: 35px;
+}
+
