@@ -1,0 +1,135 @@
+body{
+  margin: 0;  
+  padding: 0;  
+  background-color:white;  
+  font-family: 'New Times Roman'; 
+}
+.header{
+width: 100%;
+height: 100%;
+background-color: white;
+}
+.image{
+display: flex;
+justify-content: center; 
+align-items :center;
+}
+  input[type=submit]:hover {
+    background-color: lightcoral;
+}
+.Change{  
+        width: 400px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 50 0 0 400px;  
+        padding: 25px 450px;  
+        background: white;  
+        border-radius: 15px;         
+}
+.h1{
+    background-color: lightcoral;
+    color: black;
+    float: center;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin-right: 0%;
+}
+
+h1{
+    text-align: center;
+    float: left;
+    background-color: lightcoral;
+    font-size: 25px;
+    padding: 15px;
+} 
+h2{ 
+    text-align: center;  
+    color: black;  
+    font-size: 25px;  
+}  
+label{  
+    color: black;  
+    font-size: 17px; 
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: 1px;  
+    border-radius: 3px;  
+    padding-left: 8px;
+    border-style: solid;   
+}  
+
+.button-cont{
+    border-radius: 5px;
+    background-color: lightcoral;
+    color: black;
+    padding: 14px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.nav-admin{
+  overflow: hidden;
+  text-align: center;
+}
+.admin-dropdown{
+  display: inline-block;
+  overflow: hidden;
+  min-width: 160px;
+}
+.admin-button{
+  padding: 12px 16px;
+  text-decoration: none;
+  background-color: lightcoral;
+}
+.admin-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.admin-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.admin-dropdown:hover .admin-content {
+  display: block;
+}
+.footer{
+    margin-top: 150px;
+    width: 100%;
+    padding: 20px;
+    background: lightcoral;
+    display: flex;
+  }
+  .footer div{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .footer div h1{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+  
+/*
+CSS for Username and Password on Login
+*/
+input[type=text], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid rgb(0, 0, 0);   
+    box-sizing: border-box;   
+}
