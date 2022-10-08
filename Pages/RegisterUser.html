@@ -22,7 +22,12 @@
     <div class="login">    
 
       <center> <h2> Register New User </h2> </center>  
-      
+      <center><p>
+        Password Requirements: <br>
+        At least 1 number, 1 uppercase, 1 lowercase, <br>
+        and must be more than 8 characters long.</center>
+
+    </p> </center>
     <form id="loginForm" action="/register" method="POST">   
         <div class="container">     
             <fieldset>
@@ -33,7 +38,7 @@
                 <!-- Password is set to meet the requirements above -->
                 <label>Password</label>
                 <input type="password" placeholder="Enter Password" name="password" id="password" 
-                required>      
+                required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$">      
                 <br><br>
 
                 <button type="submit" id="register">Register</button> 
