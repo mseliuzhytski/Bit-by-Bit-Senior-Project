@@ -1,6 +1,6 @@
 const alert = require('alert');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 
 exports.get = function(req,res){
