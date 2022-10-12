@@ -7,7 +7,8 @@ Then run command "node app.js" on your terminal.
 // import statement section
 const express = require('express');
 const bodyParser = require('body-parser');
-const http = require('http');
+
+const port = process.env.PORT || 8000;
 
 // import route file section
 var about = require('./Backend/Routes/aboutUs');
@@ -22,7 +23,6 @@ var search = require('./Backend/Routes/search');
 // variable declaration section
 const app = express();
 const router = express.Router();
-const server = http.createServer(app);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
@@ -50,5 +50,4 @@ app.post('/login', login.post);
 app.post('/register', register.post);
 
 
-// server is started at http://localhost:8000
-server.listen(8000);
+app.listen(port, () => console.log(`Listening on port ${port}`));
