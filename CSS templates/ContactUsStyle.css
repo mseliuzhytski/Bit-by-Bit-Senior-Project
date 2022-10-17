@@ -67,7 +67,7 @@ background-color:lightcoral;
 }
 
 input[type=text], select, textarea {
-width: 50%;
+width: 100%;
 padding: 12px;
 border: 1px solid #ccc;
 border-radius: 4px;
@@ -79,8 +79,8 @@ resize: vertical;
 }
 
 input[type=submit] {
-background-color: lightcoral;
-color: white;
+background-color: white;
+color: black;
 padding: 12px 20px;
 border: none;
 border-radius: 4px;
@@ -88,7 +88,7 @@ cursor: pointer;
 }
 
 input[type=submit]:hover {
-background-color: lightcoral;
+background-color: gray;
 }
 .navi {
 overflow: hidden;
@@ -131,13 +131,15 @@ background-color: lightcoral;
 }
 .container {
 border-radius: 5px;
-background-color: white;
+background-color: lightcoral;
 padding: 10px;
 margin-top: 50px;
-margin-left: 35%;
+margin-left: 3%;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 16px;
 font-weight: 300;
+width: 35%;
+outline: 2px solid lightcoral;
 }
 .blockPart2-box {
 margin-top: 100px;
