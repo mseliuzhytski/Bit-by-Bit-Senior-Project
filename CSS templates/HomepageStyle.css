@@ -253,3 +253,33 @@ body
     margin-bottom: 50px;
     margin-left: 10px;
 }
+
+.review1{
+    margin: 0 auto;
+    margin: 15px;
+    width: 350px;
+    height: 300px;
+    outline: 2px solid lightcoral;
+}
+.review2{
+    margin: 0 auto;
+    margin: 15px;
+    width: 350px;
+    height: 300px;
+    outline: 2px solid lightcoral;
+}
+.review3{
+    margin: 0 auto;
+    margin: 15px;
+    width: 350px;
+    height: 300px;
+    outline: 2px solid lightcoral;
+ }
+ .review1,.review2,.review3 {
+   display: inline-block;
+ }
+ .review-boxes {
+    display: block;
+    text-align: center;
+    margin-top: 0px;
+ }
