@@ -129,16 +129,41 @@ background-color: rgb(255, 245, 245);
 color: black;
 background-color: lightcoral;
 }
+.info-box {
+  padding-top: 25px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin-left: 50px;
+}
+.info-box logo {
+  float: left;
+  margin-left: 50px;
+}
+.info-box below {
+  display: block;
+}
+.info-box a {
+  vertical-align: top;
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+}
+.info-box a2 {
+  color: black;
+  font-size: 18px;
+}
+
 .container {
 border-radius: 5px;
 background-color: lightcoral;
 padding: 10px;
 margin-top: 50px;
-margin-left: 3%;
+margin-left: 6%;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 16px;
 font-weight: 300;
-width: 35%;
+width: 40%;
 outline: 2px solid lightcoral;
 }
 .blockPart2-box {
@@ -173,4 +198,15 @@ margin: 0;
 .footer-end{
   display: block;
   height: 35px;
+}
+.banner-info{
+  text-align: center;
+  float: left;
+  background-color: lightcoral;
+  font-size: 25px;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 6%;
+  margin-right: auto;
+  width: 40%;
 }
