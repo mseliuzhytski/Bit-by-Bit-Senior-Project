@@ -160,7 +160,6 @@ background-color: lightcoral;
   white-space: pre;
   font-family: monospace;
 }
-
 .container {
 border-radius: 5px;
 background-color: lightcoral;
@@ -172,6 +171,14 @@ font-size: 16px;
 font-weight: 300;
 width: 40%;
 outline: 2px solid black;
+}
+.disclaimer {
+  text-align: center;
+  padding: 10px;
+  padding-top: 15px;
+  font-size: 8;
+  font-weight: normal;
+  color: black;
 }
 .blockPart2-box {
 margin-top: 100px;
