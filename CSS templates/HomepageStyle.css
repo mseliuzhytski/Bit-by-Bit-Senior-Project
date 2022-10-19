@@ -207,9 +207,14 @@ body
 .footer {
     width: 100%;
     background: lightcoral;
+    overflow: auto;
     text-align: center;
     margin: 0 auto;
 }
+.footer-section {
+    float:left;
+    width:33%;
+  }
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -232,6 +237,7 @@ body
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
+    
 }
 
 .footer-end {
@@ -283,3 +289,5 @@ body
     text-align: center;
     margin-top: 0px;
  }
+
+  
