@@ -49,27 +49,65 @@
        <form action="#" method="post">
            
            <label for="fname">Make:</label>
-           <input type="text" class="input" value="" name="make" title="make" tabindex="1"> 
-           
-           <label for="model">Model:</label> 
+           <br>
+           <select name="Make" id="Make">
+            <option value="empty"></option> 
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="BMW">BMW</option>
+            </select>
+           <br>
+
+           <label for="model">Model Year:</label> 
            <input type="text" class="input" value="" name="model" title="model" tabindex="2">
-           
-           <label for="year">Year:</label>
-           <input type="text"  class="input" value="" name="year" title="year" tabindex="3">    
-           
+           <br>
+
             <label for="condition">Condition:</label>
-           <input type="text" class="input" value="" name="condition" title="condition" tabindex="4">
-                      
-            <label for="type">Type:</label>
-           <input type="text" class="input" value="" name="type" title="type" tabindex="5">
-           
-                      
+           <select name="Condition" id="Condition">
+            <option value="empty"></option> 
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+            <option value="Certified">Certified</option>
+           </select>
+           <br>    
+              
+            <label for="Color">Color:</label>
+            <br>
+            <select name="Color" id="Color">
+            <option value="empty"></option> 
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Black">Black</option> 
+            <option value="Brown">Brown</option>
+            <option value="Beige">Beige</option>
+            <option value="Grey">Grey</option>
+            </select>
+            <br>
+
             <label for="price">Price:</label>
-           <input type="text" class="input" value="" name="price" title="price" tabindex="6">
-           
-                      
+            <select name="Price" id="Price">
+            <option value = "empty"></option>
+            <option value = "less5000">Less Than $5000</option>
+            <option value = "less10000">Less Than $10000</option>
+            <option value = "less15000">Less Than $15000</option>
+            <option value = "less20000">Less Than $20000</option>
+            <option value = "less25000">Less Than $25000</option>
+            </select>
+            <br>  
+
             <label for="mileage">Mileage:</label>
-           <input type="text" class="input" value="" name="mileage" title="mileage" tabindex="7">
+           <select name="mileage" id="mileage">
+            <option value = "empty"></option>
+            <option value = "less5000">Less Than 5000</option>
+            <option value = "less10000">Less Than 10000</option>
+            <option value = "less25000">Less Than 25000</option>
+            <option value = "less50000">Less Than 50000</option>
+            <option value = "greater50000">Greater Than 50000</option>
+            <br>
+
+           </select>
            
         </form>
     </div>
