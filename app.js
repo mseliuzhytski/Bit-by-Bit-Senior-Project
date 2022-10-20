@@ -19,6 +19,7 @@ var homePage = require('./Backend/Routes/homePage');
 var login = require('./Backend/Routes/login');
 var register = require('./Backend/Routes/register');
 var search = require('./Backend/Routes/search');
+var db = require('./Backend/Routes/Database/db');
 
 // variable declaration section
 const app = express();
@@ -30,6 +31,12 @@ app.use(router, express.static(__dirname));
 
 // temporary until database is connected
 users = [];
+
+// test db query
+db.query('SELECT * FROM inventory WHERE Car_Make = "Ford"', (error, rows) => {
+    if(error) throw error;
+    console.log(rows);
+});
 
 
 // get section
