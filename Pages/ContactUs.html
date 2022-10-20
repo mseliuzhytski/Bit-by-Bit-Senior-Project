@@ -17,7 +17,7 @@
             <nav id="navbar">
                 <div class="nav-menu">
                     <div class="nav-text">
-                        <h3>OKAIDI AUTO SALES</h3>
+                        <h3 class="nav-text-logo">OKAIDI AUTO SALES</h3>
                         <div class="nav-toggle" id="navToggle">
                             <img class="navIcon"
                                 src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Images/iconHambMenu.png"
@@ -75,23 +75,26 @@
     <div class="conBox">
     <div class="container">
         <form action="#">
-            <label for="fname">First Name<br></label>
+            <label for="fname">First Name *<br></label>
             <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
 
             <label for="lname">Last Name<br></label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
 
-            <label for="contact">Contact Information<br></label>
+            <label for="contact">Contact Information *<br></label>
             <select id="contact" name="contact">
                 <option value="usa">Phone</option>
                 <option value="usa">Email</option>
             </select><br>
             <input type="text" id="contact" name="contact" placeholder="Your contact information..."><br>
 
-            <label for="subject">Reason for contacting us<br></label>
+            <label for="subject">Reason for contacting us *<br></label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+            <div class="container-alert-txt">
+                Please fill out all the filds with a "*"
+            </div>
 
-            <input type="submit" value="Submit">
+            <input class="submit-button" type="submit" value="Submit">
 
             <br>
             <div class="disclaimer">
