@@ -4,29 +4,161 @@ body{
   background-color:white;  
   font-family: 'New Times Roman'; 
 }
-.image{
-display: flex;
-justify-content: center; 
-align-items :center;
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.nav-text {
+  display: none;
+}
+
+.ulForDir {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 5px;
+}
+
+.ulForDir li {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navi-li-here {
+  background-color: lightcoral;
+}
+
 /* Use a media query to add a breakpoint at 720px: */
 @media screen and (max-width: 720px) {
   .image img {
     width: 100%;
   }
+
+  .navi-centered {
+    width: 100%;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+  }
+
+  .navList {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .openNav {
+    height: auto;
+  }
+
+  .hiddenNavIcon {
+    display: none;
+  }
+
+  .ulForDir {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type=text] {
+    width: 100%;
+  }
 }
-  input[type=submit]:hover {
-    background-color: lightcoral;
+
+.navi {
+  overflow: hidden;
+  text-align: center;
+  background-color: rgb(255, 245, 245);
 }
+
+.navi-centered {
+  display: inline-block;
+}
+
+.navi a {
+  background-color: rgb(255, 245, 245);
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgb(75, 75, 75);
+  text-decoration: none;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navi a:hover {
+  color: black;
+  background-color: lightcoral;
+}
+
+nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 245, 245);
+}
+
+.nav.sticky a:hover {
+  background-color: rgb(255, 245, 245);
+  color: black;
+  background-color: lightcoral;
+}
+
+.text-line-body-1-box {
+  width: 100%;
+  padding: 0;
+}
+
+.text-line-body-1 {
+  text-align: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+  background-color: lightcoral;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.login-box{
+  text-align: center;
+}
+
 .login{  
-        width: 400px;  
-        overflow: hidden;  
-        margin: auto;  
-        margin: 50 0 0 400px;  
-        padding: 25px 450px;  
+        display: inline-block;
+        width: 400px;    
         background: white;  
-        border-radius: 15px;         
+        border-radius: 15px; 
+        margin-top: 15px;        
+        margin-bottom: 50px;
 }
+
+.container{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px;
+}
+
 .h1{
     background-color: lightcoral;
     color: black;
@@ -61,44 +193,13 @@ label{
     background-color: lightcoral;
     color: black;
     padding: 14px 20px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border: none;
     cursor: pointer;
     width: 100%;
 }
-.nav-admin{
-  overflow: hidden;
-  text-align: center;
-}
-.admin-dropdown{
-  display: inline-block;
-  overflow: hidden;
-  min-width: 160px;
-}
-.admin-button{
-  padding: 12px 16px;
-  text-decoration: none;
-  background-color: lightcoral;
-}
-.admin-content{
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.admin-content a{
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.admin-dropdown:hover .admin-content {
-  display: block;
-}
+
 .footer {
   width: 100%;
   background: lightcoral;
