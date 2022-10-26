@@ -24,8 +24,8 @@ exports.post = async (req, res)=> {
         });
 
         var mailOptions = {
-        from: 'eriksanchezcs@gmail.com',
-        to: 'buck10_805@yahoo.com',
+        from: 'okaidiautosalescontact@gmail.com',
+        to: 'okaidiautosalescontact+receive@gmail.com',
         subject: 'OKAIDI CONTACT FORM',
         text: 'Name: ' + firstName + ' ' + lastName + ' \n' + 
                 'Contact preference: ' + ' ' + contactPreference + ' \n' + 
@@ -38,7 +38,7 @@ exports.post = async (req, res)=> {
             res.status(500).send('Unable to send contact form.')
             alert("Unable to send contact form.")
         } else {
-            res.status(200).send('Email sent: ' + info.response)
+            res.status(200).send('Contact form sent successfully.')
             alert("Contact form sent successfully.")
         }
         }); 

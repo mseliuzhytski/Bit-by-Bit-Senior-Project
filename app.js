@@ -25,7 +25,7 @@ var db = require('./Backend/Database/db');
 const app = express();
 const router = express.Router();
 
-app.use(express.static('./Frontend'));
+app.use(express.static('Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
 
