@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 
 exports.get = function(req,res){
-    res.sendFile(path.join(__dirname+'../../../Pages/RegisterUser.html'));
+    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.html'));
 };
 
 exports.post = async (req, res)=> {

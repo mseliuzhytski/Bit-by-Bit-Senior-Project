@@ -1,30 +1,31 @@
 const path = require('path');
 const alert = require('alert');
 const nodemailer = require('nodemailer');
+require("dotenv").config();
 
 exports.get = function(req,res){
-        res.sendFile(path.join(__dirname+'../../../Pages/ContactUs.html'));
+        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
     };
 
 exports.post = async (req, res)=> {
     try {
-        const firstName = req.body.firstName;
-        const lastName = req.body.lastname;
-        const contactPreference = req.body.contactPreference;
-        const contactInfo = req.body.contactInfo;
-        const subject = req.body.subject;
+        var firstName = req.body.firstName;
+        var lastName = req.body.lastName;
+        var contactPreference = req.body.contactPreference;
+        var contactInfo = req.body.contactInfo;
+        var subject = req.body.subject;
 
         var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'youremail@gmail.com',
-            pass: 'yourpassword'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PW
         }
         });
 
         var mailOptions = {
-        from: 'youremail@gmail.com',
-        to: 'youremail@gmail.com',
+        from: 'eriksanchezcs@gmail.com',
+        to: 'buck10_805@yahoo.com',
         subject: 'OKAIDI CONTACT FORM',
         text: 'Name: ' + firstName + ' ' + lastName + ' \n' + 
                 'Contact preference: ' + ' ' + contactPreference + ' \n' + 

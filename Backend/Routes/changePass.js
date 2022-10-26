@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 
 exports.get = function(req,res){
-    res.sendFile(path.join(__dirname+'../../../Pages/ChangePassword.html'));
+    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'));
 };
 
 exports.post = async (req, res)=> {

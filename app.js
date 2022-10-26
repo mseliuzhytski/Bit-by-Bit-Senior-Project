@@ -19,15 +19,15 @@ var homePage = require('./Backend/Routes/homePage');
 var login = require('./Backend/Routes/login');
 var register = require('./Backend/Routes/register');
 var search = require('./Backend/Routes/search');
-var db = require('./Backend/Routes/Database/db');
+var db = require('./Backend/Database/db');
 
 // variable declaration section
 const app = express();
 const router = express.Router();
 
+app.use(express.static('./Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
-
 
 // temporary until database is connected
 users = [];
@@ -37,6 +37,12 @@ db.query('SELECT * FROM inventory WHERE Car_Make = "Ford"', (error, rows) => {
     if(error) throw error;
     console.log(rows);
 });
+/*
+db.query('SELECT * FROM inventory WHERE Car_Make = ?', [username], (error, rows) => {
+    if(error) throw error;
+    console.log(rows);
+});
+*/
 
 
 // get section
@@ -55,6 +61,7 @@ app.get('/RegisterUser.html', register.get);
 app.post('/change', change.post);
 app.post('/login', login.post);
 app.post('/register', register.post);
+app.post('/contact', contact.post);
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
