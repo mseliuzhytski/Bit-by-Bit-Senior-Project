@@ -9,8 +9,8 @@ exports.get = function(req,res){
 
 exports.post = async (req, res)=> {
     try {
-        var firstName = req.body.firstName;
-        var lastName = req.body.lastName;
+        var firstName = req.body.firstname;
+        var lastName = req.body.lastname;
         var contactPreference = req.body.contactPreference;
         var contactInfo = req.body.contactInfo;
         var subject = req.body.subject;
@@ -35,15 +35,16 @@ exports.post = async (req, res)=> {
 
         transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            res.status(500).send('Unable to send contact form.')
+            res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
             alert("Unable to send contact form.")
         } else {
-            res.status(200).send('Contact form sent successfully.')
+            res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
             alert("Contact form sent successfully.")
         }
         }); 
 
     } catch {
-        res.sendFile(path.join(__dirname+'../../../Pages/ContactUs.html'))
+        res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
+        alert("Error processing request.")
     }
 };

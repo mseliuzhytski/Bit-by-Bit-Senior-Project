@@ -15,20 +15,20 @@ exports.post = async (req, res)=> {
         let foundUser = users.find(user=> user.username === username);
 
         if(!foundUser){
-            res.sendFile(path.join(__dirname+'../../../Pages/Login.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
              alert("Invalid Username");
          }
 
         let isCorrectPassword = await bcrypt.compare(password, foundUser.password);
 
         if(isCorrectPassword){
-            res.sendFile(path.join(__dirname+'../../../Pages/Homepage.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
         }
         else{
-            res.sendFile(path.join(__dirname+'../../../Pages/Login.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
             alert("Invalid Password")
         }
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Pages/Login.html'))
+        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
     }
 };

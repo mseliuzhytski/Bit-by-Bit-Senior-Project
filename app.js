@@ -33,10 +33,12 @@ app.use(router, express.static(__dirname));
 users = [];
 
 // test db query
+/*
 db.query('SELECT * FROM inventory WHERE Car_Make = "Ford"', (error, rows) => {
     if(error) throw error;
     console.log(rows);
 });
+*/
 /*
 db.query('SELECT * FROM inventory WHERE Car_Make = ?', [username], (error, rows) => {
     if(error) throw error;

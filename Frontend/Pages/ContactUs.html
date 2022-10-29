@@ -79,22 +79,23 @@
     </div>
     <div class="conBox">
     <div class="container">
-        <form action="#">
+        <!--<form action="#">-->
+            <form action="/contact" method="POST"> 
             <label for="fname">First Name *<br></label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
 
             <label for="lname">Last Name<br></label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
 
             <label for="contact">Contact Information *<br></label>
-            <select id="contact" name="contact">
-                <option value="usa">Phone</option>
-                <option value="usa">Email</option>
+            <select id="contact" name="contactPreference">
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
             </select><br>
-            <input type="text" id="contact" name="contact" placeholder="Your contact information..."><br>
+            <input type="text" id="contact" name="contactInfo" placeholder="Your contact information..." required><br>
 
             <label for="subject">Reason for contacting us *<br></label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea><br>
             <div class="container-alert-txt">
                 Please fill out all the filds with a "*"
             </div>

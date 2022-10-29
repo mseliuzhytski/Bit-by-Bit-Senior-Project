@@ -27,12 +27,12 @@ exports.post = async (req, res)=> {
              console.log(users)
          }
          else{
-            res.sendFile(path.join(__dirname+'../../../Pages/RegisterUser.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.html'))
             alert("Username Taken")
          }
 
-         res.sendFile(path.join(__dirname+'../../../Pages/Homepage.html'))
+         res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Pages/RegisterUser.html'))
+        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.html'))
     }
 };

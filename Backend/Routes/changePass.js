@@ -15,14 +15,14 @@ exports.post = async (req, res)=> {
         let foundUser = users.find(user=> user.username === username);
 
         if(!foundUser){
-            res.sendFile(path.join(__dirname+'../../../Pages/ChangePassword.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
              alert("Invalid Username");
          }
 
         let isCorrectPassword = await bcrypt.compare(password, foundUser.password);
 
         if(!isCorrectPassword){
-            res.sendFile(path.join(__dirname+'../../../Pages/ChangePassword.html'))
+            res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
             alert("Invalid Password")
         }
 
@@ -39,8 +39,8 @@ exports.post = async (req, res)=> {
 
         console.log(users)
 
-        res.sendFile(path.join(__dirname+'../../../Pages/Homepage.html'))
+        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Pages/ChangePassword.html'))
+        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
     }
 };
