@@ -5,7 +5,7 @@ INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Ca
 VALUES ('Ford', 'F-150', '2023', '70000', '20', 'Truck', 'New', 'Silver');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Ford', 'F-250', '2023', '90000', '25', 'Truck', 'New', 'Black');
+VALUES ('Ford', 'F-250', '2023', '90000', '40', 'Truck', 'New', 'Black');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Honda', 'Civic', '2018', '20000', '25000', 'Coupe', 'Used', 'White');
@@ -17,7 +17,7 @@ INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Ca
 VALUES ('Honda', 'CR-V', '2014', '12000', '15000', 'SUV', 'Used', 'Gray');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Honda', 'Odyssey', '2023', '48500', '0', 'Van', 'New', 'White');
+VALUES ('Honda', 'Odyssey', '2023', '48500', '10', 'Van', 'New', 'White');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Nissan', 'NV200', '2020', '19000', '15000', 'Van', 'Used', 'Silver');
@@ -47,7 +47,7 @@ INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Ca
 VALUES ('BMW', 'M5 CS', '2023', '149899', '25', 'Sedan', 'New', 'Blue');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('BMW', 'M5 CS', '2023', '155300', '20', 'Sedan', 'New', 'Black');
+VALUES ('BMW', 'M5 CS', '2023', '151600', '20', 'Sedan', 'New', 'Black');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Mercedes-Benz', 'AMG G63 4MATIC', '2022', '220000', '80', 'SUV', 'New', 'MANUFAKTUR Platinum Magno (matte)');
