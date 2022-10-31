@@ -15,7 +15,7 @@ async function Tester(){
     var end;
     var start = await performance.now()
     var time;
-
+    
     await loginTestWithCorrectLogin("ABCdefGHIjklMNOpqrSTUvwxYz", "Qwerty2022", 1, "Funtional")
     await loginTestWithCorrectLogin("tester", "Az1Za2Az3Za4", 2, "Funtional")
 
