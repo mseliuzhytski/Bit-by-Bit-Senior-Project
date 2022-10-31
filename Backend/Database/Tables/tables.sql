@@ -14,7 +14,7 @@ PRIMARY KEY (Car_Stock_Num)
 CREATE TABLE EMPLOYEE (
 Emp_ID INT AUTO_INCREMENT,
 Emp_Username VARCHAR(50),
-Emp_PasswordHash VARCHAR(50) NOT NULL,
+Emp_PasswordHash VARCHAR(100) NOT NULL,
 Emp_FirstName VARCHAR(50),
 Emp_LastName VARCHAR(50),
 Emp_Role VARCHAR(50),
