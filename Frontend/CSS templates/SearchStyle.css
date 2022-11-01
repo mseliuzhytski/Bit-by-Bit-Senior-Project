@@ -130,10 +130,17 @@ nav.sticky {
     margin-right: auto;
   }
       
-#filters {
-    width: 15%;
+  #filters {
+    width: 280px;
+    min-width: min-content;
+    max-width: 33%;
+    height: max-content;
     border-style: groove;
-    text-align: center;
+    text-align: left;
+    float: left;
+    margin-left: 3%;
+    padding-bottom: 10px;
+    line-height: 29px;
 }
 
 .input{
@@ -197,4 +204,43 @@ nav.sticky {
     padding-right: 4px;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.car-card { /*Each car*/
+    height: 300px;
+    width: 250px;
+    outline: 2px solid green;
+    margin: 15px;
+    padding: 10px;
+}
+
+.car-container {
+    float: inline-start;
+    min-width: 33%;
+    max-width: 90%;
+    display: inline;
+}
+
+.car_ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.car-li {
+    flex: 0 0 30%; /* flex-grow, flex-shrink, flex-basis */
+}
+
+.filter-title {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    background-color: lightcoral;
+}
+
+.price {
+
+}
+.mileage {
+    color: gray;
 }

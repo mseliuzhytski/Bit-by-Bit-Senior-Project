@@ -47,27 +47,36 @@
     <!-- Search Filter section -->
 
     <div id="filters">
-        <P>Filters</P>
-       <form action="#" method="post">
-           
-           <label for="fname">Make:</label>
-           <br>
-           <select name="Make" id="Make">
-            <option value="empty"></option> 
+        <div class="filter-title"><P>Filters</P></div>
+        <form action="#" method="post">
+
+            <label for="fname">Make:</label>
+            <select name="Make" id="Make">
+            <option value="All">All</option> 
             <option value="Toyota">Toyota</option>
             <option value="Honda">Honda</option>
             <option value="Ford">Ford</option>
             <option value="BMW">BMW</option>
             </select>
-           <br>
-
-           <label for="model">Model Year:</label> 
-           <input type="text" class="input" value="" name="model" title="model" tabindex="2">
-           <br>
+            <br>
+            
+            <label for="Model">Model:</label>
+            <select name="Model">
+            <option value="All">All</option> 
+            <option value="Placeholder">Placeholder</option> 
+            </select>
+            <br>
+           
+            <label for="Year">Year:</label> 
+            <select name="Year">
+            <option value="All">All</option> 
+            <option value="2010">2010</option> 
+            </select>
+            <br>
 
             <label for="condition">Condition:</label>
-           <select name="Condition" id="Condition">
-            <option value="empty"></option> 
+            <select name="Condition" id="Condition">
+            <option value="All">All</option> 
             <option value="New">New</option>
             <option value="Used">Used</option>
             <option value="Certified">Certified</option>
@@ -75,9 +84,8 @@
            <br>    
               
             <label for="Color">Color:</label>
-            <br>
             <select name="Color" id="Color">
-            <option value="empty"></option> 
+            <option value="All">All</option> 
             <option value="Red">Red</option>
             <option value="Blue">Blue</option>
             <option value="Green">Green</option>
@@ -90,29 +98,60 @@
 
             <label for="price">Price:</label>
             <select name="Price" id="Price">
-            <option value = "empty"></option>
-            <option value = "less5000">Less Than $5000</option>
-            <option value = "less10000">Less Than $10000</option>
-            <option value = "less15000">Less Than $15000</option>
-            <option value = "less20000">Less Than $20000</option>
-            <option value = "less25000">Less Than $25000</option>
+            <option value="All">All</option> 
+            <option value = "less5000">Under $5000</option>
+            <option value = "less10000">Under $10000</option>
+            <option value = "less15000">Under $15000</option>
+            <option value = "less20000">Under $20000</option>
+            <option value = "less25000">Under $25000</option>
             </select>
             <br>  
 
             <label for="mileage">Mileage:</label>
-           <select name="mileage" id="mileage">
-            <option value = "empty"></option>
-            <option value = "less5000">Less Than 5000</option>
-            <option value = "less10000">Less Than 10000</option>
-            <option value = "less25000">Less Than 25000</option>
-            <option value = "less50000">Less Than 50000</option>
-            <option value = "greater50000">Greater Than 50000</option>
+            <select name="mileage" id="mileage">
+            <option value="All">All</option> 
+            <option value = "less5000">Under 5000</option>
+            <option value = "less10000">Under 10000</option>
+            <option value = "less25000">Under 25000</option>
+            <option value = "less50000">Under 50000</option>
+            <option value = "greater50000">Over 50000</option>
             <br>
 
-           </select>
-           
+            </select>
         </form>
     </div>
+
+    <!--    Car display     -->
+    <div class="car-container">
+        <ul class="car_ul">
+            <!--    Order:
+                Year Make Model
+                price      mileage
+                // not shown: condition, color
+                -->
+            <li><div class="car-card">
+                <!--    img    
+                <img src="" alt="car" style="width:100%">
+                -->
+                <h1 class="car-title">Year Make Model</h1>
+                <p class="price">$Price</p>
+                <p class="mileage">Mileage: xx</p>
+            </div></li>
+            <li><div class="car-card">
+                <h1 class="car-title">2000 Honda Accord</h1>
+                <p class="price">$11000</p>
+                <p class="mileage">Mileage: 50000</p>
+            </div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+            <li><div class="car-card"></div></li>
+        </ul>
+    </div>
+
     <div class="footer">
         <div class="col-1">
             <h1>

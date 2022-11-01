@@ -29,24 +29,6 @@ app.use(express.static('Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
 
-// temporary until database is connected
-users = [];
-
-// test db query
-/*
-db.query('SELECT * FROM inventory WHERE Car_Make = "Ford"', (error, rows) => {
-    if(error) throw error;
-    console.log(rows);
-});
-*/
-/*
-db.query('SELECT * FROM inventory WHERE Car_Make = ?', [username], (error, rows) => {
-    if(error) throw error;
-    console.log(rows);
-});
-*/
-
-
 // get section
 app.get('/', homePage.get);
 app.get('/Aboutus.html', about.get);

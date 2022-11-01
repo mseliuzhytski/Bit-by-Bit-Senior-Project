@@ -260,34 +260,38 @@ body
     margin-left: 10px;
 }
 
-.review1{
-    margin: 0 auto;
-    margin: 15px;
-    width: 350px;
+
+.review {
     height: 300px;
+    width: 350px;
     outline: 2px solid lightcoral;
+    margin: 20px;
 }
-.review2{
-    margin: 0 auto;
-    margin: 15px;
-    width: 350px;
-    height: 300px;
-    outline: 2px solid lightcoral;
-}
-.review3{
-    margin: 0 auto;
-    margin: 15px;
-    width: 350px;
-    height: 300px;
-    outline: 2px solid lightcoral;
- }
- .review1,.review2,.review3 {
-   display: inline-block;
- }
- .review-boxes {
-    display: block;
+
+ .review-container {
+    float: left;
+    width: 100%;
     text-align: center;
-    margin-top: 0px;
+    background-color: gray;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+ }
+ 
+ .review-inner {
+    display: inline-flex;
  }
 
-  
+  .ul-review{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-align: center;
+    align-items: center;
+  }
+
+  /*Temp empty spacing*/
+  .empty-space{
+    margin-top: 250px;
+    margin-bottom: 250px;
+  }

@@ -9,11 +9,8 @@ exports.get = function(req,res){
 
 exports.post = async (req, res)=> {
     try {
-        var firstName = req.body.firstname;
-        var lastName = req.body.lastname;
-        var contactPreference = req.body.contactPreference;
-        var contactInfo = req.body.contactInfo;
-        var subject = req.body.subject;
+        var { firstname, lastname, contactPreference,
+             contactInfo, subject } = req.body;
 
         var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -27,7 +24,7 @@ exports.post = async (req, res)=> {
         from: 'okaidiautosalescontact@gmail.com',
         to: 'okaidiautosalescontact+receive@gmail.com',
         subject: 'OKAIDI CONTACT FORM',
-        text: 'Name: ' + firstName + ' ' + lastName + ' \n' + 
+        text: 'Name: ' + firstname + ' ' + lastname + ' \n' + 
                 'Contact preference: ' + ' ' + contactPreference + ' \n' + 
                 'Contact info: ' + ' ' + contactInfo + ' \n\n' + 
                 'Subject: ' + ' ' + subject
