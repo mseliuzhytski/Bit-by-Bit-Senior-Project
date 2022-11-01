@@ -19,7 +19,7 @@ var homePage = require('./Backend/Routes/homePage');
 var login = require('./Backend/Routes/login');
 var register = require('./Backend/Routes/register');
 var search = require('./Backend/Routes/search');
-var db = require('./Backend/Database/db');
+var inventory = require('./Backend/Routes/inventory');
 
 // variable declaration section
 const app = express();
@@ -39,13 +39,16 @@ app.get('/Search.html', search.get);
 app.get('/HomePage.html', homePage.get);
 app.get('/Login.html', login.get);
 app.get('/RegisterUser.html', register.get); 
-
+app.get('/inventory', inventory.get);
 
 // post section
 app.post('/change', change.post);
 app.post('/login', login.post);
 app.post('/register', register.post);
 app.post('/contact', contact.post);
+app.post('/inventory', inventory.post);
 
+//  delete section 
+app.delete('/inventory', inventory.delete);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
