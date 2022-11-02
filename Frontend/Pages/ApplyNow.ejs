@@ -1,9 +1,9 @@
-<!--About Us-->
+<!--ApplyNow Page-->
 <!DOCTYPE html>    
 <html>    
 <head>    
-    <title>About Us</title>
-    <link rel="stylesheet" href="../CSS templates/AboutusStyle.css">
+    <title>Okaidi Auto Sales</title>    
+    <link rel="stylesheet" href="../CSS templates/ApplyNowStyle.css">   
 </head>    
 <body>
     <div class="image">
@@ -27,11 +27,11 @@
                     </div>
                     <div class="navList" id="navShow">
                         <ul class="ulForDir">
-                            <li><a href="Homepage.html">Home</a></li>
-                            <li><a href="Search.html">Search</a></li>
-                            <li class="navi-li-here"><a href="Aboutus.html">About Us</a></li>
-                            <li><a href="ContactUs.html">Contact Us</a></li>
-                            <li><a href="ApplyNow.html">Apply Now</a></li>
+                            <li><a href="Homepage.ejs">Home</a></li>
+                            <li><a href="Search.ejs">Search</a></li>
+                            <li><a href="Aboutus.ejs">About Us</a></li>
+                            <li><a href="ContactUs.ejs">Contact Us</a></li>
+                            <li class="navi-li-here"><a href="ApplyNow.ejs">Apply Now</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,16 +43,29 @@
             Find your next car at Okaidi Auto Sales in Sacramento, CA
         </div>
     </div>
-    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png" width="45%" height="50%" alt="Logo" style="float: left; margin-left: 2%; margin-top: 8%;">
-    <div>
-        <p class="blocktext">    
-            At Okaidi Auto Sales LLC, located in Sacramento, CA, we want to provide you with the best automotive experience possible. From researching the vehicle you want to test driving your options, we're here to help with our knowledgeable sales staff and an impressive selection of cars, trucks, and SUVs. Let us help you find the perfect vehicle!
-        </p>
-        <a href="ContactUs.html">
-            <button type="button" class="block">Contact Us</button>
-        </a>
+    <div class="row">
+        <div class="col">
+            <form action="#">
+              <label for="fname">First Name<br></label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+          
+              <label for="lname">Last Name<br></label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+          
+              <label for="contact">Contact Information<br></label>
+              <input type="text" id="contact" name="contact" placeholder="Your contact information email/phone number..."><br>
+            </form>
+        </div>
+        <div class="col">
+            <form action="#">
+              <label for="stockNumber">Stock Number<br></label>
+              <input type="text" id="stockNumber" name="stockNumber" placeholder="Stock Number.."><br>
+              
+            </form>
+        </div>
+        <button class="button">Submit</button>
     </div>
-    
+
     <div class="footer">
         <div class="col-1">
             <h1>
@@ -109,5 +122,5 @@
             }
         });  
     </script>
-</body>    
+</body>
 </html>

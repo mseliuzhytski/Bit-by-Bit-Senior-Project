@@ -12,10 +12,10 @@ exports.get = async (req, res)=> {
             getVehicleByID(Car_Stock_Num, function(foundVehicle) {
                 if (foundVehicle) {
                     console.log(foundVehicle);
-                    res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                    res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                 }
                 else {
-                    res.status(400).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                    res.status(400).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                     console.log("Car_Stock_Num " + Car_Stock_Num + " does not exist.");
                     alert("Car_Stock_Num " + Car_Stock_Num + " does not exist.");
                 }
@@ -26,13 +26,13 @@ exports.get = async (req, res)=> {
                 (error, results) => {
                     if (error) throw error;
                     console.log(results);
-                    res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                    res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                 }
             );
         }
     }
     catch {
-        res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
         alert("Error processing request.");
     }
 };
@@ -54,12 +54,12 @@ exports.post = async (req, res)=> {
                         (error) => {
                             if (error) throw error;
                             console.log("Successfully updated inventory item. Car_Stock_Num: " + Car_Stock_Num);
-                            res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                            res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                         }
                     ); 
                 }
                 else {
-                    res.status(400).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                    res.status(400).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                     console.log("Car_Stock_Num " + Car_Stock_Num + " does not exist. Update unsuccessful.");
                     alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Update unsuccessful.");
                 }
@@ -73,13 +73,13 @@ exports.post = async (req, res)=> {
                 (error, results) => {
                     if (error) throw error;
                     console.log("Successfully added new inventory item. Car_Stock_Num: " + results.insertId);
-                    res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                    res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                 }
             ); 
         }
     } 
     catch {
-        res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
         alert("Error processing request.");
     }
 };
@@ -95,19 +95,19 @@ exports.delete = async (req, res)=> {
                     (error) => {
                         if (error) throw error;
                         console.log("Successfully deleted inventory item: " + Car_Stock_Num);
-                        res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                        res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                     }
                 );
             } 
             else {
-                res.status(400).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+                res.status(400).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
                 console.log("Car_Stock_Num " + Car_Stock_Num + " does not exist. Deletion unsuccessful.");
                 alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Deletion unsuccessful.");
             }
         });
     }
     catch {
-        res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/Search.html'));
+        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
         alert("Error processing request.");
     }
 };

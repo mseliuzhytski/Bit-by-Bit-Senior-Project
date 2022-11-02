@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('../Database/db');
 
 exports.get = function(req,res){
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'));
+        res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'));
     };
 
 exports.post = async (req, res)=> {
@@ -16,7 +16,7 @@ exports.post = async (req, res)=> {
         db.query('SELECT * FROM Employee WHERE Emp_username = ?', username,  async function(err,result, fields){
             if(err) throw error;
             if(result.length <= 0) {
-                res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+                res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
                 alert("Invalid Username")
             }
             
@@ -25,16 +25,16 @@ exports.post = async (req, res)=> {
                 let passwordToCheck = row.Emp_PasswordHash;
                 let isCorrectPassword = await bcrypt.compare(password, passwordToCheck);
                 if(isCorrectPassword){
-                    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
+                    res.render(path.join(__dirname+'../../../Frontend/Pages/Homepage.ejs'))
                 }
                 else{
-                    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+                    res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
                     alert("Invalid Password")
                 }
             });
 
         });
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+        res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
     }
 };

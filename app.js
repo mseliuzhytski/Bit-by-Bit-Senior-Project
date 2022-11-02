@@ -28,17 +28,18 @@ const router = express.Router();
 app.use(express.static('Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
+app.set('view engine', 'ejs');
 
 // get section
 app.get('/', homePage.get);
-app.get('/Aboutus.html', about.get);
-app.get('/ApplyNow.html', apply.get);
-app.get('/ContactUs.html', contact.get);
-app.get('/ChangePassword.html', change.get)
-app.get('/Search.html', search.get);
-app.get('/HomePage.html', homePage.get);
-app.get('/Login.html', login.get);
-app.get('/RegisterUser.html', register.get); 
+app.get('/Aboutus.ejs', about.get);
+app.get('/ApplyNow.ejs', apply.get);
+app.get('/ContactUs.ejs', contact.get);
+app.get('/ChangePassword.ejs', change.get)
+app.get('/Search.ejs', search.get);
+app.get('/HomePage.ejs', homePage.get);
+app.get('/Login.ejs', login.get);
+app.get('/RegisterUser.ejs', register.get); 
 app.get('/inventory', inventory.get);
 
 // post section
