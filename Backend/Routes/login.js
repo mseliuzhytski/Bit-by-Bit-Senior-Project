@@ -28,7 +28,6 @@ exports.post = async (req, res)=> {
                 let isCorrectPassword = await bcrypt.compare(password, passwordToCheck);
                 
                 if(isCorrectPassword){
-                    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
                     // authenticate
                     req.session.userInfo = {
                         "sessionId": req.session.id,
@@ -39,8 +38,10 @@ exports.post = async (req, res)=> {
                         Emp_Role: row.Emp_Role
                     }
                     const oneDay = 1000 * 60 * 60 * 24;
-
+                    
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });
+                    
+                    res.redirect("/")
                 }
                 else{
                     res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
