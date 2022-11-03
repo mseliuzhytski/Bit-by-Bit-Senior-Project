@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('../Database/db');
 
 exports.get = function(req,res){
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'));
+        res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'));
     };
 
 exports.post = async (req, res)=> {
@@ -18,7 +18,7 @@ exports.post = async (req, res)=> {
             if( err ) throw err;
 
             if(result.length <= 0) {
-                res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+                res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
                 alert("Invalid Username")
             }
             
@@ -43,13 +43,13 @@ exports.post = async (req, res)=> {
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });
                 }
                 else{
-                    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+                    res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
                     alert("Invalid Password")
                 }
             });
 
         });
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Login.html'))
+        res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
     }
 };

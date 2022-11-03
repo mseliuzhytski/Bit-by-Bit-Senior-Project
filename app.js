@@ -19,7 +19,11 @@ var homePage = require('./Backend/Routes/homePage');
 var login = require('./Backend/Routes/login');
 var register = require('./Backend/Routes/register');
 var search = require('./Backend/Routes/search');
-var db = require('./Backend/Database/db');
+var inventory = require('./Backend/Routes/inventory');
+var employee = require('./Backend/Routes/employee');
+var phone = require('./Backend/Routes/phone');
+var email = require('./Backend/Routes/email');
+var adminPage = require('./Backend/Routes/adminPage');
 
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
@@ -31,6 +35,7 @@ const router = express.Router();
 app.use(express.static('Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
+app.set('view engine', 'ejs');
 
 
 const oneDay = 1000 * 60 * 60 * 24;
@@ -50,22 +55,35 @@ app.use(express.json());
 
 // get section
 app.get('/', homePage.get);
-app.get('/Aboutus.html', about.get);
-app.get('/ApplyNow.html', apply.get);
-app.get('/ContactUs.html', contact.get);
-app.get('/ChangePassword.html', change.get)
-app.get('/Search.html', search.get);
-app.get('/HomePage.html', homePage.get);
-app.get('/Login.html', login.get);
-app.get('/RegisterUser.html', register.get); 
-
+app.get('/Aboutus.ejs', about.get);
+app.get('/ApplyNow.ejs', apply.get);
+app.get('/ContactUs.ejs', contact.get);
+app.get('/ChangePassword.ejs', change.get)
+app.get('/Search.ejs', search.get);
+app.get('/HomePage.ejs', homePage.get);
+app.get('/Login.ejs', login.get);
+app.get('/RegisterUser.ejs', register.get); 
+app.get('/inventory', inventory.get);
+app.get('/employee', employee.get);
+app.get('/phone', phone.get);
+app.get('/email', email.get);
+app.get('/AdminPage.ejs', adminPage.get);
 
 // post section
 app.post('/change', change.post);
 app.post('/login', login.post);
 app.post('/register', register.post);
 app.post('/contact', contact.post);
+app.post('/inventory', inventory.post);
+app.post('/employee', employee.post);
+app.post('/phone', phone.post);
+app.post('/email', email.post);
 
+// delete section 
+app.delete('/inventory', inventory.delete);
+app.delete('/employee', employee.delete);
+app.delete('/phone', phone.delete);
+app.delete('/email', email.delete);
 
 // handle logout, destroy session + delete cookie
 app.get("/logout", (req, res) => {

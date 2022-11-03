@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('../Database/db');
 
 exports.get = function(req,res){
-    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'));
+    res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'));
 };
 
 exports.post = async (req, res)=> {
@@ -17,7 +17,7 @@ exports.post = async (req, res)=> {
         db.query('SELECT * FROM Employee WHERE Emp_username = ?', username,  async function(err,result, fields){
             if(err) throw error;
             if(result.length < 0) {
-                res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
+                res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'))
                 alert("Username not in the database. Please make an account")
             }
             else{
@@ -26,7 +26,7 @@ exports.post = async (req, res)=> {
                 let passwordToCheck = row.Emp_PasswordHash;
                 let isCorrectPassword = await bcrypt.compare(oldPassword, passwordToCheck);
                 if(!isCorrectPassword){
-                    res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
+                    res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'))
                     alert("Invalid Password")
                 }
             });
@@ -34,11 +34,11 @@ exports.post = async (req, res)=> {
 
              db.query('UPDATE Employee SET Emp_PasswordHash = ? WHERE Emp_username = ?', [hash, username], (error) => {
                 if(error) throw error;
-                res.sendFile(path.join(__dirname+'../../../Frontend/Pages/Homepage.html'))
+                res.render(path.join(__dirname+'../../../Frontend/Pages/Homepage.ejs'))
             });
             }
         });
     }catch{
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.html'))
+        res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'))
     }
 };

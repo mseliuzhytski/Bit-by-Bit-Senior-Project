@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 require("dotenv").config();
 
 exports.get = function(req,res){
-        res.sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
+        res.render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
     };
 
 exports.post = async (req, res)=> {
@@ -32,16 +32,16 @@ exports.post = async (req, res)=> {
 
         transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
+            res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
             alert("Unable to send contact form.")
         } else {
-            res.status(200).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
+            res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
             alert("Contact form sent successfully.")
         }
         }); 
 
     } catch {
-        res.status(500).sendFile(path.join(__dirname+'../../../Frontend/Pages/ContactUs.html'));
+        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
         alert("Error processing request.")
     }
 };

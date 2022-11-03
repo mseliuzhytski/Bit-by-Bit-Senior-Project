@@ -141,10 +141,14 @@ nav.sticky {
 .footer {
     width: 100%;
     background: lightcoral;
+    overflow: auto;
     text-align: center;
     margin: 0 auto;
-    margin-top: 10%;
 }
+.footer-section {
+    float:left;
+    width:33%;
+  }
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -154,20 +158,20 @@ nav.sticky {
 
 .footer-info {
     display: block;
-    padding-bottom: 10px;
-    padding-top: 0;
+    padding-bottom: 20px;
 }
 
 .footer-facebook-box {
     display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .footer-hr {
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
+    
 }
 
 .footer-end {
@@ -192,3 +196,7 @@ nav.sticky {
     padding-top: 12px;
     padding-bottom: 12px;
 }
+.empty-space{
+    margin-top: 250px;
+    margin-bottom: 250px;
+  }

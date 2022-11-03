@@ -156,14 +156,10 @@ nav.sticky {
 .footer {
     width: 100%;
     background: lightcoral;
-    overflow: auto;
     text-align: center;
     margin: 0 auto;
+    margin-top: 70px;
 }
-.footer-section {
-    float:left;
-    width:33%;
-  }
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -186,7 +182,6 @@ nav.sticky {
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
-    
 }
 
 .footer-end {
@@ -218,10 +213,11 @@ nav.sticky {
     outline: 2px solid green;
     margin: 15px;
     padding: 10px;
+    float: center;
 }
 
 .car-container {
-    float: inline-start;
+    float: center;
     min-width: 33%;
     max-width: 90%;
     display: inline;
@@ -237,16 +233,57 @@ nav.sticky {
     flex: 0 0 30%; /* flex-grow, flex-shrink, flex-basis */
 }
 
-.filter-title {
-    padding-top: 1px;
-    padding-bottom: 1px;
+.car-title{
     text-align: center;
-    background-color: lightcoral;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
 }
-
+.center {
+    display: block;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.centerImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .price {
-
+ color: black;
+ text-align: center;
 }
 .mileage {
     color: gray;
+    text-align: center;
+}
+.button {
+    background-color: lightcoral;
+    border: none;
+    color: black;
+    width: 30%;
+    height: 20px;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 35%;
+    margin-right: auto;
+}
+.button2 {
+    background-color: lightcoral;
+    border: none;
+    color: black;
+    width: 10%;
+    height: 40px;
+    border-radius: 10%;
+    margin-top: 100px;
+    margin-left: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
 }

@@ -203,8 +203,13 @@ label{
 .footer {
   width: 100%;
   background: lightcoral;
+  overflow: auto;
   text-align: center;
   margin: 0 auto;
+}
+.footer-section {
+  float:left;
+  width:33%;
 }
 
 .footer div h1 {
@@ -228,6 +233,7 @@ label{
   color: rgb(75, 75, 75);
   width: 95%;
   height: 1px;
+  
 }
 
 .footer-end {
