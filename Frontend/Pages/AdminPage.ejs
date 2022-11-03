@@ -1,0 +1,220 @@
+<!--Contact Us-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Okaidi Auto Sales</title>
+    <link rel="stylesheet" href="../CSS templates/AdminPageStyle.css" />
+</head>
+
+<body>
+    <div class="header-top">
+        <div class="top-previous-box">
+            <button class="previous-page">Return</button>
+        </div>
+        <div class="top-out">
+            <button class="log-out">Logout</button>
+            <div class="show-user">myLongUsername</div>
+        </div>
+    </div>
+    <div class="image">
+        <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png"
+            alt="Okaidi Auto Sales" width="50%" height="10%">
+    </div>
+    <div class="navi">
+        <div class="navi-centered">
+            <nav id="navbar">
+                <div class="nav-menu">
+                    <div class="nav-text">
+                        <h3 class="nav-text-logo">OKAIDI AUTO SALES</h3>
+                        <div class="nav-toggle" id="navToggle">
+                            <img class="navIcon"
+                                src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconHambMenu.png"
+                                alt="hamburger menu" width="25px" id="hamburger">
+                            <img class="navIcon hiddenNavIcon"
+                                src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconClose.png"
+                                alt="close hamburger" width="25px">
+                        </div>
+                    </div>
+                    <div class="navList" id="navShow">
+                        <ul class="ulForDir">
+                            <li><a href="Homepage.html">Home</a></li>
+                            <li><a href="Search.html">Search</a></li>
+                            <li><a href="Aboutus.html">About Us</a></li>
+                            <li class="navi-li-here"><a href="ContactUs.html">Contact Us</a></li>
+                            <li><a href="ApplyNow.html">Apply Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="text-line-body-1-box">
+        <div class="text-line-body-1">
+            Find your next car at Okaidi Auto Sales in Sacramento, CA
+        </div>
+    </div>
+    <div class="body-main">
+        <div class="buttons-box">
+            <div class="emp-add">
+                <button class="button-top" onclick="addElement()">Add New Employee</button>
+            </div>
+        </div>
+        <div class="emp-body">
+            <div class="emp-table-title">
+                Table of employees
+            </div>
+            <div class="emp-table" id="empTable">
+                <div class="emp-table-row-fixed">
+                    <div class="emp-table-fixed">
+                        Name
+                    </div>
+                    <div class="emp-table-fixed">
+                        Phone
+                    </div>
+                    <div class="emp-table-fixed">
+                        Email
+                    </div>
+                    <div class="emp-table-fixed">
+                        User
+                    </div>
+                    <div class="emp-table-fixed">
+                        Role
+                    </div>
+                    <div class="emp-table-fixed">
+                        Edit
+                    </div>
+                </div>
+                <div class="emp-table-row" id="hideRow">
+                    <div class="emp-table-name">
+                        ...
+                    </div>
+                    <div class="emp-table-phone">
+                        ...
+                    </div>
+                    <div class="emp-table-email">
+                        ...
+                    </div>
+                    <div class="emp-table-user">
+                        ...
+                    </div>
+                    <div class="emp-table-role">
+                        ...
+                    </div>
+                    <div class="emp-table-button">
+                        <a class="emp-table-move">
+                            <button class="emp-table-row-button">MORE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-1">
+            <h1>
+                <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
+                    style="width:120px;height:70px;">
+                <div class="footer-info">
+                    <br>
+                    2400 FULTON AVE-B,<br> SACRAMENTO, CA 95825<br>
+                    916-750-9099<br>
+                </div>
+            </h1>
+            <div class="footer-facebook-box">
+                <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
+                    <img src="https://www.seville.michlibrary.org/site-assets/images/facebook-icon.png/@@images/image.png"
+                        width="50px" height="50px">
+                </a>
+            </div>
+        </div>
+        <hr class="footer-hr">
+        <div class="footer-end"></div>
+    </div>
+    <script>
+        var navbar = document.getElementById("navbar");
+        window.onscroll = function(){
+            if(window.pageYOffset > navbar.offsetTop){
+                navbar.classList.add("sticky");
+            }
+            else{
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script>
+        const navToggle = document.querySelector('#navToggle');
+        const navl = document.querySelector('#navShow');
+        const navIcon = document.querySelectorAll('.navIcon');
+        const hamburger = document.querySelector('#hamburger');
+
+        navToggle.addEventListener("click", () => {
+            navl.classList.toggle("openNav")
+            navIcon.forEach(icon => {
+                icon.classList.toggle("hiddenNavIcon");
+            })
+        });
+
+        window.addEventListener("resize", () => {
+            if (document.body.clientWidth > 720) {
+                navl.classList.remove("openNav");
+                navIcon.forEach(icon => {
+                    icon.classList.add("hiddenNavIcon")
+                });
+                hamburger.classList.remove("hiddenNavIcon");
+            }
+        });  
+    </script>
+    <script>
+
+        function addElement(){
+        const emp_table = document.getElementById("empTable");
+        const n_row = document.createElement('div');
+
+        n_row.className = 'emp-table-row';
+
+        const f_name = document.createElement('div');
+        const f_phone = document.createElement('div');
+        const f_email = document.createElement('div');
+        const f_user = document.createElement('div');
+        const f_role = document.createElement('div');
+        const f_button = document.createElement('div');
+
+        f_name.className = 'emp-table-name';
+        f_phone.className = 'emp-table-phone';
+        f_email.className = 'emp-table-email';
+        f_user.className = 'emp-table-user';
+        f_role.className = 'emp-table-role';
+        f_button.className = 'emp-table-button';
+
+        f_name.innerText = "my Name";
+        f_phone.innerText = "+1 (111) 111 11-11";
+        f_email.innerText = "myGmail@gmail.com";
+        f_user.innerText = "myUsername";
+        f_role.innerText = "my Role";
+
+        const a_button = document.createElement('a');
+        a_button.className = "emp-table-move";
+
+        const b_button = document.createElement('button');
+        b_button.className = 'emp-table-row-button';
+        b_button.innerText = "MORE";
+
+        a_button.appendChild(b_button);
+        f_button.appendChild(a_button);
+
+        n_row.appendChild(f_name);
+        n_row.appendChild(f_phone);
+        n_row.appendChild(f_email);
+        n_row.appendChild(f_user);
+        n_row.appendChild(f_role);
+        n_row.appendChild(f_button);
+
+        emp_table.appendChild(n_row);
+        }
+
+    </script>
+
+</body>
+
+</html>
