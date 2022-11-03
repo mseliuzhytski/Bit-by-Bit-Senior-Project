@@ -23,6 +23,7 @@ var inventory = require('./Backend/Routes/inventory');
 var employee = require('./Backend/Routes/employee');
 var phone = require('./Backend/Routes/phone');
 var email = require('./Backend/Routes/email');
+var adminPage = require('./Backend/Routes/adminPage');
 
 // variable declaration section
 const app = express();
@@ -47,6 +48,7 @@ app.get('/inventory', inventory.get);
 app.get('/employee', employee.get);
 app.get('/phone', phone.get);
 app.get('/email', email.get);
+app.get('/AdminPage.ejs', adminPage.get);
 
 // post section
 app.post('/change', change.post);
