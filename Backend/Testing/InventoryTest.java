@@ -21,11 +21,11 @@ public class InventoryTest {
         ProductEntity product = new ProductEntity();
 
         product.setId(8);
-        product.setProductName("Samsung TX");
-        product.setProductDesc("Wireless charger");
-        product.setProductPrice(150.00);
-        product.setSKU("N/A");
-        product.setQuantity(17);
+        product.setProductName("Ford");
+        product.setProductModel("TX");
+        product.setProductPrice(15000.00);
+        product.setYear("2020");
+        product.setQuantity(1);
         product.setRating(3.4);
         product.setDiscountedPrice(110.00);
         product.setReview("No review for this product yet");
