@@ -21,6 +21,9 @@ var register = require('./Backend/Routes/register');
 var search = require('./Backend/Routes/search');
 var db = require('./Backend/Database/db');
 
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
+
 // variable declaration section
 const app = express();
 const router = express.Router();
@@ -28,6 +31,22 @@ const router = express.Router();
 app.use(express.static('Frontend'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(router, express.static(__dirname));
+
+
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(sessions({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
+}));
+
+app.use(cookieParser());
+
+
+// Need this. It parses incoming requests with JSON payloads and is based on body-parser. otherwise payloads are undefined.
+app.use(express.json());
+
 
 // get section
 app.get('/', homePage.get);
@@ -47,5 +66,13 @@ app.post('/login', login.post);
 app.post('/register', register.post);
 app.post('/contact', contact.post);
 
+
+// handle logout, destroy session + delete cookie
+app.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.clearCookie("bit-by-bit-session");
+    res.redirect('/');
+})
+app.get("/isAuthenticated", (req, res) => { res.send(req.session) })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
