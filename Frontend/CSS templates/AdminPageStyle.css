@@ -1,0 +1,378 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'New Times Roman';
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-previous-box{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.previous-page{
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: lightgray;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.top-out{
+    margin-top: 1%;
+    margin-right: 1%;  
+}
+
+.log-out{
+    float: right;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: lightgray;
+    cursor: pointer;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.show-user {
+    float: right;
+    text-align: right;
+    background-color: lightcoral;
+    border-radius: 2px;
+    padding: 3px;
+    margin-top: 1px;
+    margin-right: 1px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.nav-text {
+    display: none;
+}
+
+.nav-text-logo {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.nav-toggle{
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.ulForDir {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+}
+
+.ulForDir li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navi-li-here {
+    background-color: lightcoral;
+}
+
+/* Use a media query to add a breakpoint at 720px: */
+@media screen and (max-width: 720px) {
+    .image img {
+        width: 100%;
+    }
+
+    .navi-centered {
+        width: 100%;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+
+    .nav-text {
+        display: flex;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .navList {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .openNav {
+        height: auto;
+    }
+
+    .hiddenNavIcon {
+        display: none;
+    }
+
+    .ulForDir {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type=text] {
+        width: 100%;
+    }
+}
+
+
+
+.navi {
+    overflow: hidden;
+    text-align: center;
+    background-color: rgb(255, 245, 245);
+}
+
+.navi-centered {
+    display: inline-block;
+}
+
+.navi a {
+    background-color: rgb(255, 245, 245);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.navi a:hover {
+    color: black;
+    background-color: lightcoral;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 245);
+}
+
+.nav.sticky a:hover {
+    background-color: rgb(255, 245, 245);
+    color: black;
+    background-color: lightcoral;
+}
+
+.body-main{
+    text-align: center;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.buttons-box{
+    display: block;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 1%;
+}
+
+.emp-add{
+    display: flex;
+    justify-content: left;
+    padding: 3%;
+}
+
+.button-top{
+    border-radius: 5px;
+    background-color: lightcoral;
+    color: black;
+    padding: 14px 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emp-body {
+    display: inline-block;
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 1%;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    width: 97%;
+}
+
+.emp-table-title{
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.emp-table{
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.emp-table-row-fixed{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+}
+.emp-table-fixed {
+    display: block;
+    width: 16%;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emp-table-row{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+}
+
+#hideRow{
+    height: 0;
+    overflow: hidden;
+}
+
+.emp-table-field {
+    display: block;
+    overflow: hidden;
+    text-transform: none;
+    width: 16%;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emp-table-name, 
+.emp-table-phone, 
+.emp-table-email, 
+.emp-table-user,
+.emp-table-role{
+    display: block;
+    overflow: hidden;
+    text-transform: none;
+    width: 16%;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emp-table-button {
+    display: block;
+    width: 16%;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.footer {
+    width: 100%;
+    background: lightcoral;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer div h1 {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin: 0;
+}
+
+.footer-info {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.footer-facebook-box {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-hr {
+    color: rgb(75, 75, 75);
+    width: 95%;
+    height: 1px;
+}
+
+.footer-end {
+    display: block;
+    height: 35px;
+}
+
+.text-line-body-1-box {
+    width: 100%;
+    padding: 0;
+}
+
+.text-line-body-1 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    background-color: lightcoral;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
