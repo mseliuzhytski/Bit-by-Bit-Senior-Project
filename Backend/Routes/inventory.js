@@ -13,6 +13,16 @@ exports.get = async (req, res)=> {
                 if (foundVehicle) {
                     console.log(foundVehicle);
                     res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
+                    /*
+                    var yearMakeModel = foundVehicle.Car_Year + " " + foundVehicle.Car_Make + " " + foundVehicle.Car_Model;
+                    var priceTest = "$" + foundVehicle.Car_Price;
+                    var mileageTest = "Mileage: " + foundVehicle.Car_Mileage;
+
+                    res.render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'),{
+                        yearMakeModelTest: yearMakeModel, 
+                        priceTest: priceTest, 
+                        mileageTest: mileageTest});
+                    */
                 }
                 else {
                     res.status(400).render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
