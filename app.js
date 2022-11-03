@@ -78,6 +78,7 @@ app.post('/inventory', inventory.post);
 app.post('/employee', employee.post);
 app.post('/phone', phone.post);
 app.post('/email', email.post);
+app.post('/apply', apply.post);
 
 // delete section 
 app.delete('/inventory', inventory.delete);

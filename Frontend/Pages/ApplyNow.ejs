@@ -49,18 +49,18 @@
     <!-- form -->
     <div class="container">
         <div class="row">
-            <form action="#">
+            <form action="/apply" method="POST">
                 <label for="fname">First Name<br></label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
         
                 <label for="lname">Last Name<br></label>
                 <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
         
                 <label for="contact">Contact Information<br></label>
-                <input type="text" id="contact" name="contact" placeholder="Your contact information email/phone number..."><br>
+                <input type="text" id="contact" name="contact" placeholder="Your contact information email/phone number..." required><br>
             
                 <label for="stockNumber">Stock Number<br></label>
-                <input type="text" id="stockNumber" name="stockNumber" placeholder="Stock Number.."><br>
+                <input type="text" id="stockNumber" name="stockNumber" placeholder="Stock Number.." required><br>
             
                 <button class="button">Submit</button>
             </form>
