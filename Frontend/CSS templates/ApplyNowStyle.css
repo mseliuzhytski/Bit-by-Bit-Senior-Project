@@ -189,9 +189,14 @@ input[type=submit]:hover {
 .footer {
     width: 100%;
     background: lightcoral;
+    overflow: auto;
     text-align: center;
-    margin-top: 100px;
+    margin: 0 auto;
 }
+.footer-section {
+    float:left;
+    width:33%;
+  }
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -201,19 +206,20 @@ input[type=submit]:hover {
 
 .footer-info {
     display: block;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .footer-facebook-box {
     display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .footer-hr {
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
+    
 }
 
 .footer-end {
