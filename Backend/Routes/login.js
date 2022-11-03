@@ -40,7 +40,6 @@ exports.post = async (req, res)=> {
                     const oneDay = 1000 * 60 * 60 * 24;
                     
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });
-                    
                     res.redirect("/")
                 }
                 else{
