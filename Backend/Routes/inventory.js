@@ -5,6 +5,11 @@ var db = require('../Database/db');
 // get specified inventory item (if query parameter exists)
 // otherwise, get all inventory items
 exports.get = async (req, res)=> { 
+    
+    if("userInfo" in req.session){
+        console.log("User is logged in", req.session.userInfo)
+    }
+
     try {
         var { Car_Stock_Num } = req.query;
 
