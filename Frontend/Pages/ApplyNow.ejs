@@ -45,27 +45,26 @@
             Find your next car at Okaidi Auto Sales in Sacramento, CA
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <form action="#">
-              <label for="fname">First Name<br></label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
-          
-              <label for="lname">Last Name<br></label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
-          
-              <label for="contact">Contact Information<br></label>
-              <input type="text" id="contact" name="contact" placeholder="Your contact information email/phone number..."><br>
+    
+    <!-- form -->
+    <div class="container">
+        <div class="row">
+            <form action="/apply" method="POST">
+                <label for="fname">First Name<br></label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
+        
+                <label for="lname">Last Name<br></label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+        
+                <label for="contact">Contact Information<br></label>
+                <input type="text" id="contact" name="contact" placeholder="Your contact information email/phone number..." required><br>
+            
+                <label for="stockNumber">Stock Number<br></label>
+                <input type="text" id="stockNumber" name="stockNumber" placeholder="Stock Number.." required><br>
+            
+                <button class="button">Submit</button>
             </form>
         </div>
-        <div class="col">
-            <form action="#">
-              <label for="stockNumber">Stock Number<br></label>
-              <input type="text" id="stockNumber" name="stockNumber" placeholder="Stock Number.."><br>
-              
-            </form>
-        </div>
-        <button class="button">Submit</button>
     </div>
 
     <div class="footer">
