@@ -78,6 +78,8 @@ body {
     overflow: hidden;
     text-align: center;
     background-color: rgb(255, 245, 245);
+    position: sticky;
+    top: 0;
 }
 
 .navi-centered {
@@ -103,14 +105,7 @@ body {
 }
 
 nav.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 245, 245);
+
 }
 
 .nav.sticky a:hover {
