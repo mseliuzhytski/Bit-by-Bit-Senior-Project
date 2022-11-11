@@ -30,6 +30,9 @@ var adminPage = require('./Backend/Routes/adminPage');
 var landingPage = require('./Backend/Routes/landingPage');
 var employeeInventoryPage = require('./Backend/Routes/employeeInventory');
 var image = require('./Backend/Routes/image');
+var inventoryPage = require('./Backend/Routes/inventoryPage');
+var adminEditPage = require('./Backend/Routes/adminEditPage');
+var editInventoryPage = require('./Backend/Routes/editInventoryPage');
 
 
 // variable declaration section
@@ -91,6 +94,9 @@ app.get('/Login.ejs', login.get);
 app.get('/phone', phone.get);
 app.get('/RegisterUser.ejs', register.get); 
 app.get('/Search.ejs', search.get);
+app.get('/InventoryPage.ejs', inventoryPage.get);
+app.get('/AdminEditPage.ejs', adminEditPage.get);
+app.get('/EditInventoryPage.ejs', editInventoryPage.get);
 
 // post section
 app.post('/change', change.post);
