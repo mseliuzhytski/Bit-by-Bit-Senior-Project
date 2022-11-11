@@ -124,41 +124,56 @@
     </div>
 
     <!--    Car display     -->
+    <div class="skip-filter">
+    </div>
     <div class="car-container">
-        <ul class="car_ul">
-            <!--    Order:
-                Year Make Model
-                price      mileage
-                // not shown: condition, color
-                -->
-            <li><div class="car-card">
-                <!--    img    
-                <img src="" alt="car" style="width:100%">
-                -->
-                <h1 class="car-title">Year Make Model</h1>
-                <p class="price">$Price</p>
-                <p class="mileage">Mileage: xx</p>
-            </div></li>
-            <li><div class="car-card">
-                <h1 class="car-title">2000 Honda Accord</h1>
-                <p class="price">$11000</p>
-                <p class="mileage">Mileage: 50000</p>
-            
-            <!--
-            </div></li>
-            <li><div class="car-card">
-                <h1 id="yearMakeModelTest"> </h1>
-                <p id="priceTest"> </p>
-                <p class="mileageTest"> </p>
-            </div></li>
-            -->
-            <li><div class="car-card"></div></li>
-            <li><div class="car-card"></div></li>
-            <li><div class="car-card"></div></li>
-            <li><div class="car-card"></div></li>
-            <li><div class="car-card"></div></li>
-            <li><div class="car-card"></div></li>
-        </ul>
+        <div class="car-table" id="carTable">
+            <% inventoryItems.forEach(function(vih){%>
+            <div class="car-card">
+                <div class="car-item">
+                    <div class="car-img-title-price">
+                        <div class="car-img">
+                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img"
+                                style="width: 200px">
+                        </div>
+                        <div class="car-title">
+                            <div class="car-year-make">
+                                <div class="car-year"><%= vih.year %></div>
+                                <div class="car-make"><%= vih.make %></div>
+                            </div>
+                            <div class="car-model"><%= vih.model %></div>
+                        </div>
+                    </div>
+                    <div class="car-stock-box">
+                        <div class="car-stock">
+                            <h3 class="stock-icon">STOCK:</h3>
+                            <div class="car-stock-t"><%= vih.stock %></div>
+                        </div>
+                        <div class="car-price">
+                            <h3 class="dollar-icon">$</h3>
+                            <div class="car-price-t"><%= vih.price %></div>
+                        </div>
+                        <div class="car-mil">
+                            <h3 class="mil-icon">Mileage:</h3>
+                            <div class="car-mil-t"><%= vih.mileage %></div>
+                        </div>
+                        <h3 class="color-icon">Color:</h3>
+                        <div class="car-color"><%= vih.color %></div>
+                        <div class="car-body-cond">
+                            <div class="car-body-box">
+                                <h3 class="body-icon">Body:</h3>
+                                <div class="car-body"><%= vih.body %></div>
+                            </div>
+                            <div class="car-cond-box">
+                                <h3 class="cond-icon">Condition:</h3>
+                                <div class="car-cond"><%= vih.condition %></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
     </div>
 
     <div class="footer">
