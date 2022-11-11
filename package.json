@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "alert": "^5.1.1",
+    "aws-sdk": "^2.1248.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
@@ -10,6 +11,7 @@
     "express-session": "^1.17.3",
     "http": "^0.0.1-security",
     "jest": "^29.3.1",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.8.0",
     "password-validator": "^5.3.0",

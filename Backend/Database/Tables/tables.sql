@@ -2,7 +2,7 @@ CREATE TABLE INVENTORY (
 Car_Stock_Num INT AUTO_INCREMENT,
 Car_Make VARCHAR(50),
 Car_Model VARCHAR(50),
-Car_Year INT,
+Car_Year INT, var car_stock_num = car[0]
 Car_Price INT,
 Car_Mileage INT,
 Car_BodyType VARCHAR(50),
@@ -38,6 +38,12 @@ REVIEW_ID INT AUTO_INCREMENT,
 REVIEW_COMMENT TEXT(5000),
 REVIEW_RATING INT,
 PRIMARY KEY (Review_ID)
+);
+
+CREATE TABLE IMAGES (
+Car_Stock_Num INT,
+Car_Image VARCHAR(160),
+FOREIGN KEY (Car_Stock_Num) REFERENCES INVENTORY(Car_Stock_Num)
 );
 
 /* Meets 2NF criteria
