@@ -148,6 +148,149 @@ nav.sticky {
     background-color: lightblue;
 }
 
+/*  Car Inventory   */
+
+.car-container{
+    float: inline-start;
+    min-width: 33%;
+    max-width: 90%;
+    display: inline;
+
+}
+
+.car-table{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car-card{
+    display: block;
+    overflow: hidden;
+    width: 450px;
+    height: 200px;
+    background-color: lightgray;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.car-item{
+    display: block;
+    overflow: hidden;
+    width: 436px;
+    height: 185px;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.car-img-title-price{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 205px;
+}
+
+.car-img{
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    margin: 5px;
+    border-radius: 3px;
+    background-color: grey;
+}
+
+.car-title{
+    display: inline-block;
+    text-align: center;
+}
+
+.car-year-make{
+    display: flex;
+    justify-content: center;
+}
+
+.car-year,
+.car-make,
+.car-model{
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 7px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.car-stock-box{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.car-stock,
+.car-price,
+.car-mil{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+
+.stock-icon,
+.dollar-icon{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.car-stock-t,
+.car-price-t{
+    display: block;
+    overflow: hidden;
+    padding-left: 7px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mil-icon,
+.cond-icon,
+.body-icon,
+.color-icon{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+
+.car-color{
+    display: block;
+    overflow: hidden;
+    height: 18px;
+}
+
+.car-body-cond{
+    display: block;
+}
+
+.car-body-box,
+.car-cond-box{
+    float: left;
+}
+
+.car-body,
+.car-cond{
+    display: block;
+    width: 105px;
+    height: 18px;
+    overflow: hidden;
+}
+/*      */
+
 .footer {
     width: 100%;
     background: lightcoral;
@@ -205,43 +348,4 @@ nav.sticky {
     padding-right: 4px;
     padding-top: 12px;
     padding-bottom: 12px;
-}
-
-.car-card { /*Each car*/
-    height: 300px;
-    width: 250px;
-    outline: 2px solid green;
-    margin: 15px;
-    padding: 10px;
-}
-
-.car-container {
-    float: inline-start;
-    min-width: 33%;
-    max-width: 90%;
-    display: inline;
-}
-
-.car_ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-}
-
-.car-li {
-    flex: 0 0 30%; /* flex-grow, flex-shrink, flex-basis */
-}
-
-.filter-title {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    text-align: center;
-    background-color: lightcoral;
-}
-
-.price {
-
-}
-.mileage {
-    color: gray;
 }
