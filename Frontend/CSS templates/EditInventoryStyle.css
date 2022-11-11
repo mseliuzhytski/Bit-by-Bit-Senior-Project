@@ -1,0 +1,368 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:white;  
+    font-family: 'New Times Roman';  
+}
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-text {
+    display: none;
+}
+
+.ulForDir {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+}
+
+.ulForDir li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navi-li-here {
+    background-color: lightcoral;
+}
+
+/* Use a media query to add a breakpoint at 720px: */
+@media screen and (max-width: 720px) {
+    .image img {
+        width: 100%;
+    }
+
+    .navi-centered {
+        width: 100%;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+
+    .nav-text {
+        display: flex;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .navList {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .openNav {
+        height: auto;
+    }
+
+    .hiddenNavIcon {
+        display: none;
+    }
+
+    .ulForDir {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.navi {
+    overflow: hidden;
+    text-align: center;
+    background-color: rgb(255, 245, 245);
+}
+
+.navi-centered {
+    display: inline-block;
+}
+
+.navi a {
+    background-color: rgb(255, 245, 245);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.navi a:hover {
+    color: black;
+    background-color: lightcoral;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 245);
+}
+
+.nav.sticky a:hover {
+    background-color: rgb(255, 245, 245);
+    color: black;
+    background-color: lightcoral;
+}
+      
+ .body-main{
+    display: block;
+ }
+
+ .container-box{
+    text-align: center;
+ }
+
+ .container{
+    display: inline-block;
+    text-align: center;
+    background-color: lightcoral;
+    border-radius: 10px;
+    margin: 30px;
+ }
+
+ .img-box{
+    display: block;
+    float: left;
+    margin: 10px;
+ }
+
+ .img-manage{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+ }
+
+.img-upload,
+.img-delete{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.img-delete:hover{
+    background-color: crimson;
+}
+
+ .img-container{
+    display: inline-block;
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 20px;
+ }
+
+ .img-main{
+    display: block;
+    background-color: gray;
+ }
+
+.img-collection{
+    display: inline-block;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.collection-item{
+    display: block;
+    background-color: lightgray;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ .info-box{
+    display: block;
+    float: left;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 10px;
+ }
+
+ .i-container{
+    display: block;
+    background-color: white;
+    text-align: left;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+ }
+
+ .year-make-model{
+    display: inline-block;
+    margin: 10px;
+ }
+
+.car-label{
+    display: block;
+    clear: both;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.car-label input{
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ .year,
+ .make,
+ .model{
+    float: left;
+    padding: 7px;
+ }
+
+.car-field{
+    display: inline-block;
+}
+
+ .stock-box,
+ .cond-box,
+ .price-box,
+ .car-body-box,
+ .color-box{
+    display: block;
+    width: 100%;
+    margin: 10px;
+ }
+
+ .stock-box input,
+ .price-box input,
+ .cond-box input,
+ .car-body-box input,
+ .color-box input{
+    display: block;
+    float:right;
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+ }
+
+ .stock-icon,
+ .price-icon,
+ .cond-icon,
+ .car-body-icon,
+ .color-icon,
+ .stock,
+ .price,
+ .cond,
+ .car-body,
+ .color{
+    float: left;
+    padding: 5px;
+ }
+
+ .label-manage {
+     display: flex;
+     justify-content: center;
+     background-color: white;
+     border-radius: 10px;
+     padding-top: 15px;
+ }
+
+ .label-save,
+ .label-delete {
+     padding: 10px;
+     cursor: pointer;
+ }
+
+ .label-save:hover{
+    background-color: lightcoral;
+ }
+
+ .delete-button{
+    background-color: lightgray;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+ }
+
+ .label-delete:hover {
+     background-color: crimson;
+ }
+
+.footer {
+    width: 100%;
+    background: lightcoral;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+.footer-section {
+    float:left;
+    width:33%;
+  }
+
+.footer div h1 {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin: 0;
+}
+
+.footer-info {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.footer-facebook-box {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-hr {
+    color: rgb(75, 75, 75);
+    width: 95%;
+    height: 1px;
+    
+}
+
+.footer-end {
+    display: block;
+    height: 35px;
+}
+
+.text-line-body-1-box {
+    width: 100%;
+    padding: 0;
+}
+.text-line-body-1 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    background-color: lightcoral;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
