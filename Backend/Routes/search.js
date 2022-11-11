@@ -1,5 +1,9 @@
 const path = require('path');
+const inventory = require('./inventory');
 
-exports.get = function(req,res){
-        res.render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'));
-    };
+exports.get = async function (req, res) {
+    inventory.getAllInventoryItems(function (items) {
+        res.render(path.join(__dirname + '../../../Frontend/Pages/Search.ejs'), {
+            inventoryItems: items});
+        });
+    } 
