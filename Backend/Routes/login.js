@@ -18,7 +18,7 @@ exports.post = async (req, res)=> {
             if( err ) throw err;
 
             if(result.length <= 0) {
-                res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
+                res.redirect('/Login.ejs');
                 alert("Invalid Username")
             }
             
@@ -40,16 +40,15 @@ exports.post = async (req, res)=> {
                     const oneDay = 1000 * 60 * 60 * 24;
                     
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });
-                    res.redirect("/")
+                    res.redirect("/LandingPage.ejs");
                 }
                 else{
-                    res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
+                    res.redirect('/Login.ejs');
                     alert("Invalid Password")
                 }
             });
-
         });
     }catch{
-        res.render(path.join(__dirname+'../../../Frontend/Pages/Login.ejs'))
+        res.redirect('/Login.ejs');
     }
 };

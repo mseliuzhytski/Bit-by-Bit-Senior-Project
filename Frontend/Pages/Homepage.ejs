@@ -59,30 +59,14 @@
         <h1>CUSTOMER REVIEWS</h1>
         <div class="review-inner">
         <ul class="ul-review">
-            <li><div class="review">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <center><p id="reviewOne"><%=reviewOne%></p></center>
-            </div></li>
-            <li><div class="review">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <center><p id="reviewTwo"><%=reviewTwo%></p></center>
-            </div></li>
-            <li><div class="review">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <img src="../Images/star.png" width="40px" height="40px">
-                <center><p id="reviewThree"><%=reviewThree%></p></center>
-            </div></li>
+                <%  reviews.slice(0,3).forEach(function(review){%>
+                    <li><div class="review">
+                    <% for(var i = 0; i < 5; i++){%>
+                        <img src="../Images/star.png" width="40px" height="40px">
+                    <% } %>
+                    <center><p><%= review.comment %></p></center>
+                    </div></li> 
+                    <% }); %> 
         </ul>
         </div>
     </div>

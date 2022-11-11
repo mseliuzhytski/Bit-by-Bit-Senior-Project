@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 8000;
 
+
 // import route file section
 var about = require('./Backend/Routes/aboutUs');
 var apply = require('./Backend/Routes/applyNow');
@@ -24,6 +25,8 @@ var employee = require('./Backend/Routes/employee');
 var phone = require('./Backend/Routes/phone');
 var email = require('./Backend/Routes/email');
 var adminPage = require('./Backend/Routes/adminPage');
+var landingPage = require('./Backend/Routes/landingPage');
+var employeeInventoryPage = require('./Backend/Routes/employeeInventory');
 
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
@@ -56,32 +59,35 @@ app.use(express.json());
 // get section
 app.get('/', homePage.get);
 app.get('/Aboutus.ejs', about.get);
+app.get('/AdminPage.ejs', adminPage.get);
 app.get('/ApplyNow.ejs', apply.get);
 app.get('/ContactUs.ejs', contact.get);
-app.get('/ChangePassword.ejs', change.get)
-app.get('/Search.ejs', search.get);
-app.get('/HomePage.ejs', homePage.get);
-app.get('/Login.ejs', login.get);
-app.get('/RegisterUser.ejs', register.get); 
-app.get('/employee', employee.get);
-app.get('/phone', phone.get);
+app.get('/ChangePassword.ejs', change.get);
 app.get('/email', email.get);
-app.get('/AdminPage.ejs', adminPage.get);
+app.get('/employee', employee.get);
+app.get('/EmployeeInventory.ejs', employeeInventoryPage.get);
+app.get('/HomePage.ejs', homePage.get);
+app.get('/LandingPage.ejs', landingPage.get);
+app.get('/Login.ejs', login.get);
+app.get('/phone', phone.get);
+app.get('/RegisterUser.ejs', register.get); 
+app.get('/Search.ejs', search.get);
+
 
 // post section
-app.post('/change', change.post);
-app.post('/login', login.post);
-app.post('/register', register.post);
-app.post('/contact', contact.post);
-app.post('/employee', employee.post);
-app.post('/phone', phone.post);
-app.post('/email', email.post);
 app.post('/apply', apply.post);
+app.post('/change', change.post);
+app.post('/contact', contact.post);
+app.post('/email', email.post);
+app.post('/employee', employee.post);
+app.post('/login', login.post);
+app.post('/phone', phone.post);
+app.post('/register', register.post);
 
 // delete section 
+app.delete('/email', email.delete);
 app.delete('/employee', employee.delete);
 app.delete('/phone', phone.delete);
-app.delete('/email', email.delete);
 
 // handle logout, destroy session + delete cookie
 app.get("/logout", (req, res) => {
@@ -92,3 +98,4 @@ app.get("/logout", (req, res) => {
 app.get("/isAuthenticated", (req, res) => { res.send(req.session) })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
+

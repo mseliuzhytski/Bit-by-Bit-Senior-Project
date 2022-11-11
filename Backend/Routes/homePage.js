@@ -8,12 +8,8 @@ var reviews;
 exports.get = async function(req,res){
         getReview(function(reviews){
             res.render(path.join(__dirname+'../../../Frontend/Pages/Homepage.ejs'),{
-                reviewOne: reviews[0].comment, 
-                reviewTwo: reviews[1].comment, 
-                reviewThree: reviews[2].comment});
+                reviews: reviews});
         });
-
-        
 
 };
 
