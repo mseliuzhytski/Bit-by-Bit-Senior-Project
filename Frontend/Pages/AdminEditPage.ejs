@@ -1,0 +1,206 @@
+<!--Contact Us-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Okaidi Auto Sales</title>
+    <link rel="stylesheet" href="../CSS templates/AdminEditPageStyle.css" />
+</head>
+
+<body>
+    <div class="header-top">
+        <div class="top-previous-box">
+            <a href="../Pages/AdminPage.ejs">
+                <button class="previous-page">Return</button>
+            </a>
+        </div>
+        <div class="top-out">
+            <button class="log-out">Logout</button>
+            <div class="show-user">myLongUsername</div>
+        </div>
+    </div>
+    <div class="image">
+        <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png"
+            alt="Okaidi Auto Sales" width="50%" height="10%">
+    </div>
+    <div class="navi">
+        <div class="navi-centered">
+            <nav id="navbar">
+                <div class="nav-menu">
+                    <div class="nav-text">
+                        <h3 class="nav-text-logo">OKAIDI AUTO SALES</h3>
+                        <div class="nav-toggle" id="navToggle">
+                            <img class="navIcon"
+                                src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconHambMenu.png"
+                                alt="hamburger menu" width="25px" id="hamburger">
+                            <img class="navIcon hiddenNavIcon"
+                                src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconClose.png"
+                                alt="close hamburger" width="25px">
+                        </div>
+                    </div>
+                    <div class="navList" id="navShow">
+                        <ul class="ulForDir">
+                            <li><a href="Homepage.html">Home</a></li>
+                            <li><a href="Search.html">Search</a></li>
+                            <li><a href="Aboutus.html">About Us</a></li>
+                            <li class="navi-li-here"><a href="ContactUs.html">Contact Us</a></li>
+                            <li><a href="ApplyNow.html">Apply Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="text-line-body-1-box">
+        <div class="text-line-body-1">
+            Find your next car at Okaidi Auto Sales in Sacramento, CA
+        </div>
+    </div>
+    <div class="body-main">
+        <div class="conBox">
+        <div class="container">
+            <!--<form action="#">-->
+            <form action="/contact" method="POST">
+                <div class="f-name-table">
+                <div class="f-name-fieled">
+                    <div class="f-name-label">
+                        <label for="fname">First Name:</label>
+                        <div class="f-name-fname">my Name</div>
+                    </div>
+                    <div class="f-name-input">
+                        <input type="text" id="fname" name="firstname" placeholder="Change first name.."><br>
+                    </div>
+                </div>
+                <div class="f-name-fieled">
+                    <div class="f-name-label">
+                        <label for="fname">Last Name:</label>
+                        <div class="f-name-lname">my Last Name</div>
+                    </div>
+                    <div class="f-name-input">
+                        <input type="text" id="lname" name="lastname" placeholder="Change last name.."><br>
+                    </div>
+                </div>
+                <div class="f-name-fieled">
+                    <div class="f-name-label">
+                        <label for="fname">Role:</label>
+                        <div class="f-name-rname">my Role</div>
+                    </div>
+                    <div class="f-name-input">
+                        <input type="text" id="rname" name="rolename" placeholder="Change role.."><br>
+                    </div>
+                </div>
+                <div class="f-name-fieled">
+                    <div class="f-name-label">
+                        <label for="lname">Userame:</label>
+                        <div class="f-name-uname">myUsername</div>
+                    </div>
+                    <div class="f-name-input">
+                        <input type="text" id="uname" name="username" placeholder="Change username.."><br>
+                    </div>
+                </div>
+                <div class="f-name-fieled">
+                    <div class="f-name-label">
+                        <label for="lname">Password</label>
+                    </div>
+                    <div class="f-name-input">
+                        <input type="text" id="newpassword" name="newPassword" placeholder="Change password.."><br>
+                    </div>
+                </div>
+                </div>
+                <div class="f-table-phone">
+                    <div class="phone-field">
+                        <div class="phone-title">Phone:</div>
+                        <div class="phone-table">
+                            <div class="phone-item">+1 (111) 111 11-11</div>
+                        </div>
+                        <div class="phone-add">Add Phone:</div>
+                        <input type="text" id="addphone" name="addPhone" placeholder="Add new phone number"><br>
+                        <div class="phone-remove">Remove Existing Phone:</div>
+                        <input type="text" id="deletephone" name="deletePhone" placeholder="Type in phone to remove"><br>
+                    </div>
+                </div>
+                <div class="f-table-email">
+                    <div class="email-field">
+                        <div class="email-title">Email:</div>
+                        <div class="email-table">
+                            <div class="email-item">myEmail@gmail.com</div>
+                        </div>
+                        <div class="email-add">Add Email:</div>
+                        <input type="text" id="addemail" name="addEmail" placeholder="Add new email"><br>
+                        <div class="email-remove">Remove Existing Email:</div>
+                        <input type="text" id="deleteemail" name="deleteEmail" placeholder="Type in email to remove"><br>
+                    </div>
+                </div>
+                <input class="submit-save" type="submit" value="Save Changes"><br>
+                <input class="submit-delete" type="submit" value="Delete Employee">
+                <br>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footer-facebook-box">
+                <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png"
+                        width="100px" height="100px">
+                </a>
+            </div>
+            <br>
+            <font size=+2>1941 El Camino Ave,</font>
+            <br> SACRAMENTO, CA 95815
+            <br>
+        </div>
+        <div class="footer-section"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
+                style="width:300px;height:200px;">
+            <br>
+            <font size=+2> 916-750-9099</font>
+            <br>
+        </div>
+        <div class="footer-section"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus"
+                width="100%" height="250" style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    
+        <hr class="footer-hr">
+        <div class="footer-end"></div>
+    </div>
+    <script>
+        var navbar = document.getElementById("navbar");
+        window.onscroll = function(){
+            if(window.pageYOffset > navbar.offsetTop){
+                navbar.classList.add("sticky");
+            }
+            else{
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script>
+        const navToggle = document.querySelector('#navToggle');
+        const navl = document.querySelector('#navShow');
+        const navIcon = document.querySelectorAll('.navIcon');
+        const hamburger = document.querySelector('#hamburger');
+
+        navToggle.addEventListener("click", () => {
+            navl.classList.toggle("openNav")
+            navIcon.forEach(icon => {
+                icon.classList.toggle("hiddenNavIcon");
+            })
+        });
+
+        window.addEventListener("resize", () => {
+            if (document.body.clientWidth > 720) {
+                navl.classList.remove("openNav");
+                navIcon.forEach(icon => {
+                    icon.classList.add("hiddenNavIcon")
+                });
+                hamburger.classList.remove("hiddenNavIcon");
+            }
+        });  
+    </script>
+</body>
+
+</html>
