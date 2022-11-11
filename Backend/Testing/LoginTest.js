@@ -17,7 +17,7 @@ async function Tester(){
     var time;
     
     await loginTestWithCorrectLogin("ABCdefGHIjklMNOpqrSTUvwxYz", "Qwerty2022", 1, "Funtional")
-    await loginTestWithCorrectLogin("tester", "Az1Za2Az3Za4", 2, "Funtional")
+    await loginTestWithCorrectLogin("loginTester", "Az1Za2Az3Za4", 2, "Funtional")
 
     await loginTestWithInvalidLogin("invalid", "Qwerty2019", 3, "Funtional")
     await loginTestWithInvalidLogin("invalid 2", "Pass1234", 4, "Funtional")
@@ -45,7 +45,7 @@ async function loginTestWithCorrectLogin(user, pass, num, testType){
             // setups an account for the test since database isn't connected
             await register(user,pass)
 
-            await driver.get("https://okaidi-auto-sales.herokuapp.com/Login.html");
+            await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Login.ejs");
 
             let username = await driver.findElement(By.id("username"))
             let password = await driver.findElement(By.id("password"))
@@ -91,7 +91,7 @@ async function loginTestWithInvalidLogin(user, pass, num, testType){
         // setups an account for the test since database isn't connected
         await register(user + "j", pass)
 
-        await driver.get("https://okaidi-auto-sales.herokuapp.com/Login.html");
+        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Login.ejs");
 
         let username = await driver.findElement(By.id("username"))
         let password = await driver.findElement(By.id("password"))
@@ -126,7 +126,7 @@ async function loginTestWithInvalidLogin(user, pass, num, testType){
 }
  
 async function register(user, pass){
-    await driver.get("https://okaidi-auto-sales.herokuapp.com/RegisterUser.html");
+    await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs");
 
     let username = await driver.findElement(By.id("username"))
     let password = await driver.findElement(By.id("password"))
