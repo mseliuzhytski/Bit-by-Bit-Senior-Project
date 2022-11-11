@@ -63,7 +63,6 @@ app.get('/Search.ejs', search.get);
 app.get('/HomePage.ejs', homePage.get);
 app.get('/Login.ejs', login.get);
 app.get('/RegisterUser.ejs', register.get); 
-app.get('/inventory', inventory.get);
 app.get('/employee', employee.get);
 app.get('/phone', phone.get);
 app.get('/email', email.get);
@@ -74,14 +73,12 @@ app.post('/change', change.post);
 app.post('/login', login.post);
 app.post('/register', register.post);
 app.post('/contact', contact.post);
-app.post('/inventory', inventory.post);
 app.post('/employee', employee.post);
 app.post('/phone', phone.post);
 app.post('/email', email.post);
 app.post('/apply', apply.post);
 
 // delete section 
-app.delete('/inventory', inventory.delete);
 app.delete('/employee', employee.delete);
 app.delete('/phone', phone.delete);
 app.delete('/email', email.delete);
