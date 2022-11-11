@@ -18,12 +18,15 @@ body
     overflow: hidden;
     margin: 0;
     padding: 5px;
+    z-index: 2;
 } 
 .ulForDir li{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 2;
 }
 .navi-li-here {
     background-color:lightcoral;
+    z-index: 2;
 }
 .logo{
     width: 120px;
@@ -39,11 +42,11 @@ body
     overflow: hidden;
     text-align: center;
     background-color: rgb(255, 245, 245);
-    position: sticky;
-    top: 0;
+    z-index: 2;
 }
 .navi-centered {
     display: inline-block;
+    z-index: 2;
 }
 .navi a {
     background-color: rgb(255, 245, 245);
@@ -56,13 +59,22 @@ body
     text-align: center;
     font-size: 20px;
     font-weight: 600;
+    z-index: 2;
 }
 .navi a:hover {
     color: black;
     background-color: lightcoral;
 }  
 nav.sticky{
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 245);
+    z-index: 2;
 }
 nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
@@ -120,9 +132,11 @@ nav.sticky a:hover {
     margin-right: 5%;
     padding: 0;
     width: 20%;
+    z-index: 2;
 }
 .ulBlock li {
     padding: 5px;
+    z-index: 2;
 }
 .block-body-box a {
     display: block;
@@ -190,6 +204,7 @@ nav.sticky a:hover {
     border-spacing: 0px;
     table-layout: fixed;
     overflow: scroll;
+    z-index: 1;
 }
   
 table {
@@ -197,6 +212,7 @@ table {
     border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
+    z-index: 1;
 }
   
 td {
@@ -208,6 +224,7 @@ td {
     max-width: 20%;
     height: 7%;
     background-color: white;
+    z-index: 1;
 }
 th {
     white-space: nowrap;
@@ -220,27 +237,7 @@ th {
     background-color: lightgray;
     position: sticky;
     top: -1px;
-    z-index: 2;
-}
-.button {
-    background-color: lightcoral;
-    border: none;
-    color: black;
-    width: 10%;
-    height: 30px;
-    border-radius: 10%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin-left: 3%;
-    padding: 10px;
-}
-h6{
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 10%;
-    margin-bottom: 0;
+    z-index: 1;
 }
 .button1 {
     background-color: lightgrey;
@@ -253,6 +250,7 @@ h6{
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
     padding: 2px;
     margin-left: 0;
 }
@@ -267,12 +265,34 @@ h6{
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
     padding: 2px;
     margin-right: 5%;
+    margin-left: 3%;
+}
+.button {
+    background-color: lightcoral;
+    border: none;
+    color: black;
+    width: 10%;
+    height: 50px;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 3%;
+    padding: 10px;
+}
+h6{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 10%;
+    margin-bottom: 0;
 }
 th:first-of-type {
     left: 0;
-    z-index: 3;
+    z-index: 1;
 }
   
 tbody tr td:first-of-type {
@@ -280,4 +300,10 @@ tbody tr td:first-of-type {
     position: sticky;
     left: -1px;
     text-align: left;
+}
+.inputStyle{
+    font-size: 15px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
