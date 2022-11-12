@@ -1,17 +1,8 @@
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Ford', 'Focus', '2015', '18000', '16000', 'Sedan', 'Used', 'Gray');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Ford', 'F-150', '2023', '70000', '20', 'Truck', 'New', 'Silver');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Ford', 'F-250', '2023', '90000', '40', 'Truck', 'New', 'Black');
+VALUES ('Ram', '1500 TRX', '2023', '98899', '2800', 'Truck', 'Used', 'Blue');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Honda', 'Civic', '2018', '20000', '25000', 'Coupe', 'Used', 'White');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Honda', 'Civic', '2019', '28000', '21000', 'Sedan', 'Used', 'Red');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Honda', 'CR-V', '2014', '12000', '15000', 'SUV', 'Used', 'Gray');
@@ -23,16 +14,7 @@ INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Ca
 VALUES ('Nissan', 'NV200', '2020', '19000', '15000', 'Van', 'Used', 'Silver');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Nissan', 'Altima', '2012', '14300', '105000', 'Coupe', 'Used', 'Black');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Toyota', 'Tacoma', '2020', '45000', '25000', 'Truck', 'Used', 'Black');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Toyota', 'Carolla', '2022', '29000', '10', 'Sedan', 'New', 'Red');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Toyota', 'Carolla', '2021', '24000', '12000', 'Sedan', 'Used', 'Red');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Toyota', 'Carolla', '2021', '25000', '1300', 'Sedan', 'Used', 'White');
@@ -44,27 +26,16 @@ INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Ca
 VALUES ('BMW', 'M5 CS', '2023', '149899', '30', 'Sedan', 'New', 'Blue');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('BMW', 'M5 CS', '2023', '149899', '25', 'Sedan', 'New', 'Blue');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('BMW', 'M5 CS', '2023', '151600', '20', 'Sedan', 'New', 'Black');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Mercedes-Benz', 'AMG G63 4MATIC', '2022', '220000', '80', 'SUV', 'New', 'MANUFAKTUR Platinum Magno (matte)');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Mercedes-Benz', 'E53', '2022', '80000', '20', 'Sedan', 'New', 'Nautical Blue Metallic');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
-VALUES ('Mercedes-Benz', 'E53', '2022', '80000', '50', 'Sedan', 'New', 'Nautical Blue Metallic');
-
-INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Maserati', 'Ghibli Modena Q4', '2023', '95000', '10', 'Sedan', 'New', 'Blu Emozione Metallic');
 
 INSERT INTO INVENTORY (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)
 VALUES ('Dodge', 'Challenger SRT Demon', '2018', '151000', '6000', 'Sedan', 'Used', 'Destroyer Gray Clearcoat');
-
-
 
 INSERT INTO EMPLOYEE (Emp_Username, Emp_PasswordHash, Emp_FirstName, Emp_LastName, Emp_Role)
 VALUES ('moham4321', 'e66a124f9cabd3198d84dd68c8c87cf7', 'Mohammed', 'Smith', 'General Manager');
