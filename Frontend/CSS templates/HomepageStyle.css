@@ -224,8 +224,7 @@ body
 
 .footer-facebook-box {
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 .footer-hr {
@@ -261,6 +260,7 @@ body
     width: 350px;
     outline: 2px solid lightcoral;
     margin: 20px;
+    padding: 5px;
 }
 
  .review-container {
@@ -285,8 +285,10 @@ body
     align-items: center;
   }
 
-  /*Temp empty spacing*/
-  .empty-space{
-    margin-top: 250px;
-    margin-bottom: 250px;
+  .featured-image {
+    width: 100%;
+    max-height: 550px;
+    background: #000 url("https://www.autoinfluence.com/wp-content/uploads/2020/07/Local-Car-Dealerships-SUVs-and-Cars.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
   }
