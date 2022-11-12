@@ -48,99 +48,101 @@
         </div>
     </div>
     <div class="body-main">
-    <div class="info-box">
-        <img src="https://assets-cc.carsforsale.com/img/1018648/avatar.jpg" width="450px" height="300px">
-        <span class="below">
-            <a2><br><br>
-                <a>Okaidi Auto Sales</a>
-                <br>Located at
-                <br>1941 El Camino Ave
-                <br>Sacramento, CA 95815
-                <br><br>
-                <a>Call today!</a>
-                <br>(916) 750-9099
-                <br><br><br>
-                <a>Hours of Operation</a>
-                <br><br>
-                <div class="hours-box">
-                <div class="hours">
-                    <br>Sunday 10:30 AM - 3:00 PM
-                    <br>Monday 10:30 AM - 7:00 PM
-                    <br>Tuesday 10:30 AM - 7:00 PM
-                    <br>Wednesday 10:30 AM - 7:00 PM
-                    <br>Thursday 10:30 AM - 7:00 PM
-                    <br>Friday 10:30 AM - 7:00 PM
-                    <br>Saturday 10:30 AM - 7:00 PM
+        <div class="info-box">
+            <img src="https://assets-cc.carsforsale.com/img/1018648/avatar.jpg" width="450px" height="300px">
+            <span class="below">
+                <a2><br><br>
+                    <a>Okaidi Auto Sales</a>
+                    <br>Located at
+                    <br>1941 El Camino Ave
+                    <br>Sacramento, CA 95815
+                    <br><br>
+                    <a>Call today!</a>
+                    <br>(916) 750-9099
+                    <br><br><br>
+                    <a>Hours of Operation</a>
+                    <br><br>
+                    <div class="hours-box">
+                    <div class="hours">
+                        <br>Sunday 10:30 AM - 3:00 PM
+                        <br>Monday 10:30 AM - 7:00 PM
+                        <br>Tuesday 10:30 AM - 7:00 PM
+                        <br>Wednesday 10:30 AM - 7:00 PM
+                        <br>Thursday 10:30 AM - 7:00 PM
+                        <br>Friday 10:30 AM - 7:00 PM
+                        <br>Saturday 10:30 AM - 7:00 PM
+                    </div>
+                    </div>
+                </a2>
+            </span>
+        </div>
+        <div class="banner-info">
+            Fill out the form below and we will contact you shortly!
+        </div>
+        <div class="conBox">
+            <div class="container">
+                <!--<form action="#">-->
+                <form action="/contact" method="POST"> 
+                <label for="fname">First Name *<br></label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
+
+                <label for="lname">Last Name<br></label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+
+                <label for="contact">Contact Information *<br></label>
+                <select id="contact" name="contactPreference">
+                    <option value="Phone">Phone</option>
+                    <option value="Email">Email</option>
+                </select><br>
+                <input type="text" id="contact" name="contactInfo" placeholder="Your contact information..." required><br>
+
+                <label for="subject">Reason for contacting us *<br></label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea><br>
+                <div class="container-alert-txt">
+                    Please fill out all the filds with a "*"
                 </div>
+
+                <input class="submit-button" type="submit" value="Submit">
+
+                <br>
+                <div class="disclaimer">
+                    By clicking “Submit”, I consent to be contacted by OkaidiAutoSales.com and the dealer selling this
+                    vehicle
+                    at any telephone number I provide, including, without limitation, communications sent via text message
+                    to my cell phone or communications sent using an autodialer or prerecorded message. This acknowledgment
+                    constitutes my written consent to receive such communications.
                 </div>
-            </a2>
-        </span>
-    </div>
-    <div class="banner-info">
-        Fill out the form below and we will contact you shortly!
-    </div>
-    <div class="conBox">
-    <div class="container">
-        <!--<form action="#">-->
-            <form action="/contact" method="POST"> 
-            <label for="fname">First Name *<br></label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
-
-            <label for="lname">Last Name<br></label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
-
-            <label for="contact">Contact Information *<br></label>
-            <select id="contact" name="contactPreference">
-                <option value="Phone">Phone</option>
-                <option value="Email">Email</option>
-            </select><br>
-            <input type="text" id="contact" name="contactInfo" placeholder="Your contact information..." required><br>
-
-            <label for="subject">Reason for contacting us *<br></label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea><br>
-            <div class="container-alert-txt">
-                Please fill out all the filds with a "*"
+                </form>
             </div>
+        </div>
+    </div>
 
-            <input class="submit-button" type="submit" value="Submit">
-
-            <br>
-            <div class="disclaimer">
-                By clicking “Submit”, I consent to be contacted by OkaidiAutoSales.com and the dealer selling this
-                vehicle
-                at any telephone number I provide, including, without limitation, communications sent via text message
-                to my cell phone or communications sent using an autodialer or prerecorded message. This acknowledgment
-                constitutes my written consent to receive such communications.
-            </div>
-        </form>
-    </div>
-    </div>
-    </div>
     <div class="footer">
         <div class="footer-section">
             <div class="footer-facebook-box">
                 <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
-                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png" width="100px" height="100px">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png" width="40px" height="40px">
                 </a>
-                </div>
+            </div>
             <br><font size=+2>1941 El Camino Ave,</font>
             <br> SACRAMENTO, CA 95815
-            <br>
+            <br> 916-750-9099
         </div>
         <div class="footer-section"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo" style="width:300px;height:200px;">
-        <br>
-           <font size =+2> 916-750-9099</font>
-            <br>
         </div>
         <div class="footer-section"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus" 
-            width="100%" height="250" style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            width="60%" height="200" style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-            </div>
+        </div>
 
         <hr class="footer-hr">
-        <div class="footer-end"></div>
+        <div class="footer-end">
+            <div class="bottom">
+                <a href="Login.ejs"><u>Dealer Login</u></a>
+                <br>
             </div>
         </div>
+    </div>
 
     <script>
         var navbar = document.getElementById("navbar");

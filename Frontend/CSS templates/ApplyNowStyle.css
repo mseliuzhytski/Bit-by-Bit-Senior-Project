@@ -205,7 +205,8 @@ input[type=submit]:hover {
 .footer-section {
     float:left;
     width:33%;
-  }
+    margin-top: 6px;
+}
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -220,8 +221,7 @@ input[type=submit]:hover {
 
 .footer-facebook-box {
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 .footer-hr {
@@ -234,6 +234,21 @@ input[type=submit]:hover {
 .footer-end {
     display: block;
     height: 35px;
+}
+
+.bottom{
+    width: 100%;
+    background-color: lightcoral;
+    font-size: 13px;
+    text-align: right;
+    margin-right: 100px;
+    margin-bottom: 0%;
+}
+
+.bottom a{
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 .text-line-body-1-box {

@@ -209,7 +209,12 @@ body
 .footer-section {
     float:left;
     width:33%;
-  }
+}
+.footer-section-map {
+  float: left;
+  width: 33%;
+  margin-top: 6px;
+}
 
 .footer div h1 {
     letter-spacing: 1px;
@@ -260,7 +265,7 @@ body
     width: 350px;
     outline: 2px solid lightcoral;
     margin: 20px;
-    padding: 5px;
+    padding: 7px;
 }
 
  .review-container {

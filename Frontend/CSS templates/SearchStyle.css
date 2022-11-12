@@ -156,13 +156,12 @@ nav.sticky {
 }
 
 /*  Car Inventory   */
-
 .car-container{
     float: inline-start;
     min-width: 33%;
     max-width: 90%;
     display: inline;
-
+    /*box-shadow: 2px 2px #000;*/
 }
 
 .car-table{
@@ -308,6 +307,7 @@ nav.sticky {
 .footer-section {
     float:left;
     width:33%;
+    margin-top: 6px;
   }
 
 .footer div h1 {
@@ -323,8 +323,7 @@ nav.sticky {
 
 .footer-facebook-box {
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 .footer-hr {
@@ -337,6 +336,21 @@ nav.sticky {
 .footer-end {
     display: block;
     height: 35px;
+}
+
+.bottom{
+    width: 100%;
+    background-color: lightcoral;
+    font-size: 13px;
+    text-align: right;
+    margin-right: 100px;
+    margin-bottom: 0%;
+}
+
+.bottom a{
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 .text-line-body-1-box {
