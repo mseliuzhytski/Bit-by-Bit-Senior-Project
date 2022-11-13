@@ -1,3 +1,4 @@
+const alert = require('alert');
 var db = require('../Database/db');
 
 // get specified inventory item
