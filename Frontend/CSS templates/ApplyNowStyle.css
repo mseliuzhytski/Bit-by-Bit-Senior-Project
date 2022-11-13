@@ -130,10 +130,10 @@ nav.sticky {
     border: none;
     color: black;
     padding: 15px;
-    margin-top: 10%;
-    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
     text-decoration: none;
-    /*display: inline-block;*/
     font-size: 16px;
     cursor: pointer;
     width: 25%;
@@ -151,7 +151,7 @@ nav.sticky {
     text-indent: 30%;
 }
 input[type=text], select, textarea {
-    width: 50%;
+    width: 80%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -186,13 +186,31 @@ input[type=submit]:hover {
     float: left;
     width: 300%;
 }
+.conBox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 .container {
-    display: inline-block;
-    padding-bottom: 80px;
     text-align: center;
-    margin-top: 30px;
-    margin-left: 30%;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: lightcoral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 25px 10px 10px 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 500px;
+}
+
+.container-alert-txt{
+    height: 0;
+    overflow: hidden;
+    padding-left: 5px;
+    color: rgb(150, 0, 0)
 }
 
 .footer {
