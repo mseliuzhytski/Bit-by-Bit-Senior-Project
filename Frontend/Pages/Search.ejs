@@ -144,53 +144,48 @@
     </div>
 
     <!--    Car display     -->
-    <div class="skip-filter">
-    </div>
     <div class="car-container">
         <div class="car-table" id="carTable">
             <% inventoryItems.forEach(function(vih){%>
             <div class="car-card">
                 <div class="car-item">
-                    <div class="car-img-title-price">
-                        <div class="car-img">
-                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img"
-                                style="width: 200px">
-                        </div>
-                        <div class="car-title">
-                            <div class="car-year-make">
-                                <div class="car-year"><%= vih.Car_Year %></div>
-                                <div class="car-make"><%= vih.Car_Make %></div>
-                            </div>
-                            <div class="car-model"><%= vih.Car_Model %></div>
-                        </div>
+                    <div class="car-img">
+                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img"
+                            style="width: 200px">
                     </div>
-                    <div class="car-stock-box">
-                        <div class="car-stock">
-                            <h3 class="stock-icon">STOCK:</h3>
-                            <div class="car-stock-t"><%= vih.Car_Stock_Num %></div>
+                    <div class="car-title">
+                        <div class="car-year"><%= vih.Car_Year %></div>
+                        <div class="car-make"><%= vih.Car_Make %></div>
+                        <div class="car-model"><%= vih.Car_Model %></div>
+                    </div>
+                    <div class="car-text-box">
+                        <div class="car-stock-mil">
+                            <div class="car-stock">
+                                <p class="stock-icon">STOCK: </p>
+                                <div class="car-stock-t"><%= vih.Car_Stock_Num %></div>
+                            </div>
+                            <div class="car-mil">
+                                <div class="car-mil-t"><%= vih.Car_Price %></div>
+                                <p class="mil-icon">miles</p>
+                            </div>
                         </div>
                         <div class="car-price">
                             <h3 class="dollar-icon">$</h3>
                             <div class="car-price-t"><%= vih.Car_Price %></div>
                         </div>
-                        <div class="car-mil">
-                            <h3 class="mil-icon">Mileage:</h3>
-                            <div class="car-mil-t"><%= vih.Car_Price %></div>
-                        </div>
-                        <h3 class="color-icon">Color:</h3>
-                        <div class="car-color"><%= vih.Car_Color %></div>
-                        <div class="car-body-cond">
-                            <div class="car-body-box">
-                                <h3 class="body-icon">Body:</h3>
-                                <div class="car-body"><%= vih.Car_BodyType %></div>
-                            </div>
-                            <div class="car-cond-box">
-                                <h3 class="cond-icon">Condition:</h3>
-                                <div class="car-cond"><%= vih.Car_Condition %></div>
-                            </div>
+                        <div class=".car-color-body-cond">
+                            <h4 class="color-icon">Color:</h4>
+                            <div class="car-color"><%= vih.Car_Color %></div>
+
+                            <h4 class="body-icon">Body:</h4>
+                            <div class="car-body"><%= vih.Car_BodyType %></div>
+                            
+                            <h4 class="cond-icon">Condition:</h4>
+                            <div class="car-cond"><%= vih.Car_Condition %></div>
                         </div>
                     </div>
                 </div>
+                <button class="submit">Apply</button>
             </div>
             <% }); %>
         </div>

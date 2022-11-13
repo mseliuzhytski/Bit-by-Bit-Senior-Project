@@ -141,6 +141,7 @@ nav.sticky {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 30px;
     margin-bottom: 50px;
+    margin-right: 15px;
 }
 
 .filter-title {
@@ -172,8 +173,7 @@ nav.sticky {
     float: inline-start;
     min-width: 33%;
     max-width: 90%;
-    display: inline;
-    /*box-shadow: 2px 2px #000;*/
+    display: inline;    
 }
 
 .car-table{
@@ -185,129 +185,147 @@ nav.sticky {
     display: block;
     overflow: hidden;
     width: 450px;
-    height: 200px;
-    background-color: lightgray;
-    margin: 30px;
+    height: 410px;
+    background-color: white;
+    margin: 18px;
     border-radius: 10px;
+    box-shadow: 2px 3px 5px 5px rgba(0,0,0,0.30);
 }
 
 .car-item{
     display: block;
     overflow: hidden;
-    width: 436px;
-    height: 185px;
-    margin-left: 6px;
-    margin-top: 6px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.car-img-title-price{
-    display: flex;
-    flex-direction: column;
-    float: left;
-    width: 205px;
+    margin: 5px;
 }
 
 .car-img{
     display: block;
     overflow: hidden;
-    width: 200px;
     margin: 5px;
     border-radius: 3px;
     background-color: grey;
-}
-
-.car-title{
-    display: inline-block;
+    width: 97.5%;
+    height: 225px;
     text-align: center;
 }
 
-.car-year-make{
-    display: flex;
-    justify-content: center;
+.car-title{
+    display: inline-flex;
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    width: 97.5%;
 }
 
 .car-year,
 .car-make,
 .car-model{
-    display: block;
     height: 15px;
     overflow: hidden;
     padding-top: 3px;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 5px;
     padding-bottom: 7px;
     font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 600;
 }
 
-.car-stock-box{
+.car-text-box{
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    padding-top: 10px;
 }
 
+.car-stock-mil {
+    display: block;
+    float: left;
+    justify-content: start;
+    align-items: baseline;
+    padding-left: 10px;
+    margin: 0px 15px 5px 0px;
+}
 .car-stock,
-.car-price,
-.car-mil{
+.car-stock-t,
+.stock-icon {
+    display: inline;
+    overflow: hidden;
+    font-weight: normal;
+    color: gray;
+    margin: 0px;
+    font-size: 11px;
+}
+
+.car-mil {
+    display: inline;
+    margin-left: 50%;
+}
+.car-mil-t,
+.mil-icon {
+    display: inline-flex;
+    overflow: hidden;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.car-price {
     display: flex;
     justify-content: start;
     align-items: baseline;
+    padding-bottom: 5px;
 }
-
-.stock-icon,
-.dollar-icon{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.car-stock-t,
-.car-price-t{
+.car-price-t {
     display: block;
     overflow: hidden;
-    padding-left: 7px;
     font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
 }
 
-.mil-icon,
+.dollar-icon,
 .cond-icon,
 .body-icon,
 .color-icon{
-    margin-top: 3px;
-    margin-bottom: 3px;
-    font-size: 15px;
+    display: inline;
+    padding-right: 1px;
+    margin: 0px;
 }
 
-.car-color{
+.car-color-body-cond{
     display: block;
-    overflow: hidden;
-    height: 18px;
+    margin-top: 10px;
+    font-size: 16px;
 }
-
-.car-body-cond{
-    display: block;
-}
-
-.car-body-box,
-.car-cond-box{
-    float: left;
-}
-
+.car-color,
 .car-body,
 .car-cond{
-    display: block;
-    width: 105px;
-    height: 18px;
+    display: inline;
     overflow: hidden;
+    padding-right: 22px;
 }
-/*      */
+/*  End car inventory */
+
+.submit {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    background-color: lightcoral;
+    font-size: 16px;
+    color: black;
+    border: 1px black;
+    border-radius: 5px;
+
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 25%;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
+}
+.submit:hover {
+    background-color: lightgray;
+}
 
 .footer {
     width: 100%;
