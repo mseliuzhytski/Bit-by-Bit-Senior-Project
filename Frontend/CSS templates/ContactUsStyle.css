@@ -100,7 +100,7 @@ body {
 input[type=text],
 select,
 textarea {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -231,11 +231,7 @@ nav.sticky {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     font-weight: 300;
-    outline: 2px solid black;
-    padding-top: 16px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 25px 10px 10px 40px;
     text-align: left;
     margin-top: 15px;
     margin-bottom: 50px;
@@ -256,8 +252,8 @@ nav.sticky {
 .disclaimer {
     text-align: left;
     padding: 10px;
-    padding-top: 15px;
-    font-size: 8;
+    padding-top: 10px;
+    font-size: 10px;
     font-weight: normal;
     color: black;
 }

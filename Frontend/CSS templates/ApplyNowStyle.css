@@ -161,7 +161,6 @@ input[type=text], select, textarea {
     margin-left: auto;
     resize: vertical;
 }
-/*  NOT USED
 input[type=submit] {
     background-color: white;
     color: black;
@@ -173,7 +172,7 @@ input[type=submit] {
   
 input[type=submit]:hover {
     background-color: gray;
-}*/
+}
 
 .row {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
