@@ -5,7 +5,12 @@ const bodyParser = require('body-parser');
 const db = require('../Database/db');
 
 exports.get = function(req,res){
+    if(typeof req.session.userInfo !== 'undefined' && req.session.userInfo.Emp_Role == 'Admin'){
     res.render(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.ejs'));
+    }
+    else{
+        res.send("Access Denied");
+    }
 };
 
 exports.post = async (req, res)=> {

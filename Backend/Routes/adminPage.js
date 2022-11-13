@@ -4,19 +4,23 @@ const phone = require('./phone');
 const email = require('./email');
 
 exports.get = function (req, res) {
-
-    employee.getAllEmployees((employees) => {
-            
-        phone.getAllEmployeePhones((phones) => {
-
-            email.getAllEmployeeEmails((emails) => {
+    if(typeof req.session.userInfo !== 'undefined' && req.session.userInfo.Emp_Role == 'Admin'){
+        employee.getAllEmployees((employees) => {
                 
-                res.render(path.join(__dirname + '../../../Frontend/Pages/AdminPage.ejs'), {
-                    employeeItems: employees,
-                    phoneItems: phones,
-                    emailsItems: emails
-                });
+            phone.getAllEmployeePhones((phones) => {
+
+                email.getAllEmployeeEmails((emails) => {
+                    
+                    res.render(path.join(__dirname + '../../../Frontend/Pages/AdminPage.ejs'), {
+                        employeeItems: employees,
+                        phoneItems: phones,
+                        emailsItems: emails
+                    });
+                })
             })
         })
-    })
+    }
+    else{
+        res.send("Access Denied")
+    }
 };

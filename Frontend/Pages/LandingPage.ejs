@@ -33,16 +33,27 @@
     <div class="block-body-box">
         <div class="block-body">
             <ul class="ulBlock">
-                <li><a href="Admin.html"><h3>Admin</h3></a></li><br>
+                <li><a href="AdminPage.ejs"><h3>Admin</h3></a></li><br>
                 <li><a href="ChangePassword.ejs"><h3>Change Password</h3></a></li>
             </ul>
             <h4>
                 Employee Information<br>
             </h4>
+            
             <h5>
-                Username: abcd<br>
-                Email: abc@123.com<br>
-                Phone: 123-456-7890<br>
+                Username: <%= employeeInfo.Emp_Username %> <br>
+                Email: <% if(employeeInfo.Emp_Email == ""){ %>
+                        N/A
+                       <% } %>
+                       <%  if(employeeInfo.Emp_Email != ""){  %> 
+                       <%= employeeInfo.Emp_Email %>
+                       <% } %> <br>
+                Phone: <% if(employeeInfo.Emp_Phone == ""){ %>
+                        N/A
+                     <% } %>
+                     <%  if(employeeInfo.Emp_Phone != ""){  %> 
+                     <%= employeeInfo.Emp_Phone %>
+                     <% } %> <br>
             </h5>
         </div>
     </div>

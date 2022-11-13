@@ -32,11 +32,30 @@ exports.post = async (req, res)=> {
                     req.session.userInfo = {
                         "sessionId": req.session.id,
                         Emp_ID: row.Emp_ID,
-                        Emp_Username: row.Emp_FirstName,
+                        Emp_Username: row.Emp_Username,
                         Emp_FirstName: row.Emp_FirstName,
                         Emp_LastName: row.Emp_LastName,
-                        Emp_Role: row.Emp_Role
+                        Emp_Role: row.Emp_Role,
+                        Emp_Email: "",
+                        Emp_Phone: ""
                     }
+
+                    let id = row.Emp_ID
+
+
+                    var [phoneResult] = await db.promise().query("SELECT EMP_PHONE FROM PHONE WHERE EMP_ID = ?", [id])
+                    let phoneLen = (await phoneResult.length)
+                    if(await phoneLen != 0 && typeof phoneLen !== 'undefined'){
+                        req.session.userInfo.Emp_Phone = await phoneResult[0].EMP_PHONE
+                    }
+
+                    
+                    var [emailResult] = await db.promise().query("SELECT Emp_Email FROM EMAIL WHERE Emp_ID = ?", [id])
+                    let emailLen = (await emailResult.length)
+                    if(await emailLen != 0 && typeof emailLen !== 'undefined'){                    
+                        req.session.userInfo.Emp_Email = await emailResult[0].Emp_Email;
+                    }
+
                     const oneDay = 1000 * 60 * 60 * 24;
                     
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });

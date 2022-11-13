@@ -5,7 +5,12 @@ const bodyParser = require('body-parser');
 const db = require('../Database/db');
 
 exports.get = function(req,res){
-    res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'));
+    if(typeof req.session.userInfo !== 'undefined'){
+        res.render(path.join(__dirname+'../../../Frontend/Pages/ChangePassword.ejs'));
+    }
+    else{
+        res.send("Access Denied")
+    }
 };
 
 exports.post = async (req, res)=> {
