@@ -1,25 +1,13 @@
 const path = require('path');
-const employee = require('./employee');
-const phone = require('./phone');
-const email = require('./email');
+const inventory = require('./inventory');
 
 exports.get = function (req, res) {
 
-    employee.getAllEmployees((employees) => {
-            
-        phone.getAllEmployeePhones((phones) => {
+    inventory.getAllInventoryItems("All", "All", "All", 
+    "All", "All", "All", "All", "All", (items) => {
 
-            email.getAllEmployeeEmails((emails) => {
-                console.log(employees)
-                console.log(phones)
-                console.log(emails)
-                
-                res.render(path.join(__dirname + '../../../Frontend/Pages/LandingPage.ejs'), {
-                    employeeItems: employees,
-                    phoneItems: phones,
-                    emailsItems: emails
-                });
-            })
-        })
-    })
+            res.render(path.join(__dirname+'../../../Frontend/Pages/LandingPage.ejs'), {
+                inventoryItems: items
+            });
+        });
 };
