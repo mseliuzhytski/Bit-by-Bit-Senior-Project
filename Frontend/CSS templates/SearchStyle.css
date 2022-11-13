@@ -185,7 +185,7 @@ nav.sticky {
     display: block;
     overflow: hidden;
     width: 450px;
-    height: 410px;
+    height: 415px;
     background-color: white;
     margin: 18px;
     border-radius: 10px;
@@ -199,7 +199,8 @@ nav.sticky {
 }
 
 .car-img{
-    display: block;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
     margin: 5px;
     border-radius: 3px;
@@ -207,6 +208,7 @@ nav.sticky {
     width: 97.5%;
     height: 225px;
     text-align: center;
+    object-fit: cover;
 }
 
 .car-title{
@@ -306,9 +308,15 @@ nav.sticky {
     padding-right: 22px;
 }
 /*  End car inventory */
+.button-detail-submit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
-.submit {
-    display: block;
+.detail-btn,
+.submit-btn {
+    display: inline;
     justify-content: center;
     text-align: center;
     background-color: lightcoral;
@@ -323,7 +331,8 @@ nav.sticky {
     width: 25%;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
 }
-.submit:hover {
+.detail-btn:hover,
+.submit-btn:hover {
     background-color: lightgray;
 }
 
