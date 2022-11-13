@@ -33,6 +33,7 @@ var image = require('./Backend/Routes/image');
 var inventoryPage = require('./Backend/Routes/inventoryPage');
 var adminEditPage = require('./Backend/Routes/adminEditPage');
 var editInventoryPage = require('./Backend/Routes/editInventoryPage');
+var inventory = require('./Backend/Routes/inventory');
 
 
 // variable declaration section
@@ -85,13 +86,10 @@ app.get('/AdminPage.ejs', adminPage.get);
 app.get('/ApplyNow.ejs', apply.get);
 app.get('/ContactUs.ejs', contact.get);
 app.get('/ChangePassword.ejs', change.get);
-app.get('/email', email.get);
-app.get('/employee', employee.get);
 app.get('/EmployeeInventory.ejs', employeeInventoryPage.get);
 app.get('/HomePage.ejs', homePage.get);
 app.get('/LandingPage.ejs', landingPage.get);
 app.get('/Login.ejs', login.get);
-app.get('/phone', phone.get);
 app.get('/RegisterUser.ejs', register.get); 
 app.get('/Search.ejs', search.get);
 app.get('/InventoryPage.ejs', inventoryPage.get);
@@ -107,12 +105,14 @@ app.post('/employee', employee.post);
 app.post('/phone', phone.post);
 app.post('/email', email.post);
 app.post('/apply', apply.post);
-app.post("/image", upload.array('upload_file'), image.post);
+app.post('/image', upload.array('upload_file'), image.post);
+app.post('/inventory', inventory.post);
 
 // delete section 
 app.delete('/employee', employee.delete);
 app.delete('/phone', phone.delete);
 app.delete('/email', email.delete);
+app.delete('/inventory', inventory.delete);
 
 
 // handle logout, destroy session + delete cookie

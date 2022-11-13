@@ -18,7 +18,7 @@ exports.post = async (req, res)=> {
             if( err ) throw err;
 
             if(result.length <= 0) {
-                res.redirect('/Login.ejs');
+                res.status(400).redirect('/Login.ejs');
                 alert("Invalid Username")
             }
             
@@ -40,15 +40,15 @@ exports.post = async (req, res)=> {
                     const oneDay = 1000 * 60 * 60 * 24;
                     
                     res.cookie('bit-by-bit-session', JSON.stringify(req.session.userInfo) , { maxAge: oneDay , httpOnly: true, encode: String });
-                    res.redirect("/LandingPage.ejs");
+                    res.status(200).redirect("/LandingPage.ejs");
                 }
                 else{
-                    res.redirect('/Login.ejs');
+                    res.status(400).redirect('/Login.ejs');
                     alert("Invalid Password")
                 }
             });
         });
     }catch{
-        res.redirect('/Login.ejs');
+        res.status(500).redirect('/Login.ejs');
     }
 };

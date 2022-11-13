@@ -16,7 +16,7 @@ exports.post = async (req, res)=> {
          db.query('SELECT * FROM Employee WHERE Emp_username = ?', username,  async function(err,result, fields){
             if(err) throw error;
             if(result.length > 0) {
-                res.render(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.ejs'))
+                res.status(400).redirect('/RegisterUser.ejs');
                 alert("Username already in database")
             }
             else{
@@ -25,12 +25,12 @@ exports.post = async (req, res)=> {
 
              db.query('INSERT INTO EMPLOYEE (Emp_Username, Emp_PasswordHash) VALUES (?)', [[username,hash]], (error) => {
                 if(error) throw error;
-                res.render(path.join(__dirname+'../../../Frontend/Pages/Homepage.ejs'))
+                res.status(200).redirect('/Homepage.ejs');
             });
             }
 
         });
     }catch{
-        res.render(path.join(__dirname+'../../../Frontend/Pages/RegisterUser.ejs'))
+        res.status(500).redirect('/RegisterUser.ejs');
     }
 };

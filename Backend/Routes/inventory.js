@@ -1,17 +1,17 @@
 var db = require('../Database/db');
 
 // get specified inventory item
-function getSingleInventoryItem(Car_Stock_Num) {
+exports.getInventoryItem = function getInventoryItem(Car_Stock_Num, callback) {
 
     db.query('SELECT * FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
         (error, results) => {
             if (error) throw error;
-            return results[0];
+            return callback(results[0]);
         });
 };
 
 // get all inventory items
-function getAllInventoryItems(Car_Make, Car_Model, Car_Year, Car_Price, 
+exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model, Car_Year, Car_Price, 
     Car_Mileage, Car_BodyType, Car_Condition, Car_Color, callback) {
 
     if (containsForbiddenInputs([Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage,
@@ -48,51 +48,78 @@ function getAllInventoryItems(Car_Make, Car_Model, Car_Year, Car_Price,
     });
 };
 
-// add new inventory item
-// return new Car_Stock_Num
-function addNewVehicleItem(Car_Make, Car_Model, Car_Year, Car_Price, 
-    Car_Mileage, Car_BodyType, Car_Condition, Car_Color) {
-    
-    db.query('INSERT INTO Inventory (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)' +
-    'VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
-    [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color],
-        (error, results) => {
-            if (error) throw error;
-            results.insertId;
-        });
+// add or update an inventory item
+exports.post = async (req, res)=> {
+    try {
+        var { Car_Stock_Num } = req.query;
+        var { Car_Make, Car_Model, Car_Year, Car_Price, 
+            Car_Mileage, Car_BodyType, Car_Condition, Car_Color } = req.body;
+
+        // update inventory item
+        if (Car_Stock_Num) {
+            getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+                if (foundVehicle) {
+                    db.query('UPDATE Inventory SET Car_Make = ?, Car_Model = ?, Car_Year = ?,' + 
+                    'Car_Price = ?, Car_Mileage = ?, Car_BodyType = ?, Car_Condition = ?, Car_Color = ? WHERE Car_Stock_Num = ?', 
+                    [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color, Car_Stock_Num],
+                        (error) => {
+                            if (error) throw error;
+                            res.status(200).redirect('/LandingPage.ejs');
+                            alert("Successfully updated inventory item: " + Car_Stock_Num);
+                        }
+                    ); 
+                }
+                else {
+                    res.status(400).redirect('/EditInventoryPage.ejs');
+                    alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Update unsuccessful.");
+                }
+            });
+        }
+        // add new inventory item
+        else {
+            db.query('INSERT INTO Inventory (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)' +
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
+            [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color],
+                (error) => {
+                    if (error) throw error;
+                    res.status(200).redirect('/LandingPage.ejs');
+                    alert("Successfully added new inventory item: " + Car_Stock_Num);
+                }
+            ); 
+        }
+    } 
+    catch {
+        res.status(500).redirect('/EditInventoryPage.ejs');
+        alert("Error processing request.");
+    }
 };
 
-// update an inventory item
-// return true if successfully, false otherwise
-function updateVehicleItem(Car_Stock_Num, Car_Make, Car_Model, Car_Year, Car_Price, 
-    Car_Mileage, Car_BodyType, Car_Condition, Car_Color) {
-    
-    db.query('UPDATE Inventory SET Car_Make = ?, Car_Model = ?, Car_Year = ?,' + 
-    'Car_Price = ?, Car_Mileage = ?, Car_BodyType = ?, Car_Condition = ?, Car_Color = ? WHERE Car_Stock_Num = ?', 
-    [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color, Car_Stock_Num],
-        (error, results) => {
-            if (error) throw error;
-            if (results.affectedRows == 0) {
-                return false;
+// delete an inventory item by car_stock_num
+exports.delete = async (req, res)=> {
+    try {
+        var { Car_Stock_Num } = req.query;
+
+        getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+            if (foundVehicle) {
+                db.query('DELETE FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
+                    (error) => {
+                        if (error) throw error;
+                        res.status(200).redirect('/LandingPage.ejs');
+                        alert("Successfully deleted inventory item: " + Car_Stock_Num);
+                    }
+                );
+            } 
+            else {
+                res.status(400).redirect('/EditInventoryPage.ejs');
+                alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Deletion unsuccessful.");
             }
-            return true;
         });
+    }
+    catch {
+        res.status(500).redirect('/EditInventoryPage.ejs');
+        alert("Error processing request.");
+    }
 };
-
-// delete an inventory item by car_stock_num 
-// return true if successfull, false otherwise
-function deleteInventoryItem(Car_Stock_Num) {
-    
-    db.query('DELETE FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
-        (error, result) => {
-            if (error) throw error;
-            if (result.affectedRows == 0) {
-                return false;
-            }
-            return true;
-        });
-};
-
 
 function containsForbiddenInputs(filters) {
     var forbiddenInputs = ["drop", "update", "delete", "insert", "into", "create", "table", "altar", "database", "index", "where", "join", "and", "(", ")", ";"]
@@ -111,6 +138,3 @@ function containsForbiddenInputs(filters) {
     });
     return foundForbiddenWord;
 }
-
-module.exports = {getSingleInventoryItem, getAllInventoryItems,
-addNewVehicleItem, updateVehicleItem, deleteInventoryItem};
