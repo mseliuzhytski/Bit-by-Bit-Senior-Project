@@ -51,74 +51,84 @@ exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model
 
 // add or update an inventory item
 exports.post = async (req, res)=> {
-    try {
-        var { Car_Stock_Num } = req.query;
-        var { Car_Make, Car_Model, Car_Year, Car_Price, 
-            Car_Mileage, Car_BodyType, Car_Condition, Car_Color } = req.body;
+    if(typeof req.session.userInfo !== 'undefined'){
+        try {
+            var { Car_Stock_Num } = req.query;
+            var { Car_Make, Car_Model, Car_Year, Car_Price, 
+                Car_Mileage, Car_BodyType, Car_Condition, Car_Color } = req.body;
 
-        // update inventory item
-        if (Car_Stock_Num) {
-            getVehicleByID(Car_Stock_Num, function(foundVehicle) {
-                if (foundVehicle) {
-                    db.query('UPDATE Inventory SET Car_Make = ?, Car_Model = ?, Car_Year = ?,' + 
-                    'Car_Price = ?, Car_Mileage = ?, Car_BodyType = ?, Car_Condition = ?, Car_Color = ? WHERE Car_Stock_Num = ?', 
-                    [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color, Car_Stock_Num],
-                        (error) => {
-                            if (error) throw error;
-                            res.status(200).redirect('/LandingPage.ejs');
-                            alert("Successfully updated inventory item: " + Car_Stock_Num);
-                        }
-                    ); 
-                }
-                else {
-                    res.status(400).redirect('/EditInventoryPage.ejs');
-                    alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Update unsuccessful.");
-                }
-            });
+            // update inventory item
+            if (Car_Stock_Num) {
+                getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+                    if (foundVehicle) {
+                        db.query('UPDATE Inventory SET Car_Make = ?, Car_Model = ?, Car_Year = ?,' + 
+                        'Car_Price = ?, Car_Mileage = ?, Car_BodyType = ?, Car_Condition = ?, Car_Color = ? WHERE Car_Stock_Num = ?', 
+                        [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color, Car_Stock_Num],
+                            (error) => {
+                                if (error) throw error;
+                                res.status(200).redirect('/LandingPage.ejs');
+                                alert("Successfully updated inventory item: " + Car_Stock_Num);
+                            }
+                        ); 
+                    }
+                    else {
+                        res.status(400).redirect('/EditInventoryPage.ejs');
+                        alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Update unsuccessful.");
+                    }
+                });
+            }
+            // add new inventory item
+            else {
+                db.query('INSERT INTO Inventory (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)' +
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
+                [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color],
+                    (error) => {
+                        if (error) throw error;
+                        res.status(200).redirect('/LandingPage.ejs');
+                        alert("Successfully added new inventory item: " + Car_Stock_Num);
+                    }
+                ); 
+            }
+        } 
+        catch {
+            res.status(500).redirect('/EditInventoryPage.ejs');
+            alert("Error processing request.");
         }
-        // add new inventory item
-        else {
-            db.query('INSERT INTO Inventory (Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color)' +
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
-            [Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage, Car_BodyType, Car_Condition, Car_Color],
-                (error) => {
-                    if (error) throw error;
-                    res.status(200).redirect('/LandingPage.ejs');
-                    alert("Successfully added new inventory item: " + Car_Stock_Num);
-                }
-            ); 
-        }
-    } 
-    catch {
-        res.status(500).redirect('/EditInventoryPage.ejs');
-        alert("Error processing request.");
+    }
+    else{
+        res.send("Access denied")
     }
 };
 
 // delete an inventory item by car_stock_num
 exports.delete = async (req, res)=> {
-    try {
-        var { Car_Stock_Num } = req.query;
+    if(typeof req.session.userInfo !== 'undefined'){
+        try {
+            var { Car_Stock_Num } = req.query;
 
-        getVehicleByID(Car_Stock_Num, function(foundVehicle) {
-            if (foundVehicle) {
-                db.query('DELETE FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
-                    (error) => {
-                        if (error) throw error;
-                        res.status(200).redirect('/LandingPage.ejs');
-                        alert("Successfully deleted inventory item: " + Car_Stock_Num);
-                    }
-                );
-            } 
-            else {
-                res.status(400).redirect('/EditInventoryPage.ejs');
-                alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Deletion unsuccessful.");
-            }
-        });
+            getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+                if (foundVehicle) {
+                    db.query('DELETE FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
+                        (error) => {
+                            if (error) throw error;
+                            res.status(200).redirect('/LandingPage.ejs');
+                            alert("Successfully deleted inventory item: " + Car_Stock_Num);
+                        }
+                    );
+                } 
+                else {
+                    res.status(400).redirect('/EditInventoryPage.ejs');
+                    alert("Car_Stock_Num " + Car_Stock_Num + " does not exist. Deletion unsuccessful.");
+                }
+            });
+        }
+        catch {
+            res.status(500).redirect('/EditInventoryPage.ejs');
+            alert("Error processing request.");
+        }
     }
-    catch {
-        res.status(500).redirect('/EditInventoryPage.ejs');
-        alert("Error processing request.");
+    else{
+        res.send("Access Denied")
     }
 };
 
