@@ -154,11 +154,10 @@
                         <% foundImg=0; %>
                             <% for(let y=0; y < imageItems.length; y++) {%>
                                 <% if(vih.Car_Stock_Num==imageItems[y][0].Car_Stock_Num){ %>
-                                    <img src=<%=imageItems[y][0].Car_Image %> alt="car img"
-                                    style="width: 200px">
+                                    <img src=<%=imageItems[y][0].Car_Image %> alt="car img">
                                     <% foundImg=1; break;} }%>
                         <% if(foundImg==0){ %>
-                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 200px;">
+                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img">
                         <% } %>
                     </div>
                     <div class="car-title">
