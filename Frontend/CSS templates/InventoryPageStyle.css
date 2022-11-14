@@ -162,6 +162,10 @@ nav.sticky {
     margin: 7px;
 }
 
+.collection-item :hover{
+    opacity: 50%;
+}
+
 .collection-item img{
     width: 70px;
     height: 45px;
