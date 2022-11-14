@@ -28,7 +28,8 @@ exports.get = function(req, res) {
                             res.render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'), {
                                 inventoryItems: items,
                                 imageItems: imageItemSum,
-                                filtersParams: currentQueryParams
+                                filtersParams: currentQueryParams,
+                                isLoggedIn: typeof req.session.userInfo !== 'undefined'
                             });
                         };
                     });
@@ -38,7 +39,8 @@ exports.get = function(req, res) {
                 res.render(path.join(__dirname+'../../../Frontend/Pages/Search.ejs'), {
                     inventoryItems: [],
                     imageItems: [],
-                    filtersParams: currentQueryParams
+                    filtersParams: currentQueryParams,
+                    isLoggedIn: typeof req.session.userInfo !== 'undefined'
                 });
             };
         });

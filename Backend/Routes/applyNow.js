@@ -4,7 +4,9 @@ const nodemailer = require('nodemailer');
 require("dotenv").config();
 
 exports.get = function(req,res){
-        res.render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'));
+        res.render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'),{
+            isLoggedIn: typeof req.session.userInfo !== 'undefined'
+        });
     };
 
 exports.post = async (req, res)=> {
