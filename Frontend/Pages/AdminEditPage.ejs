@@ -49,111 +49,116 @@
     <div class="body-main">
         <div class="conBox">
         <div class="container">
-            <!--<form action="#">-->
-            <form action="/contact" method="POST">
-                <div class="f-name-table">
-                <div class="f-name-fieled">
-                    <div class="f-name-label">
-                        <label for="fname">First Name:</label>
-                        <div class="f-name-fname">my Name</div>
+            <div class="f-name-table-box">
+            <div class="f-name-table">
+                <!--<form action="#">-->
+                <form class="fromEmp" action="/contact" method="POST">
+                    <div class="f-name-fieled">
+                        <div class="f-name-label">
+                            <label for="fname">First Name:</label>
+                            <div class="f-name-fname">my Name</div>
+                        </div>
+                        <div class="f-name-input">
+                            <input type="text" id="fname" name="firstname" placeholder="Change first name.."><br>
+                        </div>
                     </div>
-                    <div class="f-name-input">
-                        <input type="text" id="fname" name="firstname" placeholder="Change first name.."><br>
+                    <div class="f-name-fieled">
+                        <div class="f-name-label">
+                            <label for="fname">Last Name:</label>
+                            <div class="f-name-lname">my Last Name</div>
+                        </div>
+                        <div class="f-name-input">
+                            <input type="text" id="lname" name="lastname" placeholder="Change last name.."><br>
+                        </div>
                     </div>
-                </div>
-                <div class="f-name-fieled">
-                    <div class="f-name-label">
-                        <label for="fname">Last Name:</label>
-                        <div class="f-name-lname">my Last Name</div>
+                    <div class="f-name-fieled">
+                        <div class="f-name-label">
+                            <label for="fname">Role:</label>
+                            <div class="f-name-rname">my Role</div>
+                        </div>
+                        <div class="f-name-input">
+                            <input type="text" id="rname" name="rolename" placeholder="Change role.."><br>
+                        </div>
                     </div>
-                    <div class="f-name-input">
-                        <input type="text" id="lname" name="lastname" placeholder="Change last name.."><br>
+                    <div class="f-name-fieled">
+                        <div class="f-name-label">
+                            <label for="lname">Userame:</label>
+                            <div class="f-name-uname">myUsername</div>
+                        </div>
+                        <div class="f-name-input">
+                            <input type="text" id="uname" name="username" placeholder="Change username.."><br>
+                        </div>
                     </div>
-                </div>
-                <div class="f-name-fieled">
-                    <div class="f-name-label">
-                        <label for="fname">Role:</label>
-                        <div class="f-name-rname">my Role</div>
+                    <div class="f-name-fieled">
+                        <div class="f-name-label">
+                            <label for="lname">Password</label>
+                        </div>
+                        <div class="f-name-pass">
+                            <button class="pass-change-button">Change Employee Password</button>
+                        </div>
                     </div>
-                    <div class="f-name-input">
-                        <input type="text" id="rname" name="rolename" placeholder="Change role.."><br>
-                    </div>
-                </div>
-                <div class="f-name-fieled">
-                    <div class="f-name-label">
-                        <label for="lname">Userame:</label>
-                        <div class="f-name-uname">myUsername</div>
-                    </div>
-                    <div class="f-name-input">
-                        <input type="text" id="uname" name="username" placeholder="Change username.."><br>
-                    </div>
-                </div>
-                <div class="f-name-fieled">
-                    <div class="f-name-label">
-                        <label for="lname">Password</label>
-                    </div>
-                    <div class="f-name-input">
-                        <input type="text" id="newpassword" name="newPassword" placeholder="Change password.."><br>
-                    </div>
-                </div>
-                </div>
-                <div class="f-table-phone">
-                    <div class="phone-field">
+                    <input class="submit-save" type="submit" value="Save Column"><br>
+                </form>
+            </div>
+            </div>
+            <div class="f-table-phone">
+                <div class="phone-field">
+                    <form class="formPhone">
                         <div class="phone-title">Phone:</div>
                         <div class="phone-table">
                             <div class="phone-item">+1 (111) 111 11-11</div>
                         </div>
-                        <div class="phone-add">Add Phone:</div>
-                        <input type="text" id="addphone" name="addPhone" placeholder="Add new phone number"><br>
-                        <div class="phone-remove">Remove Existing Phone:</div>
-                        <input type="text" id="deletephone" name="deletePhone" placeholder="Type in phone to remove"><br>
-                    </div>
+                        <div class="phone-add">Type Phone:</div>
+                        <input type="text" id="typePhone" name="thisPhone" placeholder="Enter Phone Number"><br>
+                        <div class="phone-email-buttons">
+                            <input type="button" id="addphone" name="addPhone" value="Add This Phone"><br>
+                            <input type="button" id="deletephone" name="deletePhone" value="Delete This Phone"><br>
+                        </div>
+                    </form>
                 </div>
-                <div class="f-table-email">
-                    <div class="email-field">
+            </div>
+            <div class="f-table-email">
+                <div class="email-field">
+                    <form class="formEmail">
                         <div class="email-title">Email:</div>
                         <div class="email-table">
                             <div class="email-item">myEmail@gmail.com</div>
                         </div>
-                        <div class="email-add">Add Email:</div>
-                        <input type="text" id="addemail" name="addEmail" placeholder="Add new email"><br>
-                        <div class="email-remove">Remove Existing Email:</div>
-                        <input type="text" id="deleteemail" name="deleteEmail" placeholder="Type in email to remove"><br>
-                    </div>
+                        <div class="email-add">Type Email:</div>
+                        <input type="text" id="typeEmail" name="thisEmail" placeholder="Enter Email"><br>
+                        <div class="phone-email-buttons">
+                            <input type="button" id="addemail" name="addEmail" value="Add This Email"><br>
+                            <input type="button" id="deleteemail" name="deleteEmail" value="Delete This Email"><br>
+                        </div>
+                    </form>
                 </div>
-                <input class="submit-save" type="submit" value="Save Changes"><br>
-                <input class="submit-delete" type="submit" value="Delete Employee">
-                <br>
-            </form>
+            </div>
         </div>
         </div>
     </div>
+    <div class="delete-button">
+        <button class="label-delete">Delete Employee</button>
+    </div>
     <div class="footer">
+        <div class="foot-flex">
         <div class="footer-section">
             <div class="footer-facebook-box">
                 <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
-                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png"
-                        width="100px" height="100px">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png" width="40px" height="40px">
                 </a>
             </div>
-            <br>
-            <font size=+2>1941 El Camino Ave,</font>
+            <br><font size=+2>1941 El Camino Ave,</font>
             <br> SACRAMENTO, CA 95815
-            <br>
+            <br> 916-750-9099
         </div>
-        <div class="footer-section"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
-                style="width:300px;height:200px;">
-            <br>
-            <font size=+2> 916-750-9099</font>
-            <br>
+        <div class="footer-section-img"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" 
+            alt="logo">
         </div>
-        <div class="footer-section"><iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus"
-                width="100%" height="250" style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    
+        <div class="footer-section-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus" 
+             style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        </div> 
+	    </div>
         <hr class="footer-hr">
         <div class="footer-end"></div>
     </div>
