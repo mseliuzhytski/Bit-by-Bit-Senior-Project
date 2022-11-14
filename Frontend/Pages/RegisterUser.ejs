@@ -1,25 +1,50 @@
-<!--Register User Page-->
 <!DOCTYPE html>    
 <html>    
 <head>    
-    <title>Admin</title>    
+    <title>Okaidi Auto Sales</title>    
     <link rel="stylesheet" href="../CSS templates/RegisterUserStyle.css"> 
 </head>    
 <body>
-    <div class="header">
+<div class="image-box">
+    <a href="Homepage.ejs">
+        <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png"
+            alt="Okaidi Auto Sales" width="50%" height="10%">
+    </a>
+</div>
+<div class="navi">
+    <div class="navi-centered">
         <nav id="navbar">
-            <a href="Homepage.ejs">
-            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" 
-                alt="logo" class="logo">
-            <ul id="menu">
-                <li><a href="Homepage.ejs">Home</a></li>
-                <li><a href="Search.ejs">Search</a></li>
-                <li><a href="Aboutus.ejs">About Us</a></li>
-                <li><a href="ContactUs.ejs">Contact Us</a></li>
-                <li><a href="ApplyNow.ejs">Apply Now</a></li>
-            </ul>
+            <div class="nav-menu">
+                <div class="nav-text">
+                    <h3 class="nav-text-logo">OKAIDI AUTO SALES</h3>
+                    <div class="nav-toggle" id="navToggle">
+                        <img class="navIcon"
+                            src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconHambMenu.png"
+                            alt="hamburger menu" width="25px" id="hamburger">
+                        <img class="navIcon hiddenNavIcon"
+                            src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/iconClose.png"
+                            alt="close hamburger" width="25px">
+                    </div>
+                </div>
+                <div class="navList" id="navShow">
+                    <ul class="ulForDir">
+                        <li><a href="Homepage.ejs">Home</a></li>
+                        <li><a href="Search.ejs">Search</a></li>
+                        <li><a href="Aboutus.ejs">About Us</a></li>
+                        <li><a href="ContactUs.ejs">Contact Us</a></li>
+                        <li><a href="ApplyNow.ejs">Apply Now</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
+</div>
+<div class="text-line-body-1-box">
+    <div class="text-line-body-1">
+        Find your next car at Okaidi Auto Sales in Sacramento, CA
+    </div>
+</div>
+    <div class="login-box">
     <div class="login">    
 
       <center> <h2> Register New User </h2> </center>  
@@ -47,28 +72,37 @@
         </div>   
     </form>   
     </div> 
+    </div>
     <div class="footer">
-        <div class="col-1">
-            <h1>
-                <a href="Homepage.ejs">
-                    <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
-                    style="width:120px;height:70px;">
-                </a>
-                <div class="footer-info">
-                    <br>
-                    2400 FULTON AVE-B,<br> SACRAMENTO, CA 95825<br>
-                    916-750-9099<br>
-                </div>
-            </h1>
+        <div class="footer-section">
             <div class="footer-facebook-box">
                 <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
-                    <img src="https://www.seville.michlibrary.org/site-assets/images/facebook-icon.png/@@images/image.png"
-                        width="50px" height="50px">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png"
+                        width="40px" height="40px">
                 </a>
             </div>
+            <br>
+            <font size=+2>1941 El Camino Ave,</font>
+            <br> SACRAMENTO, CA 95815
+            <br> 916-750-9099
         </div>
+        <div class="footer-section"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
+                style="width:300px;height:200px;">
+        </div>
+        <div class="footer-section"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus"
+                width="60%" height="200" style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    
         <hr class="footer-hr">
-        <div class="footer-end"></div>
-    </div>  
+        <div class="footer-end">
+            <div class="bottom">
+                <a href="Login.ejs"><u>Dealer Login</u></a>
+                <br>
+            </div>
+        </div>
+    </div>
 </body>    
 </html> 
