@@ -23,16 +23,16 @@ exports.post = async (req, res) => {
         for (let i = 0; i < results.length; i++) {
             addNewVehicleImage(Car_Stock_Num, results[i].Location);
         }
-        res.status(200).redirect('/Image.ejs');
+        res.status(200).redirect('/EditInventoryPage.ejs?Car_Stock_Num=' + Car_Stock_Num);
         alert('Added new image successfully.')
       }
       else {
-        res.status(400).redirect('/Image.ejs');
+        res.status(400).redirect('/EditInventoryPage.ejs?Car_Stock_Num=' + Car_Stock_Num);
         alert('Missing car stock number.')
       }
   } 
   catch {
-    res.status(500).redirect('/Image.ejs');
+    res.status(500).redirect('/EditInventoryPage.ejs?Car_Stock_Num=' + Car_Stock_Num);
     alert('Unable to process request.')
   }
 };
@@ -41,14 +41,17 @@ exports.delete = async (req, res) => {
   try {
       var { Car_Stock_Num, Car_Image } = req.body;
 
-      console.log(Car_Image);
       if (Car_Stock_Num) {
-        //const results = await s3Delete(Car_Image);
-
-        deleteVehicleImage(Car_Stock_Num, Car_Image);
-        
-        res.status(200).redirect('/Image.ejs');
-        alert('Deleted image successfully.')
+        deleteVehicleImage(Car_Stock_Num, Car_Image, (isDeleted) => {
+          if (isDeleted) {
+            res.status(200).redirect('/Image.ejs');
+            alert('Deleted image successfully.')
+          }
+          else {
+            res.status(400).redirect('/Image.ejs');
+            alert('Image not found.')
+          }
+        });
       }
       else {
         res.status(400).redirect('/Image.ejs');
@@ -99,14 +102,14 @@ function addNewVehicleImage(Car_Stock_Num, Car_Image) {
 
 // delete inventory image
 // return true if successfully, false otherwise
-function deleteVehicleImage(Car_Stock_Num, Car_Image) {
-  db.query('DELETE FROM IMAGES (Car_Stock_Num, Car_Image) VALUES (?, ?)', 
+function deleteVehicleImage(Car_Stock_Num, Car_Image, callback) {
+  db.query('DELETE FROM Images WHERE Car_Stock_Num = ? AND Car_Image = ?',
   [Car_Stock_Num, Car_Image],
       (error, result) => {
           if (error) throw error;
           if (result.affectedRows == 0) {
-              return false;
+              return callback(false);
           }
-          return true;
+          return callback(true);
       });
 };

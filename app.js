@@ -113,6 +113,7 @@ app.delete('/employee', employee.delete);
 app.delete('/phone', phone.delete);
 app.delete('/email', email.delete);
 app.delete('/inventory', inventory.delete);
+app.delete('/image', image.delete);
 
 
 // handle logout, destroy session + delete cookie

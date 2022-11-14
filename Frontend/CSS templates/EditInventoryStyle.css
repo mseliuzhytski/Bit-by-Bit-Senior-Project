@@ -184,8 +184,8 @@ nav.sticky {
 
 .collection-item{
     display: block;
-    width: 70px;
     transform: translate(0px,3px);
+    width: 70px;
     float: left;
     margin: 7px;
 }

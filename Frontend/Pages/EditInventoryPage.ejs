@@ -51,32 +51,39 @@
         <div class="container">
             <div class="img-box">
                 <div class="img-container">
-                <form id="imgForm" action="/register" method="POST">
                     <div class="img-main">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 600px">
+                        <% if(imageItems.length == 0){ %>
+                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car" style="width: 600px">
+                            <% } else{ %>
+                            <img id="mainImg" src=<%=imageItems[0].Car_Image %> alt="car" style="width: 600px">
+                            <% } %>
                     </div>
                     <div class="img-collection">
+                        <% imageItems.forEach(function(arrImg){ %>
                         <div class="collection-item">
-                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
+                            <img src=<%= arrImg.Car_Image %> alt="car" style="width: 70px;cursor:pointer;"
+                            onclick="changeMain(this)">
                         </div>
-                        <div class="collection-item">
-                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                        </div>
+                        <% }); %>
                     </div>
                     <div class="img-manage">
-                        <button class="img-upload">Upload New Images</button>
-                        <button class="img-delete">Delete Displayed Image</button>
+                    <form action="/image" enctype="multipart/form-data" method="post">
+                        <input type="file" class="img-upload" name="upload_file" multiple><br><br>
+                        <input type="hidden" name="Car_Stock_Num" placeholder="Car Stock Num..." value=<%= inventoryItem.Car_Stock_Num %>><br><br>
+                        <input type="submit" class="img-delete" value="Submit" class="btn btn-default">
+                    </form>
+                    <button class="img-delete">Delete Displayed Image</button>
+                    <button class="button2" onclick="deleteImg(<%= inventoryItem.Car_Stock_Num %>)">Delete Image</button>
                     </div>
-                </form>
                 </div>
             </div>
             <div class="info-box">
                 <div class="i-container">
                     <form id="carForm" action="/register" method="POST">
                         <div class="year-make-model">
-                            <div class="year">1999</div>
-                            <div class="make">HONDA</div>
-                            <div class="model">ACCORD</div>
+                            <div class="year"><%= inventoryItem.Car_Year %></div>
+                            <div class="make"><%= inventoryItem.Car_Make %></div>
+                            <div class="model"><%= inventoryItem.Car_Model %></div>
                         </div>
                         <div class="car-label">
                             <div class="car-label-year">Year</div>
@@ -89,27 +96,27 @@
                         <div class="car-field">
                         <div class="stock-box">
                             <div class="stock-icon">STOCK:</div>
-                            <div class="stock">11</div>
+                            <div class="stock"><%= inventoryItem.Car_Stock_Num %></div>
                             <input type="text" id="stockCar" name="carStock" placeholder="Change stock.."><br>
                         </div>
                         <div class="price-box">
                             <div class="price-icon">$</div>
-                            <div class="price">1111</div>
+                            <div class="price"><%= inventoryItem.Car_Price %></div>
                             <input type="text" id="priceCar" name="carPrice" placeholder="Change price.."><br>
                         </div>
                         <div class="cond-box">
                             <div class="cond-icon">Condition:</div>
-                            <div class="cond">good</div>
+                            <div class="cond"><%= inventoryItem.Car_Condition %></div>
                             <input type="text" id="conditionCar" name="carCondition" placeholder="Change condition.."><br>
                         </div>
                         <div class="car-body-box">
                             <div class="car-body-icon">Body:</div>
-                            <div class="car-body">coup</div>
+                            <div class="car-body"><%= inventoryItem.Car_BodyType %></div>
                             <input type="text" id="bodyCar" name="carBody" placeholder="Change body.."><br>
                         </div>
                         <div class="color-box">
                             <div class="color-icon">Color:</div>
-                            <div class="color">green</div>
+                            <div class="color"><%= inventoryItem.Car_Color %></div>
                             <input type="text" id="colorCar" name="carColor" placeholder="Change color.."><br>
                         </div>
                         </div>
@@ -184,6 +191,30 @@
                 hamburger.classList.remove("hiddenNavIcon");
             }
         });  
+    </script>
+    <script>
+        function changeMain(element){
+            document.getElementById("mainImg").src = element.src;
+        }
+    </script>
+    <script>
+        function deleteImg(Car_Stock_Num) {
+            var params = {
+                "Car_Stock_Num":Car_Stock_Num,
+                "Car_Image":document.getElementById("mainImg").src
+            }
+
+            let text = "Delete this image?";
+            if (confirm(text) == true) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("DELETE", "/image");
+                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhttp.send(JSON.stringify(params));
+                setTimeout(function () {
+                    window.location.reload(true);
+                }, 500);
+            }
+        }
     </script>
     
 </body>    
