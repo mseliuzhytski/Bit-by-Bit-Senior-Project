@@ -78,21 +78,49 @@
                         Edit
                     </div>
                 </div>
-                <div class="emp-table-row" id="hideRow">
+               <% var arrPhoneIndx=[]; %>
+                <% var arrPhoneNum=[]; %>
+                <% for(let y=0; y < phoneItems.length; y++){ %>
+                    <% foundPhone=0; %>
+                    <% tempPhone=phoneItems[y].Emp_ID; %>
+                    <% tempPhoneNum=phoneItems[y].Emp_Phone; %>
+                    <% for(let x=0; x < arrPhoneIndx.length; x++){ %>
+                        <% if(arrPhoneIndx[x]==tempPhone){foundPhone=1; break;} %>
+                    <% } if(foundPhone==0){arrPhoneIndx.push(tempPhone); arrPhoneNum.push(tempPhoneNum);} %>
+                <% } %>
+
+                <% var arrEmailIndx=[]; %>
+                <% var arrEmailAddr=[]; %>
+                <% for(let y=0; y < emailsItems.length; y++){ %>
+                    <% foundEmail=0; %>
+                    <% tempEmail=emailsItems[y].Emp_ID; %>
+                    <% tempEmailAddr=emailsItems[y].Emp_Email; %>
+                    <% for(let x=0; x < arrEmailIndx.length; x++){ %>
+                        <% if(arrEmailIndx[x]==tempEmail){foundEmail=1; break;} %>
+                    <% } if(foundEmail==0){arrEmailIndx.push(tempEmail); arrEmailAddr.push(tempEmailAddr);} %>
+                <% } %>
+                <% employeeItems.forEach(function(empl){ %>
+                <div class="emp-table-row">
                     <div class="emp-table-name">
-                        ...
+                        <%= empl.Emp_FirstName %>
                     </div>
                     <div class="emp-table-phone">
-                        ...
+                        <% for(let y=0; y < arrPhoneIndx.length; y++){ %>
+                            <% if(empl.Emp_ID == arrPhoneIndx[y]){ %>
+                                <%= arrPhoneNum[y] %>
+                                <% break; }} %>
                     </div>
                     <div class="emp-table-email">
-                        ...
+                        <% for(let y=0; y < arrEmailIndx.length; y++){ %>
+                            <% if(empl.Emp_ID==arrEmailIndx[y]){ %>
+                                <%= arrEmailAddr[y] %>
+                                <% break; }} %>
                     </div>
                     <div class="emp-table-user">
-                        ...
+                        <%= empl.Emp_Username %>
                     </div>
                     <div class="emp-table-role">
-                        ...
+                        <%= empl.Emp_Role %>
                     </div>
                     <div class="emp-table-button">
                         <a class="emp-table-move">
@@ -100,30 +128,40 @@
                         </a>
                     </div>
                 </div>
+                <% }); %>
             </div>
         </div>
     </div>
     <div class="footer">
-        <div class="col-1">
-            <h1>
-                <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="logo"
-                    style="width:120px;height:70px;">
-                <div class="footer-info">
-                    <br>
-                    2400 FULTON AVE-B,<br> SACRAMENTO, CA 95825<br>
-                    916-750-9099<br>
-                </div>
-            </h1>
+        <div class="footer">
+        <div class="foot-flex">
+        <div class="footer-section">
             <div class="footer-facebook-box">
                 <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
-                    <img src="https://www.seville.michlibrary.org/site-assets/images/facebook-icon.png/@@images/image.png"
-                        width="50px" height="50px">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png" width="40px" height="40px">
                 </a>
             </div>
+            <br><font size=+2>1941 El Camino Ave,</font>
+            <br> SACRAMENTO, CA 95815
+            <br> 916-750-9099
+        </div>
+        <div class="footer-section-img"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" 
+            alt="logo">
+        </div>
+        <div class="footer-section-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus" 
+             style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        </div> 
         </div>
         <hr class="footer-hr">
-        <div class="footer-end"></div>
+        <div class="footer-end">
+            <div class="bottom">
+                <a href="Login.ejs"><u>Dealer Login</u></a>
+                <br>
+            </div>
+        </div>
     </div>
+    
     <script>
         var navbar = document.getElementById("navbar");
         window.onscroll = function(){
