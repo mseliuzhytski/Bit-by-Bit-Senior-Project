@@ -15,3 +15,17 @@ exports.s3Upload = async (files) => {
 
   return await Promise.all(params.map((param) => s3.upload(param).promise()));
 };
+
+exports.s3Delete = async (files) => {
+  const s3 = new S3();
+
+  const params = files.map((file) => {
+    return {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: `uploads/${file.originalname}`,
+      Body: file.buffer,
+    };
+  });
+
+  return await Promise.all(params.map((param) => s3.deleteObject(param).promise()));
+};

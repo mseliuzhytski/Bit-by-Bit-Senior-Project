@@ -59,7 +59,7 @@ exports.post = async (req, res)=> {
 
             // update inventory item
             if (Car_Stock_Num) {
-                getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+                getInventoryItemFunc(Car_Stock_Num, function(foundVehicle) {
                     if (foundVehicle) {
                         db.query('UPDATE Inventory SET Car_Make = ?, Car_Model = ?, Car_Year = ?,' + 
                         'Car_Price = ?, Car_Mileage = ?, Car_BodyType = ?, Car_Condition = ?, Car_Color = ? WHERE Car_Stock_Num = ?', 
@@ -106,7 +106,7 @@ exports.delete = async (req, res)=> {
         try {
             var { Car_Stock_Num } = req.query;
 
-            getVehicleByID(Car_Stock_Num, function(foundVehicle) {
+            getInventoryItemFunc(Car_Stock_Num, function(foundVehicle) {
                 if (foundVehicle) {
                     db.query('DELETE FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
                         (error) => {
@@ -130,6 +130,15 @@ exports.delete = async (req, res)=> {
     else{
         res.send("Access Denied")
     }
+};
+
+function getInventoryItemFunc(Car_Stock_Num, callback) {
+
+    db.query('SELECT * FROM Inventory WHERE Car_Stock_Num = ?', [Car_Stock_Num],
+        (error, results) => {
+            if (error) throw error;
+            return callback(results[0]);
+        });
 };
 
 function containsForbiddenInputs(filters) {

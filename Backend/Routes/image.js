@@ -2,6 +2,7 @@ require("dotenv").config();
 const alert = require('alert');
 const path = require('path');
 const { s3Upload } = require("../Database/s3");
+const { s3Delete } = require("../Database/s3");
 var db = require('../Database/db');
 
 exports.getAllImages = function(Car_Stock_Num, callback) {
@@ -22,15 +23,40 @@ exports.post = async (req, res) => {
         for (let i = 0; i < results.length; i++) {
             addNewVehicleImage(Car_Stock_Num, results[i].Location);
         }
-        res.redirect(200, '/Image.ejs');
+        res.status(200).redirect('/Image.ejs');
+        alert('Added new image successfully.')
       }
       else {
-        res.redirect(400, '/Image.ejs');
+        res.status(400).redirect('/Image.ejs');
         alert('Missing car stock number.')
       }
   } 
   catch {
-    res.redirect(500, '/Image.ejs');
+    res.status(500).redirect('/Image.ejs');
+    alert('Unable to process request.')
+  }
+};
+
+exports.delete = async (req, res) => {
+  try {
+      var { Car_Stock_Num, Car_Image } = req.body;
+
+      console.log(Car_Image);
+      if (Car_Stock_Num) {
+        //const results = await s3Delete(Car_Image);
+
+        deleteVehicleImage(Car_Stock_Num, Car_Image);
+        
+        res.status(200).redirect('/Image.ejs');
+        alert('Deleted image successfully.')
+      }
+      else {
+        res.status(400).redirect('/Image.ejs');
+        alert('Missing car stock number.')
+      }
+  } 
+  catch {
+    res.status(500).redirect('/Image.ejs');
     alert('Unable to process request.')
   }
 };
@@ -69,4 +95,18 @@ function addNewVehicleImage(Car_Stock_Num, Car_Image) {
             }
             return true;
         });
+};
+
+// delete inventory image
+// return true if successfully, false otherwise
+function deleteVehicleImage(Car_Stock_Num, Car_Image) {
+  db.query('DELETE FROM IMAGES (Car_Stock_Num, Car_Image) VALUES (?, ?)', 
+  [Car_Stock_Num, Car_Image],
+      (error, result) => {
+          if (error) throw error;
+          if (result.affectedRows == 0) {
+              return false;
+          }
+          return true;
+      });
 };

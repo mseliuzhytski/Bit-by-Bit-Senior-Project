@@ -59,15 +59,22 @@
             </h5>
         </div>
     </div>
+
+    <!--<div><button id="delete" onclick="deleteItemtest()">Delete?</button></div> -->
    
     <div class="table-wrapper">
         <form action="/inventory" method="POST">
-        <input type="text" id="makeInput" class="inputStyle" placeholder="Enter Make">
-        <input type="text" id="modelInput" class="inputStyle" placeholder="Enter Model">
-        <input type="number" id="yearInput" class="inputStyle" placeholder="Enter Year">
-        <input type="text" id="colorInput" class="inputStyle" placeholder="Enter Color">
-        <input type="number" id="priceInput" class="inputStyle" placeholder="Enter Price">
-        <button id="addButton" class="button">Add New Car</button><br><br>
+        <input type="text" id="makeInput" class="inputStyle" name="Car_Make" placeholder="Enter Make" required>
+        <input type="text" id="modelInput" class="inputStyle" name="Car_Model" placeholder="Enter Model" required>
+        <input type="text" id="yearInput" class="inputStyle" name="Car_Year" placeholder="Enter Year" required>
+        <input type="text" id="milageInput" class="inputStyle" name="Car_Mileage" placeholder="Enter Mileage" required>
+        <input type="text" id="bodyTypeInput" class="inputStyle" name="Car_BodyType" placeholder="Enter Body Type" required>
+        <input type="text" id="conditionInput" class="inputStyle" name="Car_Condition" placeholder="Enter Condition" required>
+        <input type="text" id="colorInput" class="inputStyle" name="Car_Color" placeholder="Enter Color" required>
+        <input type="text" id="priceInput" class="inputStyle" name="Car_Price" placeholder="Enter Price" required>
+        <input id="addButton" class="button" type="submit" value="Add New Car"><br><br>
+        </form>
+
         <table id="inventoryTable">
         <thead>
           <tr>
@@ -81,10 +88,36 @@
           </tr>
         </thead>
         <tbody>
-
+            <% inventoryItems.forEach(function(vih){%>
+                <tr>
+                    <td>
+                        <%= vih.Car_Stock_Num %>
+                    </td>
+                    <td>
+                        <%= vih.Car_Make %>
+                    </td>
+                    <td>
+                        <%= vih.Car_Model %>
+                    </td>
+                    <td>
+                        <%= vih.Car_Year %>
+                    </td>
+                    <td>
+                        <%= vih.Car_Color %>
+                    </td>
+                    <td>
+                        <%= vih.Car_Price %>
+                    </td>
+                    <td>
+                        <form action="/EditInventoryPage.ejs" method="GET"> 
+                            <input type="hidden" id="carStockNum" name="Car_Stock_Num" value="<%= vih.Car_Stock_Num %>" required>
+                            <input class="button1" type="submit" value="Edit">
+                        </form>
+                    <button class="button2" onclick="deleteItem(<%= vih.Car_Stock_Num %>)">Delete</button></td>
+                </tr>
+                <% }); %>
         </tbody>
         </table>
-        </form>
     </div>
     <div class="footer">
         <div class="foot-flex">
@@ -149,5 +182,71 @@
             });  
         </script>
         
+        <script>
+            let arrHead = new Array();	// array for header.
+            arrHead = ['Stock Number', 'Make', 'Model', 'Year','Color','Price',''];
+            function addNewRow() {
+                let table = document.getElementById('inventoryTable');
+                let rowCnt = table.rows.length;   // table row count.
+                let newRow = table.insertRow(rowCnt); // the table row.
+
+                var make = document.getElementById('makeInput').value;
+                var model = document.getElementById('modelInput').value;
+                var year = document.getElementById('yearInput').value;
+                var color = document.getElementById('colorInput').value;
+                var price = document.getElementById('priceInput').value;
+
+                var cell0 = newRow.insertCell(0);
+                var cell1 = newRow.insertCell(1);
+                var cell2 = newRow.insertCell(2);
+                var cell3 = newRow.insertCell(3);
+                var cell4 = newRow.insertCell(4);
+                var cell5 = newRow.insertCell(5);
+            
+                cell0.innerHTML = '';
+                cell1.innerHTML = make;
+                cell2.innerHTML = model;
+                cell3.innerHTML = year;
+                cell4.innerHTML = color;
+                cell5.innerHTML = price;
+
+                let td = document.createElement('td');
+                td = newRow.insertCell(6);
+                    // add a button in every new row in the first column.
+                    let button1 = document.createElement('input');
+                    let button2 = document.createElement('input');
+                    // set input attributes.
+                    button1.setAttribute('type', 'button');
+                    button1.setAttribute('value', 'Edit');
+                    button2.setAttribute('type', 'button');
+                    button2.setAttribute('value', 'Delete');
+                    button1.className = 'button1';
+                    button2.className = 'button2';
+                    // add button's 'onclick' event.
+                    button1.setAttribute('onclick', '');
+                    button2.setAttribute('onclick', 'removeRow(this)');
+                    td.appendChild(button1);
+                    td.appendChild(button2);
+            }
+            let removeRow = (oButton) => {
+                let empTab = document.getElementById('inventoryTable');
+                empTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+            }
+
+        </script>
+
+        <script>
+        function deleteItem(Car_Stock_Num) {
+            let text = "Delete this item?";
+            if (confirm(text) == true) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("DELETE", "/inventory?Car_Stock_Num=" + Car_Stock_Num);
+                xhttp.send();
+                setTimeout(function(){
+                    window.location.reload(true);
+                }, 100);
+            }
+        }
+        </script>
 </body>    
 </html>
