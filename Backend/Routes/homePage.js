@@ -7,9 +7,10 @@ var reviews;
 
 exports.get = async function(req,res){
         getReview(function(reviews){
-        
             res.render(path.join(__dirname+'../../../Frontend/Pages/Homepage.ejs'),{
-                reviews: reviews});
+                reviews: reviews,
+                isLoggedIn: typeof req.session.userInfo !== 'undefined'
+            });
         });
 
 };

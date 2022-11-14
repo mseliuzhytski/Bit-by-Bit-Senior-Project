@@ -50,7 +50,7 @@
     <div class="body-main">
         <div class="buttons-box">
             <div class="emp-add">
-                <button class="button-top" onclick="addElement()">Add New Employee</button>
+                <a class="button-top" href="RegisterUser.ejs">Add New Employee</a>
             </div>
         </div>
         <div class="emp-body">
@@ -123,9 +123,10 @@
                         <%= empl.Emp_Role %>
                     </div>
                     <div class="emp-table-button">
-                        <a class="emp-table-move">
-                            <button class="emp-table-row-button">MORE</button>
-                        </a>
+                        <form action="/AdminEditPage.ejs" method="GET"> 
+                            <input type="hidden" id="empID" name="Emp_ID" value="<%= empl.Emp_ID %>">
+                            <input class="emp-table-row-button" type="submit" value="Edit">
+                        </form>
                     </div>
                 </div>
                 <% }); %>
@@ -196,56 +197,6 @@
             }
         });  
     </script>
-    <script>
-
-        function addElement(){
-        const emp_table = document.getElementById("empTable");
-        const n_row = document.createElement('div');
-
-        n_row.className = 'emp-table-row';
-
-        const f_name = document.createElement('div');
-        const f_phone = document.createElement('div');
-        const f_email = document.createElement('div');
-        const f_user = document.createElement('div');
-        const f_role = document.createElement('div');
-        const f_button = document.createElement('div');
-
-        f_name.className = 'emp-table-name';
-        f_phone.className = 'emp-table-phone';
-        f_email.className = 'emp-table-email';
-        f_user.className = 'emp-table-user';
-        f_role.className = 'emp-table-role';
-        f_button.className = 'emp-table-button';
-
-        f_name.innerText = "my Name";
-        f_phone.innerText = "+1 (111) 111 11-11";
-        f_email.innerText = "myGmail@gmail.com";
-        f_user.innerText = "myUsername";
-        f_role.innerText = "my Role";
-
-        const a_button = document.createElement('a');
-        a_button.className = "emp-table-move";
-
-        const b_button = document.createElement('button');
-        b_button.className = 'emp-table-row-button';
-        b_button.innerText = "MORE";
-
-        a_button.appendChild(b_button);
-        f_button.appendChild(a_button);
-
-        n_row.appendChild(f_name);
-        n_row.appendChild(f_phone);
-        n_row.appendChild(f_email);
-        n_row.appendChild(f_user);
-        n_row.appendChild(f_role);
-        n_row.appendChild(f_button);
-
-        emp_table.appendChild(n_row);
-        }
-
-    </script>
-
 </body>
 
 </html>
