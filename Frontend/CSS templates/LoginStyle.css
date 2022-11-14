@@ -4,10 +4,10 @@ body{
   background-color:white;  
   font-family: 'New Times Roman'; 
 }
-.image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-box{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .nav-text {
