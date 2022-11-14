@@ -128,22 +128,9 @@ nav.sticky {
     text-align: center;
  }
 
- .container{
-    display: inline-block;
-    text-align: center;
-    background-color: lightcoral;
-    border-radius: 10px;
-    margin: 30px;
- }
-
- .img-box{
-    display: block;
-    float: left;
-    margin: 10px;
- }
-
  .img-container{
     display: inline-block;
+    width: 600px;
     background-color: lightgrey;
     border-radius: 10px;
     border: 2px solid black;
@@ -155,20 +142,31 @@ nav.sticky {
     background-color: gray;
  }
 
+  .img-main img{
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+  }
+
 .img-collection{
     display: inline-block;
     background-color: grey;
     border-radius: 5px;
-    margin: 10px;
-    padding: 5px;
+    margin-top: 20px;
 }
 
 .collection-item{
     display: block;
+    width: 70px;
     background-color: lightgray;
     float: left;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 7px;
+}
+
+.collection-item img{
+    width: 70px;
+    height: 45px;
+    object-fit: cover;
 }
 
  .info-box{
@@ -194,6 +192,10 @@ nav.sticky {
 
  .year-make-model{
     display: inline-block;
+    background-color: rgb(250, 150, 150);
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin: 10px;
  }
 
@@ -213,12 +215,25 @@ nav.sticky {
     align-items: baseline;
  }
 
- .stock-icon,
+  .price-box,
+  .car-body-box {
+      display: flex;
+      align-items: baseline;
+      background-color: lightgray;
+  }
+
+.stock-icon,
+.stock{
+    float: left;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 300;
+ }
+
  .price-icon,
  .cond-icon,
  .car-body-icon,
  .color-icon,
- .stock,
  .price,
  .cond,
  .car-body,
@@ -235,33 +250,75 @@ nav.sticky {
     text-align: center;
     margin: 0 auto;
 }
-.footer-section {
-    float:left;
-    width:33%;
-  }
 
-.footer div h1 {
-    letter-spacing: 1px;
-    font-size: 15px;
-    margin: 0;
+.foot-flex{
+  display: flex;
+  align-items: baseline;
 }
 
-.footer-info {
-    display: block;
-    padding-bottom: 20px;
+.footer-section {
+  display: block;
+  float: left;
+  width: 33%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.footer-section-img{
+  display: block;
+  float: left;
+  width: 33%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.footer-section-img img{
+  max-width: 300px;
+  width: 100%;
+}
+
+.footer-section-map {
+  display: block;
+  float: left;
+  width: 33%;
+  margin:auto;
+  padding-top: 10px;
+}
+
+.footer-section-map iframe{
+  max-width: 400px;
+  height: 230px;
+  width: 100%;
 }
 
 .footer-facebook-box {
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .footer-hr {
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
-    
+}
+
+.footer-end {
+    display: block;
+    height: 35px;
+}
+
+.bottom{
+    width: 100%;
+    background-color: lightcoral;
+    font-size: 13px;
+    text-align: right;
+    margin-right: 100px;
+    margin-bottom: 0%;
+}
+
+.bottom a{
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 .footer-end {
