@@ -8,9 +8,10 @@
 
 </head>    
 <body>
-    <div class="image">
-        <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png"
-            alt="Okaidi Auto Sales" width="50%" height="10%">
+    <div class="image-box">
+        <a href="Homepage.ejs">
+            <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/Logo.png" alt="Okaidi Auto Sales" width="50%" height="10%">
+        </a>
     </div>
     <div class="navi">
         <div class="navi-centered">
@@ -150,8 +151,15 @@
             <div class="car-card">
                 <div class="car-item">
                     <div class="car-img">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img"
-                            style="width: 200px">
+                        <% foundImg=0; %>
+                            <% for(let y=0; y < imageItems.length; y++) {%>
+                                <% if(vih.Car_Stock_Num==imageItems[y][0].Car_Stock_Num){ %>
+                                    <img src=<%=imageItems[y][0].Car_Image %> alt="car img"
+                                    style="width: 200px">
+                                    <% foundImg=1; break;} }%>
+                        <% if(foundImg==0){ %>
+                            <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 200px;">
+                        <% } %>
                     </div>
                     <div class="car-title">
                         <div class="car-year"><%= vih.Car_Year %></div>
