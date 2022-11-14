@@ -167,7 +167,6 @@ nav.sticky {
 
  .img-main{
     display: block;
-    background-color: gray;
  }
 
 .img-main img{
@@ -186,7 +185,7 @@ nav.sticky {
 .collection-item{
     display: block;
     width: 70px;
-    background-color: lightgray;
+    transform: translate(0px,3px);
     float: left;
     margin: 7px;
 }
