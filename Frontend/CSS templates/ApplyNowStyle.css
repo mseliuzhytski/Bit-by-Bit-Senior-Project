@@ -219,33 +219,55 @@ input[type=submit]:hover {
     text-align: center;
     margin: 0 auto;
 }
+
+.foot-flex{
+  display: flex;
+  align-items: baseline;
+}
+
 .footer-section {
-    float:left;
-    width:33%;
-    margin-top: 6px;
+  display: block;
+  float: left;
+  width: 33%;
+  margin: auto;
+  padding-top: 10px;
 }
 
-.footer div h1 {
-    letter-spacing: 1px;
-    font-size: 15px;
-    margin: 0;
+.footer-section-img{
+  display: block;
+  float: left;
+  width: 33%;
+  margin: auto;
+  padding-top: 10px;
 }
 
-.footer-info {
-    display: block;
-    padding-bottom: 20px;
+.footer-section-img img{
+  max-width: 300px;
+  width: 100%;
+}
+
+.footer-section-map {
+  display: block;
+  float: left;
+  width: 33%;
+  margin:auto;
+  padding-top: 10px;
+}
+
+.footer-section-map iframe{
+  max-width: 400px;
+  height: 230px;
+  width: 100%;
 }
 
 .footer-facebook-box {
     display: block;
-    margin-top: 50px;
 }
 
 .footer-hr {
     color: rgb(75, 75, 75);
     width: 95%;
     height: 1px;
-    
 }
 
 .footer-end {
