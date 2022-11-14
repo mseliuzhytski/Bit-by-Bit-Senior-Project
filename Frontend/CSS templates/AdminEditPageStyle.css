@@ -166,12 +166,11 @@ nav.sticky {
 }
 
 .conBox {
-    display: inline-block;
-    width: 50%;
+    display: block;
 }
 
 .container {
-    display: block;
+    display: inline-block;
     border-radius: 5px;
     background-color: lightgray;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -179,15 +178,23 @@ nav.sticky {
     font-weight: 300;
     outline: 2px solid black;
     padding-top: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
     padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin: 1%;
     text-align: center;
+}
+
+.f-name-table-box,
+.f-table-phone,
+.f-table-email{
+    float: left;
 }
 
 .f-name-table{
     display: inline-block;
     text-align: left;
+    margin: 10px;
 }
 
 .f-name-label{
@@ -208,14 +215,39 @@ nav.sticky {
     padding-left: 10px;
 }
 
+.f-name-pass{
+    text-align: center;
+}
+
+.pass-change-button{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.pass-change-button:hover {
+    cursor: pointer;
+}
+
+.submit-save {
+    display: inline-block;
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+.submit-save:hover {
+    background-color: lightcoral;
+}
+
 .phone-field,
 .email-field{
     display: inline-block;
     background-color: lightcoral;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .phone-item,
@@ -232,33 +264,39 @@ nav.sticky {
     padding-top: 10px;
 }
 
-.submit-save,
-.submit-delete {
+.phone-email-buttons{
     display: inline-block;
+}
+
+.phone-email-buttons input{
+    display: block;
     width: 150px;
-    margin-top: 30px;
-    margin-left: 5px;
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
-.submit-save:hover {
-    background-color: lightcoral;
+.phone-email-buttons input:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
 
-.submit-delete:hover{
+.delete-button {
+    background-color: lightgray;
+    border-radius: 5px;
+    text-align: right;
+    padding: 5px;
+    margin: 10px;
+}
+
+.label-delete {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.label-delete:hover {
     background-color: crimson;
-}
-
-/* Use a media query to add a breakpoint at 720px: */
-@media screen and (max-width: 720px) {
-
-    .conBox{
-        width: 90%;
-    }
-
-    .container{
-        padding-left: 5px;
-        padding-right: 5px;
-    }
 }
 .footer {
     width: 100%;
