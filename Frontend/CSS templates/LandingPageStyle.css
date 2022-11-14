@@ -4,12 +4,10 @@ body
     padding: 0;   
     font-family: 'New Times Roman';  
 }
-.top-logo-center-box {
-    background-color: rgb(255, 245, 245);
-}
-.top-logo-center img{
-    justify-content: center; 
-    align-items :center;
+.image-box{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 .ulForDir {
     display: flex;
