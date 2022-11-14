@@ -67,7 +67,7 @@
         <input type="number" id="yearInput" class="inputStyle" placeholder="Enter Year">
         <input type="text" id="colorInput" class="inputStyle" placeholder="Enter Color">
         <input type="number" id="priceInput" class="inputStyle" placeholder="Enter Price">
-        <button id="addButton" class="button" onclick="addNewRow()">Add New Car</button><br><br>
+        <button id="addButton" class="button">Add New Car</button><br><br>
         <table id="inventoryTable">
         <thead>
           <tr>
@@ -86,7 +86,34 @@
         </table>
         </form>
     </div>
-
+    <div class="footer">
+        <div class="foot-flex">
+        <div class="footer-section">
+            <div class="footer-facebook-box">
+                <a href="https://www.facebook.com/OkaidiAutoSalesLLC">
+                    <img src="https://raw.githubusercontent.com/mseliuzhytski/Bit-by-Bit-Senior-Project/main/Frontend/Images/facebook_icon.png" width="40px" height="40px">
+                </a>
+            </div>
+            <br><font size=+2>1941 El Camino Ave,</font>
+            <br> SACRAMENTO, CA 95815
+            <br> 916-750-9099
+        </div>
+        <div class="footer-section-img"><img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" 
+            alt="logo">
+        </div>
+        <div class="footer-section-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.741311338998!2d-121.40302578486073!3d38.60882397961626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada2b44205a41%3A0x6140aa8f54eec0e9!2sOKAIDI%20AUTO%20SALES!5e0!3m2!1sen!2sus!4v1651356145025!5m2!1sen!2sus" 
+             style="border:red;border-width:1pt 1pt 1pt 1pt;border-style: solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        </div> 
+        </div>
+        <hr class="footer-hr">
+        <div class="footer-end">
+            <div class="bottom">
+                <a href="Login.ejs"><u>Dealer Login</u></a>
+                <br>
+            </div>
+        </div>
+    </div>
         <script>
             var navbar = document.getElementById("navbar");
             window.onscroll = function(){
@@ -121,57 +148,6 @@
                 }
             });  
         </script>
-        <script>
-            let arrHead = new Array();	// array for header.
-            arrHead = ['Stock Number', 'Make', 'Model', 'Year','Color','Price',''];
-            function addNewRow() {
-                let table = document.getElementById('inventoryTable');
-                let rowCnt = table.rows.length;   // table row count.
-                let newRow = table.insertRow(rowCnt); // the table row.
-
-                var make = document.getElementById('makeInput').value;
-                var model = document.getElementById('modelInput').value;
-                var year = document.getElementById('yearInput').value;
-                var color = document.getElementById('colorInput').value;
-                var price = document.getElementById('priceInput').value;
-
-                var cell0 = newRow.insertCell(0);
-                var cell1 = newRow.insertCell(1);
-                var cell2 = newRow.insertCell(2);
-                var cell3 = newRow.insertCell(3);
-                var cell4 = newRow.insertCell(4);
-                var cell5 = newRow.insertCell(5);
-            
-                cell0.innerHTML = '';
-                cell1.innerHTML = make;
-                cell2.innerHTML = model;
-                cell3.innerHTML = year;
-                cell4.innerHTML = color;
-                cell5.innerHTML = price;
-
-                let td = document.createElement('td');
-                td = newRow.insertCell(6);
-                    // add a button in every new row in the first column.
-                    let button1 = document.createElement('input');
-                    let button2 = document.createElement('input');
-                    // set input attributes.
-                    button1.setAttribute('type', 'button');
-                    button1.setAttribute('value', 'Edit');
-                    button2.setAttribute('type', 'button');
-                    button2.setAttribute('value', 'Delete');
-                    button1.className = 'button1';
-                    button2.className = 'button2';
-                    // add button's 'onclick' event.
-                    button1.setAttribute('onclick', '');
-                    button2.setAttribute('onclick', 'removeRow(this)');
-                    td.appendChild(button1);
-                    td.appendChild(button2);
-            }
-            let removeRow = (oButton) => {
-                let empTab = document.getElementById('inventoryTable');
-                empTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
-            }
-
-        </script>
+        
 </body>    
 </html>
