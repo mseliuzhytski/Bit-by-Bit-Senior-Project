@@ -47,101 +47,249 @@
         </div>
     </div>
     
+    <% var arrMake=[]; arrMake.push('All') %>
+    <% var arrModel=[]; arrModel.push('All') %>
+    <% var arrYear=[]; arrYear.push('All') %>
+    <% var arrCondition=[]; arrCondition.push('All') %>
+    <% var arrBody=[]; arrBody.push('All') %>
+    <% var arrColor=[]; arrColor.push('All') %>
+    <% var arrPrice=["All", "10000", "20000", "30000", "40000", "50000", "60000"]; %>
+    <% var arrMileage=["All", "25000" , "50000" , "75000" , "100000"]; %>
+
+    <% var maxPrice = 0; %>
+    <% var maxMileage = 0; %>
+
+    <% inventoryItems.forEach(function(vih){%>
+        
+        <% foundMake = 0; %>
+        <% foundModel=0; %>
+        <% foundYear=0; %>
+        <% foundCondition=0; %>
+        <% foundBody=0; %>
+        <% foundColor=0; %>
+
+        <% tempMake=vih.Car_Make %>
+        <% tempModel=vih.Car_Model %>
+        <% tempYear=vih.Car_Year %>
+        <% tempCondition=vih.Car_Condition %>
+        <% tempBody=vih.Car_BodyType %>
+        <% tempColor=vih.Car_Color %>
+
+        <% for(let y=0; y < arrMake.length; y++){ %>
+            <% if(arrMake[y] == tempMake){foundMake = 1; break;} %>
+        <% } if(foundMake == 0){arrMake.push(tempMake);} %>
+
+        <% for(let y=0; y < arrModel.length; y++){ %>
+            <% if(arrModel[y]==tempModel){foundModel=1; break;} %>
+        <% } if(foundModel==0){arrModel.push(tempModel);} %>
+
+        <% for(let y=0; y < arrYear.length; y++){ %>
+            <% if(arrYear[y]==tempYear){foundYear=1; break;} %>
+        <% } if(foundYear==0){arrYear.push(tempYear);} %>
+
+        <% for(let y=0; y < arrCondition.length; y++){ %>
+            <% if(arrCondition[y]==tempCondition){foundCondition=1; break;} %>
+        <% } if(foundCondition==0){arrCondition.push(tempCondition);} %>
+
+        <% for(let y=0; y < arrBody.length; y++){ %>
+            <% if(arrBody[y]==tempBody){foundBody=1; break;} %>
+        <% } if(foundBody==0){arrBody.push(tempBody);} %>
+
+        <% for(let y=0; y < arrColor.length; y++){ %>
+            <% if(arrColor[y]==tempColor){foundColor=1; break;} %>
+        <% } if(foundColor==0){arrColor.push(tempColor);} %>
+
+        <% if(maxPrice < vih.Car_Price){maxPrice = vih.Car_Price;} %>
+
+        <% if(maxMileage < vih.Car_Mileage){maxMileage=vih.Car_Mileage;} %>
+
+    <% }); %>
+
+    <% //for(let y=1; y< arrPrice.length; y++){ %>
+        <% //if(maxPrice < arrPrice[y]){arrPrice.splice(y,1);}} %>
+
+    <% //for(let y=1; y< arrMileage.length; y++){ %>
+        <% //if(maxMileage < arrMileage[y]){arrMileage.splice(y,1);}} %>
+
+    <% //for(let y=0; y< arrPrice.length; y++){console.log(arrPrice[y]);} %>
     <!-- Search Filter section -->
 
     <div id="filters">
-        <div class="filter-title"><P>Filters</P></div>
-        <form action="#" method="post">
+        <div class="filter-title"><p>Filters</p></div>
+        
+        <form action="/Search.ejs" method="get">
+            <% //console.log(filtersParams) %>
 
-            <label for="Color" class="filterInside">Color:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="Color" id="Color">
-            <option value="All">All</option> 
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Green">Green</option>
-            <option value="Black">Black</option> 
-            <option value="Brown">Brown</option>
-            <option value="Beige">Beige</option>
-            <option value="Grey">Grey</option>
-            </select>
-            </div>
-            
-            <label for="fname" class="filterInside">Make:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="Make" id="Make">
-            <option value="All">All</option> 
-            <option value="Toyota">Toyota</option>
-            <option value="Honda">Honda</option>
-            <option value="Ford">Ford</option>
-            <option value="BMW">BMW</option>
-            </select>
-            </div>
-            
+            <% if((filtersParams[0] != "All") && (filtersParams[0] != undefined)){ %>
+                <label for="fname" class="filterInside">Make:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Make" id="Make" onchange="this.form.submit()">
+                    <option value=<%= filtersParams[0] %>><%= filtersParams[0] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="fname" class="filterInside">Make:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Make" id="Make"  onchange="this.form.submit()">
+
+                <option value=<%=arrMake[0] %>><%= arrMake[0] %></option>
+                <% if(arrMake.length> 1){arrMake.shift(); arrMake.sort();} %>
+                <% for(let y=0; y < arrMake.length; y++){ %>
+                    <option value=<%= arrMake[y] %>> <%= arrMake[y] %></option> 
+                <%} %>
+                </select>
+                </div>
+            <% } %>
+
+            <% if((filtersParams[1] !="All" ) && (filtersParams[1] !=undefined)){ %>
+                <label for="Model" class="filterInside">Model:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Model" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[1] %>><%= filtersParams[1] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
             <label for="Model" class="filterInside">Model:</label>
             <div class="custom-select" style="width: 180px;">
-            <select name="Model">
-            <option value="All">All</option>
-            <option value="Placeholder">Placeholder</option> 
-            </select>
-            </div>
-            
-            <label for="price" class="filterInside">Price:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="Price" id="Price">
-            <option value="All">All</option> 
-            <option value = "less5000">Under $5000</option>
-            <option value = "less10000">Under $10000</option>
-            <option value = "less15000">Under $15000</option>
-            <option value = "less20000">Under $20000</option>
-            <option value = "less25000">Under $25000</option>
-            </select>
-            </div>
+            <select name="Car_Model" onchange="this.form.submit()">
 
-            <label for="Year" class="filterInside">Year:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="Year">
-            <option value="All">All</option> 
-            <option value="2010">2010</option> 
-            </select>
-            </div>
+            <option value=<%=arrModel[0] %>><%= arrModel[0] %></option>
+            <% if(arrModel.length > 1){arrModel.shift(); arrModel.sort();} %>
+                <% for(let y=0; y < arrModel.length; y++){ %>
+                    <option value=<%= arrModel[y] %>><%= arrModel[y] %></option>
+                <% } %>
+                </select>
+                </div>
+            <% } %>
+
+            <% if((filtersParams[3] !="All" ) && (filtersParams[3] !=undefined)){ %>
+                <label for="price" class="filterInside">Max Price:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Price" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[3] %>><%= filtersParams[3] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="price" class="filterInside">Max Price:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Price" id="Price" onchange="this.form.submit()">
+                    <% for(let y=0; y < arrPrice.length; y++){ %>
+                        <option value=<%=arrPrice[y] %>><%= arrPrice[y] %></option>
+                    <% } %>
+                </select>
+                </div>
+            <% } %>
+
+            <% if((filtersParams[2] !="All" ) && (filtersParams[2] !=undefined)){ %>
+                <label for="Year" class="filterInside">Year:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Year" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[2] %>><%= filtersParams[2] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="Year" class="filterInside">Year:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Year" onchange="this.form.submit()">
+
+                <option value=<%=arrYear[0] %>><%= arrYear[0] %></option>
+                <% if(arrYear.length> 1){arrYear.shift(); arrYear.sort(function(a, b){return a-b});} %>
+                <% for(let y=0; y < arrYear.length; y++){ %>
+                    <option value=<%=arrYear[y] %>> <%= arrYear[y] %></option>
+                <%} %>
+                </select>
+                </div>
+            <% } %>
             
-            <label for="bodyStyle" class="filterInside">Body Style:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="bodyStyle">
-            <option value="All">All</option>
-            <option value="Sedan">Sedan</option>
-            <option value="Coupe">Coupe</option>
-            <option value="Truck">Truck</option>
-            <option value="SUV">SUV</option>
-            <option value="Wagon">Wagon</option>
-            </select>
-            </div>
+            <% if((filtersParams[5] !="All" ) && (filtersParams[5] !=undefined)){ %>
+                <label for="bodyStyle" class="filterInside">Body Style:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_BodyType" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[5] %>><%= filtersParams[5] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="bodyStyle" class="filterInside">Body Style:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_BodyType" onchange="this.form.submit()">
+
+                <option value=<%=arrBody[0] %>><%= arrBody[0] %></option>
+                <% if(arrBody.length> 1){arrBody.shift(); arrBody.sort();} %>
+                <% for(let y=0; y < arrBody.length; y++){ %>
+                    <option value=<%=arrBody[y] %>><%= arrBody[y] %></option>
+                <% } %>
+                </select>
+                </div>
+            <% } %>
             
-            <label for="mileage" class="filterInside">Mileage:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="mileage" id="mileage">
-            <option value="All">All</option> 
-            <option value = "less5000">Under 5000</option>
-            <option value = "less10000">Under 10000</option>
-            <option value = "less25000">Under 25000</option>
-            <option value = "less50000">Under 50000</option>
-            <option value = "greater50000">Over 50000</option>
-            </select>
-            </div>
+            <% if((filtersParams[4] !="All" ) && (filtersParams[4] !=undefined)){ %>
+                <label for="carMileage" class="filterInside">Max Mileage:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Mileage" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[4] %>><%= filtersParams[4] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="carMileage" class="filterInside">Max Mileage:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Mileage" id="" onchange="this.form.submit()">
+                    <% for(let y=0; y < arrMileage.length; y++){ %>
+                        <option value=<%=arrMileage[y] %>><%= arrMileage[y] %></option>
+                    <% } %>
+                    </select>
+                    </div>
+            <% } %>
             
-            <label for="condition" class="filterInside">Condition:</label>
-            <div class="custom-select" style="width: 180px;">
-            <select name="Condition" id="Condition">
-            <option value="All">All</option> 
-            <option value="New">New</option>
-            <option value="Used">Used</option>
-            <option value="Certified">Certified</option>
-            </select>
-            </div>
+            <% if((filtersParams[6] !="All" ) && (filtersParams[6] !=undefined)){ %>
+                <label for="condition" class="filterInside">Condition:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Condition" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[6] %>><%= filtersParams[6] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="condition" class="filterInside">Condition:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Condition" id="Condition" onchange="this.form.submit()">
+
+                <% for(let y=0; y < arrCondition.length; y++){ %>
+                    <option value=<%=arrCondition[y] %>> <%= arrCondition[y] %></option>
+                <%} %>
+                </select>
+                </div>
+            <% } %>
+
+            <% if((filtersParams[7] !="All" ) && (filtersParams[7] !=undefined)){ %>
+                <label for="Color" class="filterInside">Color:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Color" onchange="this.form.submit()">
+                    <option value=<%=filtersParams[7] %>><%= filtersParams[7] %></option>
+                    <option value="All">All</option>
+                </select>
+                </div>
+            <% }else { %>
+                <label for="Color" class="filterInside">Color:</label>
+                <div class="custom-select" style="width: 180px;">
+                <select name="Car_Color" id="Color" onchange="this.form.submit()">
+
+                <option value=<%=arrColor[0] %>><%= arrColor[0] %></option>
+                <% if(arrColor.length> 1){arrColor.shift(); arrColor.sort();} %>
+                <% for(let y=0; y < arrColor.length; y++){ %>
+                    <option value=<%=arrColor[y] %>><%= arrColor[y] %></option>
+                <% } %>
+                </select>
+                </div>
+            <% } %>
             <br>
-            
         </form>
+        <a href="Search.ejs"><button>Clear Filters</button></a> 
     </div>
 
     <!--    Car display     -->
@@ -275,82 +423,6 @@
                 hamburger.classList.remove("hiddenNavIcon");
             }
         });  
-    </script>
-    
-    <script>
-        var x, i, j, l, ll, selElmnt, a, b, c;
-        /*look for any elements with the class "custom-select":*/
-        x = document.getElementsByClassName("custom-select");
-        l = x.length;
-        for (i = 0; i < l; i++) {
-            selElmnt = x[i].getElementsByTagName("select")[0];
-            ll = selElmnt.length;
-            /*for each element, create a new DIV that will act as the selected item:*/
-            a = document.createElement("DIV");
-            a.setAttribute("class", "select-selected");
-            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-            x[i].appendChild(a);
-            /*for each element, create a new DIV that will contain the option list:*/
-            b = document.createElement("DIV");
-            b.setAttribute("class", "select-items select-hide");
-            for (j = 1; j < ll; j++) {
-                /*for each option in the original select element, create a new DIV that will act as an option item:*/
-                c = document.createElement("DIV");
-                c.innerHTML = selElmnt.options[j].innerHTML;
-                c.addEventListener("click", function(e) {
-                    /*when an item is clicked, update the original select box, and the selected item:*/
-                    var y, i, k, s, h, sl, yl;
-                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                    sl = s.length;
-                    h = this.parentNode.previousSibling;
-                    for (i = 0; i < sl; i++) {
-                        if (s.options[i].innerHTML == this.innerHTML) {
-                            s.selectedIndex = i;
-                            h.innerHTML = this.innerHTML;
-                            y = this.parentNode.getElementsByClassName("same-as-selected");
-                            yl = y.length;
-                            for (k = 0; k < yl; k++) {
-                                y[k].removeAttribute("class");
-                            }
-                            this.setAttribute("class", "same-as-selected");
-                            break;
-                        }
-                    }
-                    h.click();
-                });
-                b.appendChild(c);
-            }
-            x[i].appendChild(b);
-            a.addEventListener("click", function(e) {
-                /*when the select box is clicked, close any other select boxes, and open/close the current select box:*/
-                e.stopPropagation();
-                closeAllSelect(this);
-                this.nextSibling.classList.toggle("select-hide");
-                this.classList.toggle("select-arrow-active");
-            });
-        }
-        function closeAllSelect(elmnt) {
-            /*a function that will close all select boxes in the document, except the current select box:*/
-            var x, y, i, xl, yl, arrNo = [];
-            x = document.getElementsByClassName("select-items");
-            y = document.getElementsByClassName("select-selected");
-            xl = x.length;
-            yl = y.length;
-            for (i = 0; i < yl; i++) {
-                if (elmnt == y[i]) {
-                    arrNo.push(i)
-                } else {
-                    y[i].classList.remove("select-arrow-active");
-                }
-            }
-            for (i = 0; i < xl; i++) {
-                if (arrNo.indexOf(i)) {
-                    x[i].classList.add("select-hide");
-                }
-            }
-        }
-        /*if the user clicks anywhere outside the select box, then close all select boxes:*/
-        document.addEventListener("click", closeAllSelect);
     </script>
     
 </body>    
