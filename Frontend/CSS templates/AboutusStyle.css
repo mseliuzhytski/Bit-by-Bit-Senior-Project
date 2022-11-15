@@ -114,12 +114,17 @@ nav.sticky {
     background-color: lightcoral;
 }
 .blocktext{
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     font-size: 13pt;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    min-width: 50%;
-    margin: 8% 8% 12px 2%;
+    max-width: 800px;
+    margin: 20px 15% 20px 15%;
+}
+.img-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 10% 0px 10%;
 }
 .contact-button {
     display: flex;
@@ -127,9 +132,9 @@ nav.sticky {
     text-align: center;
     border: none;
     background-color: lightcoral;
-    padding: 15px 8% 15px 8%;
+    padding: 15px 100px 15px 100px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-size: 16px;
     cursor: pointer;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
