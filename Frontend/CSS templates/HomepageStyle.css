@@ -115,10 +115,9 @@ body
 .block-body-box {
     overflow: hidden;
     text-align: center;
-    background-color: white;
+    background-color: grey;
     background-position: center;
     background-size: cover;
-    height: 100%;
 }
 .block-body-empty {
     display: block;
@@ -130,16 +129,16 @@ body
 }
 .block-body {
     width: 100%;
-    background-color: grey;
-    height: 350px;
+    height: fit-content;
 }
 .ulBlock {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-content: center;
     overflow: hidden;
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 .ulBlock li {
@@ -286,6 +285,7 @@ body
     outline: 2px solid lightcoral;
     margin: 20px;
     padding: 7px;
+    overflow: hidden;
 }
 
  .review-container {
@@ -297,20 +297,25 @@ body
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
+    padding-bottom: 50px;
  }
- 
- .review-inner {
-    display: inline-flex;
- }
-
-  .ul-review{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    text-align: center;
-    align-items: center;
-  }
+ .review-container h1{
+    margin: 0;
+}
+.review-container hr{
+  height: 2px;
+  width: 400px;
+  color: white;
+  background-color: white;
+}
+.ul-review{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  text-align: center;
+  align-items: center;
+}
 
   .featured-image {
     width: 100%;
