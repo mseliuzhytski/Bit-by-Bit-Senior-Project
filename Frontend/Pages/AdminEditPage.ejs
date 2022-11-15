@@ -51,12 +51,12 @@
         <div class="container">
             <div class="f-name-table-box">
             <div class="f-name-table">
-                   <div class="fname-table-wrapper">
+                <div class="fname-table-wrapper">
                     <input type="hidden" id="empIDIn" value="<%= employeeItems.Emp_ID %>">
                     <label for="fnameIn">First name:</label>
-                    <input type="text" id="fnameIn" value="<%= employeeItems.Emp_FirstName %>" required><br>
+                    <input type="text" id="fnameIn" placeholder="Change first name..." value="<%= employeeItems.Emp_FirstName %>" required><br>
                     <label for="lnameIn">Last name:</label>
-                    <input type="text" id="lnameIn" value="<%= employeeItems.Emp_LastName %>" required><br>
+                    <input type="text" id="lnameIn" placeholder="Change last name..." value="<%= employeeItems.Emp_LastName %>" required><br>
                     <label for="roleIn">Role:</label>
                     <select id="roleIn">
                         <option value="<%= employeeItems.Emp_Role %>">Current Role</option>
@@ -64,17 +64,16 @@
                         <option value="Admin">Admin</option>
                     </select><br>
                     <button class="pass-change-button" onclick="updateEmpInfo()">Save Changes</button>
-		   </div>
+		        </div>
 
                 <div class="f-name-fieled fname-table-wrapper">
                     <div class="f-name-label">
                         <label for="lname">Password:</label>
                     </div>
                     
-                        <a href="/ChangePassword.ejs">
-                        <button class="pass-change-button">Change Employee Password</button>
-                        </a>
-                    
+                    <a href="/ChangePassword.ejs">
+                    <button class="pass-change-button">Change Employee Password</button>
+                    </a>
                 </div>
                 
             </div>

@@ -53,8 +53,7 @@ exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model
 exports.post = async (req, res)=> {
     if(typeof req.session.userInfo !== 'undefined'){
         try {
-            var { Car_Stock_Num } = req.query;
-            var { Car_Make, Car_Model, Car_Year, Car_Price, 
+            var { Car_Stock_Num , Car_Make, Car_Model, Car_Year, Car_Price, 
                 Car_Mileage, Car_BodyType, Car_Condition, Car_Color } = req.body;
 
             // update inventory item

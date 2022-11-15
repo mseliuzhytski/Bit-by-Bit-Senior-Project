@@ -78,7 +78,14 @@
             </div>
             <div class="info-box">
                 <div class="i-container">
-                    <form id="carForm" action="/register" method="POST">
+
+
+                    <form id="carForm" action="/inventory" method="POST">
+                        <div class="stock-box">
+                            <div class="stock-icon">STOCK:</div>
+                            <div class="stock"><%= inventoryItem.Car_Stock_Num %></div>
+                            <input type="hidden" id="stockCar" name="Car_Stock_Num" value="<%= inventoryItem.Car_Stock_Num %>"><br>
+                        </div>
                         <div class="year-make-model">
                             <div class="year"><%= inventoryItem.Car_Year %></div>
                             <div class="make"><%= inventoryItem.Car_Make %></div>
@@ -86,37 +93,37 @@
                         </div>
                         <div class="car-label">
                             <div class="car-label-year">Year</div>
-                            <input type="text" id="yearCar" name="carYear" placeholder="Change year.."><br>
+                            <input type="text" id="yearCar" name="Car_Year" placeholder="Change year..." value="<%= inventoryItem.Car_Year %>" required><br>
                             <div class="car-label-year">Make</div>
-                            <input type="text" id="makeCar" name="carMake" placeholder="Change make.."><br>
+                            <input type="text" id="makeCar" name="Car_Make" placeholder="Change make..." value="<%= inventoryItem.Car_Make %>" required><br>
                             <div class="car-label-year">Model</div>
-                            <input type="text" id="modelCar" name="carModel" placeholder="Change model.."><br>
+                            <input type="text" id="modelCar" name="Car_Model" placeholder="Change model..." value="<%= inventoryItem.Car_Model %>" required><br>
                         </div>
                         <div class="car-field">
-                        <div class="stock-box">
-                            <div class="stock-icon">STOCK:</div>
-                            <div class="stock"><%= inventoryItem.Car_Stock_Num %></div>
-                            <input type="text" id="stockCar" name="carStock" placeholder="Change stock.."><br>
-                        </div>
                         <div class="price-box">
                             <div class="price-icon">$</div>
                             <div class="price"><%= inventoryItem.Car_Price %></div>
-                            <input type="text" id="priceCar" name="carPrice" placeholder="Change price.."><br>
+                            <input type="text" id="priceCar" name="Car_Price" placeholder="Change price..." value="<%= inventoryItem.Car_Price %>" required><br>
+                        </div>
+                        <div class="mileage-box">
+                            <div class="mileage-icon">Mileage:</div>
+                            <div class="mileage"><%= inventoryItem.Car_Mileage %></div>
+                            <input type="text" id="mileageCar" name="Car_Mileage" placeholder="Change mileage..." value="<%= inventoryItem.Car_Mileage %>" required><br>
                         </div>
                         <div class="cond-box">
                             <div class="cond-icon">Condition:</div>
                             <div class="cond"><%= inventoryItem.Car_Condition %></div>
-                            <input type="text" id="conditionCar" name="carCondition" placeholder="Change condition.."><br>
+                            <input type="text" id="conditionCar" name="Car_Condition" placeholder="Change condition.." value="<%= inventoryItem.Car_Condition %>" required><br>
                         </div>
                         <div class="car-body-box">
                             <div class="car-body-icon">Body:</div>
                             <div class="car-body"><%= inventoryItem.Car_BodyType %></div>
-                            <input type="text" id="bodyCar" name="carBody" placeholder="Change body.."><br>
+                            <input type="text" id="bodyCar" name="Car_BodyType" placeholder="Change body..." value="<%= inventoryItem.Car_BodyType %>" required><br>
                         </div>
                         <div class="color-box">
                             <div class="color-icon">Color:</div>
                             <div class="color"><%= inventoryItem.Car_Color %></div>
-                            <input type="text" id="colorCar" name="carColor" placeholder="Change color.."><br>
+                            <input type="text" id="colorCar" name="Car_Color" placeholder="Change color..." value="<%= inventoryItem.Car_Color %>" required><br>
                         </div>
                         </div>
                         <div class="label-manage">
@@ -124,6 +131,8 @@
                         </div>
                         </div>
                     </form>
+
+
                 </div>
             </div>
         </div>

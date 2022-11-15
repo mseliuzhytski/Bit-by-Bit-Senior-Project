@@ -263,6 +263,7 @@ nav.sticky {
  .stock-box,
  .cond-box,
  .price-box,
+ .mileage-box,
  .car-body-box,
  .color-box{
     display: block;
@@ -272,6 +273,7 @@ nav.sticky {
 
  .stock-box input,
  .price-box input,
+ .mileage-box input,
  .cond-box input,
  .car-body-box input,
  .color-box input{
@@ -284,11 +286,13 @@ nav.sticky {
 
  .stock-icon,
  .price-icon,
+ .mileage-icon,
  .cond-icon,
  .car-body-icon,
  .color-icon,
  .stock,
  .price,
+ .mileage,
  .cond,
  .car-body,
  .color{
