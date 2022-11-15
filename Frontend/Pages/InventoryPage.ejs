@@ -50,72 +50,58 @@
         <div class="container-box">
         <div class="container">
             <div class="img-box">
-                <div class="img-container">
                 <div class="img-main">
-                    <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 600px;">
+                    <% if(imageItems.length == 0){ %>
+                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car" style="width: 600px">
+                        <% } else{ %>
+                        <img id="mainImg" src=<%=imageItems[0].Car_Image %> alt="car" style="width: 600px">
+                        <% } %>
                 </div>
                 <div class="img-collection">
+                    <% imageItems.forEach(function(arrImg){ %>
                     <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" 
-                            style="width: 70px">
+                        <img src=<%= arrImg.Car_Image %> alt="car" style="width: 70px;cursor:pointer;"
+                        onclick="changeMain(this)">
                     </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" 
-                            style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                    <div class="collection-item">
-                        <img src="https://j3v8m9d3.stackpathcdn.com/photos/wfbdUbi/1628630235.png" alt="car img" style="width: 70px">
-                    </div>
-                </div>
+                    <% }); %>
                 </div>
             </div>
             <div class="info-box">
                 <div class="i-container">
                     <div class="stock-box">
                         <div class="stock-icon">STOCK:</div>
-                        <div class="stock">11</div>
+                        <div class="stock"><%= inventoryItem.Car_Stock_Num %></div>
                     </div>
                     <div class="year-make-model">
-                        <div class="year">1999</div>
-                        <div class="make">HONDA</div>
-                        <div class="model">ACCORD</div>
+                        <div class="year"><%= inventoryItem.Car_Year %></div>
+                        <div class="make"><%= inventoryItem.Car_Make %></div>
+                        <div class="model"><%= inventoryItem.Car_Model %></div>
                     </div>
                     <div class="price-box">
                         <div class="price-icon">$</div>
-                        <div class="price">1111</div>
+                        <div class="price"><%= inventoryItem.Car_Price %></div>
+                    </div>
+                    <div class="mileage-box">
+                        <div class="mileage-icon">Mileage:</div>
+                        <div class="mileage"><%= inventoryItem.Car_Mileage %></div>
                     </div>
                     <div class="cond-box">
                         <div class="cond-icon">Condition:</div>
-                        <div class="cond">good</div>
+                        <div class="cond"><%= inventoryItem.Car_Condition %></div>
                     </div>
                     <div class="car-body-box">
                         <div class="car-body-icon">Body:</div>
-                        <div class="car-body">coup</div>
+                        <div class="car-body"><%= inventoryItem.Car_BodyType %></div>
                     </div>
                     <div class="color-box">
                         <div class="color-icon">Color:</div>
-                        <div class="color">green</div>
+                        <div class="color"><%= inventoryItem.Car_Color %></div>
                     </div>
                     <br>
                     <br>
                     <div class="apply-button-box">
-                    <form>
-                        <input type="hidden" name="Car_Stock_Num">
+                    <form id="applyForm" action="/ApplyNow.ejs" method="GET">
+                        <input type="hidden" name="Car_Stock_Num" value="<%= inventoryItem.Car_Stock_Num %>">
                         <input type="submit" value="Apply" class="apply-button">
                     </form>
                     </div>
@@ -191,6 +177,12 @@
                 hamburger.classList.remove("hiddenNavIcon");
             }
         });  
+    </script>
+
+    <script>
+        function changeMain(element){
+            document.getElementById("mainImg").src = element.src;
+        }
     </script>
     
 </body>    

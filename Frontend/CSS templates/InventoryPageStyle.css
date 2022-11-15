@@ -222,15 +222,16 @@ nav.sticky {
 
  .stock-box,
  .price-box,
- .cond-box,
+ .mileage-box,
  .car-body-box,
- .color-box{
+ .car-body-box{
     display: flex;
     align-items: baseline;
  }
 
   .price-box,
-  .car-body-box {
+  .cond-box,
+  .color-box{
       display: flex;
       align-items: baseline;
       background-color: lightgray;
@@ -247,8 +248,10 @@ nav.sticky {
  .price-icon,
  .cond-icon,
  .car-body-icon,
+ .mileage-icon,
  .color-icon,
  .price,
+ .mileage,
  .cond,
  .car-body,
  .color{

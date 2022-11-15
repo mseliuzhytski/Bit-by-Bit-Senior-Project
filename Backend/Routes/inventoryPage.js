@@ -9,8 +9,9 @@ exports.get = function (req, res) {
         image.getAllImages(Car_Stock_Num, (images) => {
 
             res.render(path.join(__dirname + '../../../Frontend/Pages/InventoryPage.ejs'), {
-                itemFound: item,
-                imagesFound: images
+                inventoryItem: item,
+                imageItems: images,
+                isLoggedIn: typeof req.session.userInfo !== 'undefined'
             });
         })
     })
