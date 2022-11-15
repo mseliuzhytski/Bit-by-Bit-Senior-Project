@@ -241,10 +241,11 @@
             if (confirm(text) == true) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("DELETE", "/inventory?Car_Stock_Num=" + Car_Stock_Num);
+                
                 xhttp.send();
                 setTimeout(function(){
                     window.location.reload(true);
-                }, 100);
+                }, 400);
             }
         }
         </script>

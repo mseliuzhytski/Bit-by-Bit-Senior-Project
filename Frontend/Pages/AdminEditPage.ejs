@@ -51,57 +51,29 @@
         <div class="container">
             <div class="f-name-table-box">
             <div class="f-name-table">
-                <!-- <form> -->
-                <form class="fromEmp" action="/employee" enctype="multipart/form-data" method="POST">
-                    <div class="f-name-fieled">
-                        <div class="f-name-label">
-                            <label for="fname">First Name:</label>
-                            <div class="f-name-fname"><%= employeeItems.Emp_FirstName %></div>
-                        </div>
-                        <div class="f-name-input">
-                            <input type="text" id="fname" name="Emp_FirstName" placeholder="First Name..." required><br>
-                        </div>
-                    </div>
-                    <div class="f-name-fieled">
-                        <div class="f-name-label">
-                            <label for="fname">Last Name:</label>
-                            <div class="f-name-fname"><%= employeeItems.Emp_LastName %></div>
-                        </div>
-                        <div class="f-name-input">
-                            <input type="text" id="lname" name="Emp_LastName" placeholder="Last Name..." required><br>
-                        </div>
-                    </div>
-                    <div class="f-name-fieled">
-                        <div class="f-name-label">
-                            <label for="fname">Role:</label>
-                            <div class="f-name-fname"><%= employeeItems.Emp_Role %></div>
-                        </div>
-                        <div class="f-name-input">
-                            <select name="Emp_Role" id="role">
-                                <option value="Employee">Employee</option>
-                                <option value="Admin">Admin</option>
-                            </select><br>
-                        </div>
-                    </div>
-                    <div class="f-name-fieled">
-                        <div class="f-name-label">
-                            <label for="lname">Userame:</label>
-                            <div class="f-name-fname"><%= employeeItems.Emp_Username %></div>
-                        </div>
-                        <div class="f-name-input">
-                            <input type="text" id="uname" name="Emp_Username" placeholder="Username..." required><br>
-                        </div>
-                    </div>
-                    <input class="submit-save" type="submit" value="Save Column"><br>
-                </form>
+                
+                    <input type="hidden" id="empIDIn" value="<%= employeeItems.Emp_ID %>">
+                    <label for="fnameIn">First name:</label>
+                    <input type="text" id="fnameIn" value="<%= employeeItems.Emp_FirstName %>" required><br>
+                    <label for="lnameIn">Last name:</label>
+                    <input type="text" id="lnameIn" value="<%= employeeItems.Emp_LastName %>" required><br>
+                    <label for="roleIn">Role:</label>
+                    <select id="roleIn">
+                        <option value="<%= employeeItems.Emp_Role %>">Current Role</option>
+                        <option value="Employee">Employee</option>
+                        <option value="Admin">Admin</option>
+                    </select><br>
+                    <button class="pass-change-button" onclick="updateEmpInfo()">Save Changes</button>
 
                 <div class="f-name-fieled">
                     <div class="f-name-label">
-                        <label for="lname">Password</label>
+                        <label for="lname">Password:</label>
                     </div>
-                    <div class="f-name-pass">
+                    
+                        <a href="/ChangePassword.ejs">
                         <button class="pass-change-button">Change Employee Password</button>
-                    </div>
+                        </a>
+                    
                 </div>
                 
             </div>
@@ -109,43 +81,34 @@
             <div class="f-table-phone">
                 <div class="phone-field">
 
-                    <div class="phone-title">Phone:</div>
+                    <div class="phone-title">Phone(s):</div>
                     <div class="phone-table">
                         <% phoneItems.forEach(function(phone){%>
                             <div class="phone-item"><%= phone.Emp_Phone %></div>
                         <% }); %>
                     </div>
                     <div class="phone-add">Type Phone:</div>
+                    <input type="text" id="phoneIn" placeholder="Enter Phone..." required><br>
+                    <button class="pass-change-button" onclick="addEmpPhone()">Add Phone</button>
+                    <button class="pass-change-button" onclick="deleteEmpPhone()">Delete Phone</button>
 
-                    <form class="formPhone" action="/phone" method="POST">
-                        <input type="hidden" id="empID_phone" name="Emp_ID" value="<%= employeeItems.Emp_ID %>" required>
-                        <input type="text" id="typePhone" name="Emp_Phone" placeholder="Enter Phone Number"><br>
-                        <input class="phone-email-buttons" type="submit" value="Add This Phone"><br>
-                    </form>
-
-                    <!--
-                        <form class="formPhone">
-                        <div class="phone-title">Phone:</div>
-                        <div class="phone-table">
-                            <% phoneItems.forEach(function(phone){%>
-                                <div class="phone-item"><%= phone.Emp_Phone %></div>
-                            <% }); %>
-                        </div>
-                        <div class="phone-add">Type Phone:</div>
-                        <input type="text" id="typePhone" name="thisPhone" placeholder="Enter Phone Number"><br>
-                        <div class="phone-email-buttons">
-                            <input type="button" id="addphone" name="addPhone" value="Add This Phone"><br>
-                            <input type="button" id="deletephone" name="deletePhone" value="Delete This Phone"><br>
-                        </div>
-                    </form>
-
-                    -->
-
-                    
                 </div>
             </div>
             <div class="f-table-email">
                 <div class="email-field">
+
+                    <div class="email-title">Email(s):</div>
+                    <div class="email-table">
+                        <% emailsItems.forEach(function(email){%>
+                            <div class="email-item"><%= email.Emp_Email %></div>
+                        <% }); %>
+                    </div>
+                    <div class="email-add">Type Email:</div>
+                    <input type="text" id="emailIn" placeholder="Enter Email..." required><br>
+                    <button class="pass-change-button" onclick="addEmpEmail()">Add Email</button>
+                    <button class="pass-change-button" onclick="deleteEmpEmail()">Delete Email</button>
+
+                    <!--
                     <form class="formEmail">
                         <div class="email-title">Email:</div>
                         <div class="email-table">
@@ -158,13 +121,12 @@
                             <input type="button" id="deleteemail" name="deleteEmail" value="Delete This Email"><br>
                         </div>
                     </form>
+                 -->
+
                 </div>
             </div>
         </div>
         </div>
-    </div>
-    <div class="delete-button">
-        <button class="label-delete">Delete Employee</button>
     </div>
     <div class="footer">
         <div class="foot-flex">
@@ -223,6 +185,93 @@
             }
         });  
     </script>
+
+<script>
+    function updateEmpInfo() {
+        var params = {
+                "Emp_FirstName":document.getElementById("fnameIn").value,
+                "Emp_LastName":document.getElementById("lnameIn").value,
+                "Emp_Role":document.getElementById("roleIn").value,
+            }
+        let text = "Update employee info?";
+        if (confirm(text) == true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/employee?Emp_ID=" + document.getElementById("empIDIn").value);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 400);
+        }
+    }
+</script>
+
+<script>
+    function addEmpPhone() {
+        var params = {
+                "Emp_Phone":document.getElementById("phoneIn").value
+            }
+        let text = "Add employee phone?";
+        if (confirm(text) == true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/phone?Emp_ID=" + document.getElementById("empIDIn").value);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 600);
+        }
+    };
+
+    function deleteEmpPhone() {
+        var params = {
+                "Emp_Phone":document.getElementById("phoneIn").value
+            }
+        let text = "Delete employee phone?";
+        if (confirm(text) == true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("DELETE", "/phone?Emp_ID=" + document.getElementById("empIDIn").value);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 600);
+        }
+    };
+
+    function addEmpEmail() {
+        var params = {
+                "Emp_Email":document.getElementById("emailIn").value
+            }
+        let text = "Add employee email?";
+        if (confirm(text) == true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/email?Emp_ID=" + document.getElementById("empIDIn").value);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 600);
+        }
+    };
+
+    function deleteEmpEmail() {
+        var params = {
+                "Emp_Email":document.getElementById("emailIn").value
+            }
+        let text = "Delete employee email?";
+        if (confirm(text) == true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("DELETE", "/email?Emp_ID=" + document.getElementById("empIDIn").value);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 600);
+        }
+    };
+</script>
+
 </body>
 
 </html>

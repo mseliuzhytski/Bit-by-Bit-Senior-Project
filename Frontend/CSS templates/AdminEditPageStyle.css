@@ -224,6 +224,7 @@ nav.sticky {
     border: 1px solid black;
     padding: 10px;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .pass-change-button:hover {

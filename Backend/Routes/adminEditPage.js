@@ -12,7 +12,6 @@ exports.get = function (req, res) {
             phone.getSingleEmployeePhones(Emp_ID, (phones) => {
 
                 email.getSingleEmployeeEmails(Emp_ID, (emails) => {
-                    console.log("emp -> " + employee)
                     
                     res.render(path.join(__dirname + '../../../Frontend/Pages/AdminEditPage.ejs'), {
                         employeeItems: employeeResult,

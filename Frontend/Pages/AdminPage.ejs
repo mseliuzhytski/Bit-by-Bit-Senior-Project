@@ -102,7 +102,7 @@
                 <% employeeItems.forEach(function(empl){ %>
                 <div class="emp-table-row">
                     <div class="emp-table-name">
-                        <%= empl.Emp_FirstName %>
+                        <%= empl.Emp_FirstName %> <%= empl.Emp_LastName %> 
                     </div>
                     <div class="emp-table-phone">
                         <% for(let y=0; y < arrPhoneIndx.length; y++){ %>
@@ -127,6 +127,7 @@
                             <input type="hidden" id="empID" name="Emp_ID" value="<%= empl.Emp_ID %>">
                             <input class="emp-table-row-button" type="submit" value="Edit">
                         </form>
+                        <button class="button2" onclick="deleteEmp(<%= empl.Emp_ID %>)">Delete</button>
                     </div>
                 </div>
                 <% }); %>
@@ -196,6 +197,31 @@
                 hamburger.classList.remove("hiddenNavIcon");
             }
         });  
+    </script>
+
+    <script>
+
+        function deleteEmp(Emp_ID) {
+            let text = "Delete this employee?";
+            if (confirm(text) == true) {
+                var xhttpPhone = new XMLHttpRequest();
+                xhttpPhone.open("DELETE", "/phone?Emp_ID=" + Emp_ID);
+                xhttpPhone.send();
+                setTimeout(function(){
+                    var xhttpEmail = new XMLHttpRequest();
+                    xhttpEmail.open("DELETE", "/email?Emp_ID=" + Emp_ID);
+                    xhttpEmail.send();
+                    setTimeout(function(){
+                        var xhttpEmp = new XMLHttpRequest();
+                        xhttpEmp.open("DELETE", "/employee?Emp_ID=" + Emp_ID);
+                        xhttpEmp.send();
+                        setTimeout(function(){
+                            window.location.reload(true);
+                        }, 250);
+                    }, 250);
+                }, 250);
+            }
+        }
     </script>
 </body>
 

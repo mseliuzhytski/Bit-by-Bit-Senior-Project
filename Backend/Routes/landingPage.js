@@ -6,8 +6,6 @@ exports.get = function (req, res) {
         inventory.getAllInventoryItems("All", "All", "All", 
         "All", "All", "All", "All", "All", (items) => {
 
-            console.log("items -> " + items[0])
-
                 res.render(path.join(__dirname+'../../../Frontend/Pages/LandingPage.ejs'), {
                     inventoryItems: items,
                     employeeInfo: req.session.userInfo

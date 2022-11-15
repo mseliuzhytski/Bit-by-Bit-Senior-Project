@@ -149,7 +149,7 @@ nav.sticky {
 
 .emp-add{
     display: flex;
-    justify-content: left;
+    justify-content: right;
     padding: 3%;
 }
 
