@@ -128,6 +128,20 @@ nav.sticky {
     text-align: center;
  }
 
+ .container{
+    display: inline-block;
+    text-align: center;
+    background-color: lightcoral;
+    border-radius: 10px;
+    margin: 30px;
+ }
+
+ .img-box{
+    display: block;
+    float: left;
+    margin: 10px;
+ }
+
  .img-container{
     display: inline-block;
     width: 600px;
@@ -139,6 +153,7 @@ nav.sticky {
 
  .img-main{
     display: block;
+    background-color: gray;
  }
 
   .img-main img{
@@ -157,16 +172,12 @@ nav.sticky {
 .collection-item{
     display: block;
     width: 70px;
-    transform: translate(0px,3px);
+    background-color: lightgray;
     float: left;
     margin: 7px;
 }
 
-.collection-item :hover{
-    opacity: 50%;
-}
-
-.collection-item img{
+.collection-item {
     width: 70px;
     height: 45px;
     object-fit: cover;
@@ -246,6 +257,19 @@ nav.sticky {
     padding: 5px;
  }
 
+.apply-button-box{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.apply-button{
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
 .footer {
     width: 100%;
     background: lightcoral;
