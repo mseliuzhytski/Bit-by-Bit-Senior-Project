@@ -328,6 +328,39 @@ nav.sticky {
     font-weight: 600;
 }
 
+.button1 {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    width: 30%;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2px;
+    margin-left: 0;
+}
+.button2 {
+    background-color: lightcoral;
+    border: none;
+    color: black;
+    width: 30%;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2px;
+    margin-right: 5%;
+    margin-left: 3%;
+}
+.button2:hover{
+    background-color: red;
+}
+
 .footer {
     width: 100%;
     background: lightcoral;
