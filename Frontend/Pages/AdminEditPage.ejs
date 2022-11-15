@@ -51,7 +51,7 @@
         <div class="container">
             <div class="f-name-table-box">
             <div class="f-name-table">
-                
+                   <div class="fname-table-wrapper">
                     <input type="hidden" id="empIDIn" value="<%= employeeItems.Emp_ID %>">
                     <label for="fnameIn">First name:</label>
                     <input type="text" id="fnameIn" value="<%= employeeItems.Emp_FirstName %>" required><br>
@@ -64,8 +64,9 @@
                         <option value="Admin">Admin</option>
                     </select><br>
                     <button class="pass-change-button" onclick="updateEmpInfo()">Save Changes</button>
+		   </div>
 
-                <div class="f-name-fieled">
+                <div class="f-name-fieled fname-table-wrapper">
                     <div class="f-name-label">
                         <label for="lname">Password:</label>
                     </div>
