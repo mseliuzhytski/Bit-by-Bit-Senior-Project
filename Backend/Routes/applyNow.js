@@ -4,10 +4,15 @@ const nodemailer = require('nodemailer');
 require("dotenv").config();
 
 exports.get = function(req,res){
-        res.render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'),{
-            isLoggedIn: typeof req.session.userInfo !== 'undefined'
-        });
-    };
+    var { Car_Stock_Num } = req.query;
+
+    if (!Car_Stock_Num) { Car_Stock_Num = ""; }
+    
+    res.render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'),{
+        isLoggedIn: typeof req.session.userInfo !== 'undefined',
+        CarNum: Car_Stock_Num
+    });
+};
 
 exports.post = async (req, res)=> {
     try {

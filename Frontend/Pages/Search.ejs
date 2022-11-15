@@ -193,8 +193,15 @@
                     </div>
                 </div>
                 <div class="button-detail-submit">
-                    <button class="detail-btn">Details</button>
-                    <button class="submit-btn">Apply</button>
+                    <form action="/InventoryPage.ejs" method="GET"> 
+                        <input type="hidden" id="carStockNum" name="Car_Stock_Num" value="<%= vih.Car_Stock_Num %>">
+                        <input class="detail-btn" type="submit" value="Details">
+                    </form>
+
+                    <form action="/ApplyNow.ejs" method="GET"> 
+                        <input type="hidden" id="carStockNum" name="Car_Stock_Num" value="<%= vih.Car_Stock_Num %>">
+                        <input class="submit-btn" type="submit" value="Apply">
+                    </form>
                 </div>
             </div>
             <% }); %>

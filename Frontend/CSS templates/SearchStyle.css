@@ -311,7 +311,7 @@ nav.sticky {
 .button-detail-submit {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .detail-btn,
@@ -328,7 +328,6 @@ nav.sticky {
     padding: 15px;
     margin: 0 auto;
     margin-top: 10px;
-    width: 25%;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
 }
 .detail-btn:hover,
