@@ -146,9 +146,14 @@ nav.sticky {
     padding: 15px;
  }
 
-.img-upload,
-.img-delete{
+.img-upload{
     padding: 10px;
+    cursor: pointer;
+}
+
+.img-delete {
+    padding: 10px;
+    margin-top: auto;
     cursor: pointer;
 }
 
@@ -299,26 +304,13 @@ nav.sticky {
      padding-top: 15px;
  }
 
- .label-save,
- .label-delete {
+ .label-save {
      padding: 10px;
      cursor: pointer;
  }
 
  .label-save:hover{
     background-color: lightcoral;
- }
-
- .delete-button{
-    background-color: lightgray;
-    border-radius: 5px;
-    text-align: center;
-    padding: 5px;
-    margin: 10px;
- }
-
- .label-delete:hover {
-     background-color: crimson;
  }
 
 .footer {
