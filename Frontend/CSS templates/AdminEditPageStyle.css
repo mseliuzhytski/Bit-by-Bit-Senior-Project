@@ -202,6 +202,21 @@ nav.sticky {
     align-items: baseline;
     padding-left: 2px;
 }
+.fname-table-wrapper{
+    display: flex;
+    background-color: lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
+}
+.fname-table-wrapper2{
+    display: inline-block;
+    background-color: lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
 
 .f-name-lname,
 .f-name-fname,
@@ -224,7 +239,6 @@ nav.sticky {
     border: 1px solid black;
     padding: 10px;
     margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .pass-change-button:hover {
@@ -249,6 +263,7 @@ nav.sticky {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    margin-top: 10px;
 }
 
 .phone-item,
