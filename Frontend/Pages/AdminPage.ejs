@@ -57,12 +57,19 @@
                     Admin Information<br>
                 </h4>
                 <h5>
-                    Username: 
-                    <br>
-                    Email: 
-                    <br>
-                    Phone: 
-                    <br>
+                    Username: <%= employeeInfo.Emp_Username %> <br>
+                    Email: <% if(employeeInfo.Emp_Email == ""){ %>
+                            N/A
+                        <% } %>
+                        <%  if(employeeInfo.Emp_Email != ""){  %> 
+                        <%= employeeInfo.Emp_Email %>
+                        <% } %> <br>
+                    Phone: <% if(employeeInfo.Emp_Phone == ""){ %>
+                            N/A
+                        <% } %>
+                        <%  if(employeeInfo.Emp_Phone != ""){  %> 
+                        <%= employeeInfo.Emp_Phone %>
+                        <% } %> <br>
                 </h5>
             </div>
         </div>
