@@ -209,7 +209,7 @@ nav.sticky a:hover {
     margin: 0 auto;
     margin-bottom: 25px;
     table-layout: fixed;
-    overflow: scroll;
+    overflow: auto;
     z-index: 1;
     border-radius: 5px;
     background-color: lightcoral;

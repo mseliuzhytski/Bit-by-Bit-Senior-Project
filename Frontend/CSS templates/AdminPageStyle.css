@@ -146,24 +146,88 @@ nav.sticky {
     border-radius: 5px;
     margin: 1%;
 }
-
-.emp-add{
-    display: flex;
-    justify-content: right;
-    padding: 3%;
+.block-body-box {
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    margin-bottom: 25px;
 }
-
-.button-top{
-    border-radius: 5px;
+.block-body {
+    width: 80%;
+    background-color: lightgray;
+    height: 300px;
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.ulBlock {
+    display: right;
+    float: right;
+    align-content: center;
+    overflow: hidden;
+    list-style-type: none;
+    margin-right: 5%;
+    padding: 0;
+    width: 20%;
+    z-index: 2;
+}
+.ulBlock li {
+    padding: 5px;
+    z-index: 2;
+}
+.block-body-box a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
     background-color: lightcoral;
     color: black;
-    padding: 14px 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: none;
-    cursor: pointer;
+    height: 60px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    margin-top: 13%;
+}
+.block-body-box h3 {
+    text-align: center;
+}
+.block-body-box h4 {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-align: left;
+    float: left;
+    margin-left: 8%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+.block-body-box h5 {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: left;
+    float: left;
+    font-weight: 400;
+    margin-left: 8%;
+    margin-top: 2%;
+    width: 60%;
+    line-height: 2.0;
+}
+.block-body-box hr{
+    text-align: left;
+    margin-left: 7%;
+    height: 2px;
+    width: 350px;
+    color: white;
+    background-color: white;
+}
+.block-body-box a:hover {
+    background-color: white;
+    color: black;
 }
 
 .emp-body {
