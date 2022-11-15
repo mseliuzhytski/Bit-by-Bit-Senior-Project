@@ -74,6 +74,12 @@ nav.sticky{
     background-color: rgb(255, 245, 245);
     z-index: 2;
 }
+.body-main{
+    text-align: center;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
     color: black;
@@ -87,9 +93,9 @@ nav.sticky a:hover {
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     background-color: lightcoral;
     padding-left: 4px;
     padding-right: 4px;
@@ -103,6 +109,7 @@ nav.sticky a:hover {
     background-position: center;
     background-size: cover;
     height: 100%;
+    margin-bottom: 25px;
 }
 .block-body-empty {
     display: block;
@@ -190,19 +197,22 @@ nav.sticky a:hover {
 .blockPart2-box {
     background-color: red;
 }
-  
+.quick-create,
 .table-wrapper {
+    justify-content: center;
     font-family: 'Times New Roman', Times, serif;
     color: black;
-    justify-content: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 3%;
-    margin-bottom: 10%;
+    width: 95%;
+    padding: 5px;
+    padding-top: 20px;
     border-spacing: 0px;
+    margin: 0 auto;
+    margin-bottom: 25px;
     table-layout: fixed;
     overflow: scroll;
     z-index: 1;
+    border-radius: 5px;
+    background-color: lightcoral;
 }
   
 table {
@@ -211,6 +221,14 @@ table {
     border-collapse: collapse;
     width: 100%;
     z-index: 1;
+}
+.table-title {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
 }
   
 td {
@@ -242,6 +260,7 @@ th {
     border: none;
     color: black;
     width: 50%;
+    min-width: 50px;
     height: 100%;
     border-radius: 10%;
     text-align: center;
@@ -257,6 +276,7 @@ th {
     border: none;
     color: black;
     width: 50%;
+    min-width: 50px;
     height: 100%;
     border-radius: 10%;
     text-align: center;
@@ -269,10 +289,11 @@ th {
     margin-left: 3%;
 }
 .button {
-    background-color: lightcoral;
+    background-color: white;
     border: none;
     color: black;
     width: 10%;
+    min-width: 120px;
     height: 50px;
     border-radius: 10%;
     text-align: center;
@@ -281,6 +302,9 @@ th {
     font-size: 15px;
     margin-left: 3%;
     padding: 10px;
+}
+.button:hover {
+    background-color: lightgray;
 }
 h6{
     font-size: 20px;

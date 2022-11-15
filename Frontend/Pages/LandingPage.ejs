@@ -29,96 +29,102 @@
     </div>
     <div class="text-line-body-1-box">
         <div class="text-line-body-1">
-         This is Landing Page
-        </div>
-    </div>
-    <div class="block-body-box">
-        <div class="block-body">
-            <ul class="ulBlock">
-                <li><a href="AdminPage.ejs"><h3>Admin</h3></a></li><br>
-                <li><a href="ChangePassword.ejs"><h3>Change Password</h3></a></li>
-            </ul>
-            <h4>
-                Employee Information<br>
-            </h4>
-            
-            <h5>
-                Username: <%= employeeInfo.Emp_Username %> <br>
-                Email: <% if(employeeInfo.Emp_Email == ""){ %>
-                        N/A
-                       <% } %>
-                       <%  if(employeeInfo.Emp_Email != ""){  %> 
-                       <%= employeeInfo.Emp_Email %>
-                       <% } %> <br>
-                Phone: <% if(employeeInfo.Emp_Phone == ""){ %>
-                        N/A
-                     <% } %>
-                     <%  if(employeeInfo.Emp_Phone != ""){  %> 
-                     <%= employeeInfo.Emp_Phone %>
-                     <% } %> <br>
-            </h5>
+            Find your next car at Okaidi Auto Sales in Sacramento, CA
         </div>
     </div>
 
-    <!--<div><button id="delete" onclick="deleteItemtest()">Delete?</button></div> -->
-   
-    <div class="table-wrapper">
-        <form action="/inventory" method="POST">
-        <input type="text" id="makeInput" class="inputStyle" name="Car_Make" placeholder="Enter Make" required>
-        <input type="text" id="modelInput" class="inputStyle" name="Car_Model" placeholder="Enter Model" required>
-        <input type="text" id="yearInput" class="inputStyle" name="Car_Year" placeholder="Enter Year" required>
-        <input type="text" id="milageInput" class="inputStyle" name="Car_Mileage" placeholder="Enter Mileage" required>
-        <input type="text" id="bodyTypeInput" class="inputStyle" name="Car_BodyType" placeholder="Enter Body Type" required>
-        <input type="text" id="conditionInput" class="inputStyle" name="Car_Condition" placeholder="Enter Condition" required>
-        <input type="text" id="colorInput" class="inputStyle" name="Car_Color" placeholder="Enter Color" required>
-        <input type="text" id="priceInput" class="inputStyle" name="Car_Price" placeholder="Enter Price" required>
-        <input id="addButton" class="button" type="submit" value="Add New Car"><br><br>
-        </form>
+    <div class="body-main">
+        <!--    Emp text box-->
+        <div class="block-body-box">
+            <div class="block-body">
+                <ul class="ulBlock">
+                    <li><a href="AdminPage.ejs"><h3>Admin</h3></a></li><br>
+                    <li><a href="ChangePassword.ejs"><h3>Change Password</h3></a></li>
+                </ul>
+                <h4>
+                    Employee Information<br>
+                </h4>
+                <h5>
+                    Username: <%= employeeInfo.Emp_Username %> <br>
+                    Email: <% if(employeeInfo.Emp_Email == ""){ %>
+                            N/A
+                        <% } %>
+                        <%  if(employeeInfo.Emp_Email != ""){  %> 
+                        <%= employeeInfo.Emp_Email %>
+                        <% } %> <br>
+                    Phone: <% if(employeeInfo.Emp_Phone == ""){ %>
+                            N/A
+                        <% } %>
+                        <%  if(employeeInfo.Emp_Phone != ""){  %> 
+                        <%= employeeInfo.Emp_Phone %>
+                        <% } %> <br>
+                </h5>
+            </div>
+        </div>
 
-        <table id="inventoryTable">
-        <thead>
-          <tr>
-            <th>Stock Number</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Year</th>
-            <th>Color</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-            <% inventoryItems.forEach(function(vih){%>
-                <tr>
-                    <td>
-                        <%= vih.Car_Stock_Num %>
-                    </td>
-                    <td>
-                        <%= vih.Car_Make %>
-                    </td>
-                    <td>
-                        <%= vih.Car_Model %>
-                    </td>
-                    <td>
-                        <%= vih.Car_Year %>
-                    </td>
-                    <td>
-                        <%= vih.Car_Color %>
-                    </td>
-                    <td>
-                        <%= vih.Car_Price %>
-                    </td>
-                    <td>
-                        <form action="/EditInventoryPage.ejs" method="GET"> 
-                            <input type="hidden" id="carStockNum" name="Car_Stock_Num" value="<%= vih.Car_Stock_Num %>" required>
-                            <input class="button1" type="submit" value="Edit">
-                        </form>
-                    <button class="button2" onclick="deleteItem(<%= vih.Car_Stock_Num %>)">Delete</button></td>
-                </tr>
-                <% }); %>
-        </tbody>
-        </table>
+        <!--<div><button id="delete" onclick="deleteItemtest()">Delete?</button></div> -->
+        <div class="quick-create">
+            <form action="/inventory" method="POST">
+            <input type="text" id="makeInput" class="inputStyle" name="Car_Make" placeholder="Enter Make" required>
+            <input type="text" id="modelInput" class="inputStyle" name="Car_Model" placeholder="Enter Model" required>
+            <input type="text" id="yearInput" class="inputStyle" name="Car_Year" placeholder="Enter Year" required>
+            <input type="text" id="milageInput" class="inputStyle" name="Car_Mileage" placeholder="Enter Mileage" required>
+            <input type="text" id="bodyTypeInput" class="inputStyle" name="Car_BodyType" placeholder="Enter Body Type" required>
+            <input type="text" id="conditionInput" class="inputStyle" name="Car_Condition" placeholder="Enter Condition" required>
+            <input type="text" id="colorInput" class="inputStyle" name="Car_Color" placeholder="Enter Color" required>
+            <input type="text" id="priceInput" class="inputStyle" name="Car_Price" placeholder="Enter Price" required>
+            <input id="addButton" class="button" type="submit" value="Add New Car"><br><br>
+            </form>
+        </div>
+
+        <div class="table-wrapper">
+            <div class="table-title"> TABLE OF INVENTORY ITEMS</div>
+            <table id="inventoryTable">
+            <thead>
+            <tr>
+                <th>STOCK NUMBER</th>
+                <th>MAKE</th>
+                <th>MODEL</th>
+                <th>YEAR</th>
+                <th>COLOR</th>
+                <th>PRICE</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                <% inventoryItems.forEach(function(vih){%>
+                    <tr>
+                        <td>
+                            <%= vih.Car_Stock_Num %>
+                        </td>
+                        <td>
+                            <%= vih.Car_Make %>
+                        </td>
+                        <td>
+                            <%= vih.Car_Model %>
+                        </td>
+                        <td>
+                            <%= vih.Car_Year %>
+                        </td>
+                        <td>
+                            <%= vih.Car_Color %>
+                        </td>
+                        <td>
+                            <%= vih.Car_Price %>
+                        </td>
+                        <td>
+                            <form action="/EditInventoryPage.ejs" method="GET"> 
+                                <input type="hidden" id="carStockNum" name="Car_Stock_Num" value="<%= vih.Car_Stock_Num %>" required>
+                                <input class="button1" type="submit" value="Edit">
+                            </form>
+                        <button class="button2" onclick="deleteItem(<%= vih.Car_Stock_Num %>)">Delete</button></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+            </table>
+        </div>
     </div>
+
     <div class="footer">
         <div class="foot-flex">
         <div class="footer-section">
