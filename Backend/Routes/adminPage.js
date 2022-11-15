@@ -14,7 +14,8 @@ exports.get = function (req, res) {
                     res.render(path.join(__dirname + '../../../Frontend/Pages/AdminPage.ejs'), {
                         employeeItems: employees,
                         phoneItems: phones,
-                        emailsItems: emails
+                        emailsItems: emails,
+                        employeeInfo: req.session.userInfo
                     });
                 })
             })
