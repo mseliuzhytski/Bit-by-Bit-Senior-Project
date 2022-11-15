@@ -203,7 +203,7 @@ nav.sticky {
     padding-left: 2px;
 }
 .fname-table-wrapper{
-    display: flex;
+    display: inline-block;
     background-color: lightcoral;
     border-radius: 10px;
     padding: 10px;
@@ -211,7 +211,7 @@ nav.sticky {
     margin-top: 0px;
 }
 .fname-table-wrapper2{
-    display: inline-block;
+    display: inline-flexbox;
     background-color: lightcoral;
     border-radius: 10px;
     padding: 10px;
