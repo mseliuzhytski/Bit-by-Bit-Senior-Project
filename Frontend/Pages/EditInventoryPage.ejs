@@ -70,7 +70,7 @@
                     <form action="/image" enctype="multipart/form-data" method="post">
                         <input type="file" class="img-upload" name="upload_file" multiple><br><br>
                         <input type="hidden" name="Car_Stock_Num" placeholder="Car Stock Num..." value=<%= inventoryItem.Car_Stock_Num %>><br><br>
-                        <input type="submit" class="img-delete" value="Submit" class="btn btn-default">
+                        <input type="submit" class="img-upload" value="Submit" class="btn btn-default">
                     </form>
                     <button class="img-delete" onclick="deleteImg(<%= inventoryItem.Car_Stock_Num %>)">Delete Image</button>
                     </div>
