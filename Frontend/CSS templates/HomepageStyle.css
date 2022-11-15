@@ -306,6 +306,7 @@ body
   .ul-review{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
     text-align: center;
     align-items: center;
