@@ -142,49 +142,6 @@ body
     padding-bottom: 12px;
 }
 
-  .temp-title{
-    text-align: center;
-    float: center;
-    background-color: lightcoral;
-    font-size: 20px;
-    padding: 10px;
-    margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-      
- #filters {
-    width: 280px;
-    min-width: min-content;
-    max-width: 33%;
-    height: max-content;
-    border-style: groove;
-    text-align: left;
-    float: left;
-    margin-left: 3%;
-    padding-bottom: 10px;
-    line-height: 29px;
-    font-size: 17px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    margin-right: 15px;
-}
-
-.filter-title {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    text-align: center;
-    background-color: lightcoral;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.filterInside{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding-left: 20px;
-}
-
 .input{
     width: 80%;
     padding: 5px;
@@ -440,65 +397,84 @@ body
     margin-left: 10px;
 }
 
+ #filters {
+    overflow: hidden;
+     width: 280px;
+     min-width: min-content;
+     max-width: 33%;
+     height: max-content;
+     border-style: groove;
+     text-align: left;
+     float: left;
+     margin-left: 3%;
+     line-height: 29px;
+     font-size: 17px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     margin-top: 30px;
+     margin-bottom: 50px;
+     margin-right: 15px;
+ }
+
+ .filter-title {
+     padding-top: 1px;
+     padding-bottom: 1px;
+     text-align: center;
+     background-color: lightcoral;
+     font-size: 20px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+
+ .filterInside {
+    display: block;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 15px;
+     padding-left: 20px;
+     margin-top: 20px;
+ }
+
 .custom-select {
     position: relative;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 20px;
     font-size: 15px;
+    margin-left: 20px;
     margin-bottom: 8px;
 }
   
-.custom-select select {
-    display: block; /*hide original SELECT element:*/
-}
-  
-.select-selected {
-    background-color: white;
-}
-  
-  /*style the arrow inside the select element:*/
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 5px solid transparent;
-    border-color: black transparent transparent transparent;
-}
-  
-  /*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-    border-color: black transparent transparent transparent;
-    top: 7px;
-}
-  
-  /*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-    color: black;
-    padding: 8px 15px;
-    border: 1px solid transparent;
-    border-color: darkgrey;
-    cursor: pointer;
-    user-select: none;
-}
-  
-  /*style items (options):*/
-.select-items {
-    position: absolute;
-    background-color: white;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-  
-  /*hide the items when the select box is closed:*/
-.select-hide {
+.custom-select select{
     display: block;
+    width: 230px;
+    background-color: white;
+    color: black;
+        padding: 8px 15px;
+        border: 1px solid transparent;
+        border-color: darkgrey;
+        cursor: pointer;
+        user-select: none;
 }
-  
-.select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
+
+.custom-select select:hover{
+    background-color: rgb(240, 240, 240);
 }
+
+.filter-button-box{
+    display: flex;
+    justify-content: center;
+    background-color: lightcoral;
+    text-decoration: none;
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.filter-button{
+    border-radius: 5px;
+    border: 1px solid black;
+        padding: 10px;
+}
+
+.filter-button:hover{
+    cursor: pointer;
+}
+
