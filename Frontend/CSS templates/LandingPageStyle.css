@@ -312,7 +312,12 @@ th {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     padding: 2px;
-    margin-left: 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+    outline: 1px solid black;
+}
+.button1:hover {
+    background-color: white;
 }
 .button2 {
     background-color: lightcoral;
@@ -328,9 +333,15 @@ th {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     padding: 2px;
-    margin-right: 5%;
-    margin-left: 3%;
+    margin-left: 0;
+    cursor: pointer;
+    outline: 1px solid black;
 }
+.button2:hover {
+    background-color: red;
+}
+
+/*quick create button*/
 .button {
     background-color: white;
     border: none;
@@ -345,6 +356,8 @@ th {
     font-size: 15px;
     margin-left: 3%;
     padding: 10px;
+    cursor: pointer;
+    outline: 1px solid black;
 }
 .button:hover {
     background-color: lightgray;

@@ -345,6 +345,7 @@ body {
     border: none;
     color: black;
     width: 30%;
+    min-width: 50px;
     border-radius: 10%;
     text-align: center;
     text-decoration: none;
@@ -352,13 +353,19 @@ body {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     padding: 2px;
-    margin-left: 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+    outline: 1px solid black;
+}
+.button1:hover {
+    background-color: white;
 }
 .button2 {
     background-color: lightcoral;
     border: none;
     color: black;
     width: 30%;
+    min-width: 50px;
     border-radius: 10%;
     text-align: center;
     text-decoration: none;
@@ -366,10 +373,10 @@ body {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     padding: 2px;
-    margin-right: 5%;
-    margin-left: 3%;
+    cursor: pointer;
+    outline: 1px solid black;
 }
-.button2:hover{
+.button2:hover {
     background-color: red;
 }
 
