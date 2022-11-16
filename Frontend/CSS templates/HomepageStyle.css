@@ -12,6 +12,23 @@ body
     .nav-text{
       display: none;
     }
+
+    .nav-text-logo {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    }
+
+    .nav-toggle{
+    padding-top: 15px;
+    padding-right: 15px;
+    }
+    
     .ulForDir {
     display: flex;
     justify-content: center; 
@@ -27,10 +44,8 @@ body
     background-color:lightcoral;
     }
     /* Use a media query to add a breakpoint at 720px: */
-    @media screen and (max-width: 720px) {
-      .image img{
-        width: 100%;
-      }
+    @media screen and (max-width: 980px) {
+        
       .navi-centered{
         width: 100%;
       }
@@ -86,9 +101,7 @@ body
     color: black;
     background-color: lightcoral;
     }  
-    nav.sticky{
 
-    }
     .nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
     color: black;
