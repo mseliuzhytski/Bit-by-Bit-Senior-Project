@@ -38,16 +38,16 @@ exports.post = async (req, res)=> {
 
         transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'));
+            res.status(400).redirect("/ApplyNow.ejs");
             alert("Unable to send apply form.")
         } else {
-            res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'));
+            res.status(200).redirect("/ApplyNow.ejs");
             alert("Apply form sent successfully.")
         }
         }); 
 
     } catch {
-        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ApplyNow.ejs'));
+        res.status(500).redirect("/ApplyNow.ejs");
         alert("Error processing request.")
     }
 };

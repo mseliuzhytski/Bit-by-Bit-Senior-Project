@@ -34,16 +34,16 @@ exports.post = async (req, res)=> {
 
         transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
+            res.status(400).redirect("/ContactUs.ejs");
             alert("Unable to send contact form.")
         } else {
-            res.status(200).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
+            res.status(200).redirect("/ContactUs.ejs");
             alert("Contact form sent successfully.")
         }
         }); 
 
     } catch {
-        res.status(500).render(path.join(__dirname+'../../../Frontend/Pages/ContactUs.ejs'));
+        res.status(500).redirect("/ContactUs.ejs");
         alert("Error processing request.")
     }
 };
