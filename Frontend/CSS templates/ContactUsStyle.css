@@ -49,10 +49,7 @@ body {
 }
 
 /* Use a media query to add a breakpoint at 720px: */
-@media screen and (max-width: 720px) {
-    .image img {
-        width: 100%;
-    }
+@media screen and (max-width: 980px) {
 
     .navi-centered {
         width: 100%;
@@ -148,14 +145,28 @@ input[type=submit]:hover {
     background-color: lightcoral;
 }
 
-nav.sticky {
-
-}
-
 .nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
     color: black;
     background-color: lightcoral;
+}
+
+.text-line-body-1-box {
+    width: 100%;
+    padding: 0;
+}
+.text-line-body-1 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    background-color: lightcoral;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .body-main{
@@ -335,20 +346,3 @@ nav.sticky {
     margin-left: 10px;
 }
 
-.text-line-body-1-box {
-    width: 100%;
-    padding: 0;
-}
-.text-line-body-1 {
-    text-align: center;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: 600;
-    color: black;
-    background-color: lightcoral;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
