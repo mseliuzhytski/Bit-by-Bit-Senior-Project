@@ -175,7 +175,6 @@ body
 
  .img-main{
     display: block;
-    background-color: gray;
  }
 
   .img-main img{
@@ -193,13 +192,17 @@ body
 
 .collection-item{
     display: block;
+    transform: translate(0px,3px);
     width: 70px;
-    background-color: lightgray;
     float: left;
     margin: 7px;
 }
 
-.collection-item {
+.collection-item :hover{
+    opacity: 50%;
+}
+
+.collection-item img {
     width: 70px;
     height: 45px;
     object-fit: cover;
@@ -295,6 +298,12 @@ body
     border: 1px solid black;
     padding: 10px;
 }
+
+.apply-button:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
 .footer {
     width: 100%;
     background: lightcoral;
