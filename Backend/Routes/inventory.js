@@ -15,10 +15,16 @@ exports.getInventoryItem = function getInventoryItem(Car_Stock_Num, callback) {
 exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model, Car_Year, Car_Price, 
     Car_Mileage, Car_BodyType, Car_Condition, Car_Color, callback) {
 
+    console.log("test1: " + Car_Model)
+    console.log("test1: " + Car_Color)
+
     if (containsForbiddenInputs([Car_Make, Car_Model, Car_Year, Car_Price, Car_Mileage,
         Car_BodyType, Car_Condition, Car_Color])) {
         console.log("Invalid input found!!!");
     }
+
+    console.log("test2: " + Car_Model)
+    console.log("test2: " + Car_Color)
 
     // parameters which are undefined or "All" get set to default value
     if (!Car_Make || Car_Make === "All") { Car_Make = "Car_Make"; }
@@ -30,6 +36,9 @@ exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model
     if (!Car_Condition || Car_Condition === "All") { Car_Condition = "Car_Condition"; }
     if (!Car_Color || Car_Color === "All") { Car_Color = "Car_Color"; }
 
+    console.log("test3: " + Car_Model)
+    console.log("test3: " + Car_Color)
+
     // if params not defualt values, wrap in quotes for query
     if (Car_Make != "Car_Make") { Car_Make = "'" + Car_Make + "'" }
     if (Car_Model != "Car_Model") { Car_Model = "'" + Car_Model + "'" }
@@ -39,6 +48,9 @@ exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model
     if (Car_BodyType != "Car_BodyType") { Car_BodyType = "'" + Car_BodyType + "'" }
     if (Car_Condition != "Car_Condition") { Car_Condition = "'" + Car_Condition + "'" }
     if (Car_Color != "Car_Color") { Car_Color = "'" + Car_Color + "'" }
+
+    console.log("test4: " + Car_Model)
+    console.log("test4: " + Car_Color)
     
     db.query('SELECT * FROM Inventory WHERE Car_Make = ' + Car_Make + ' AND Car_Model = ' + Car_Model + 
     ' AND Car_Year = ' + Car_Year + ' AND Car_Price <= ' + Car_Price + ' AND Car_Mileage <= ' + Car_Mileage + 

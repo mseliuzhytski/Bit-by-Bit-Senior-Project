@@ -136,7 +136,7 @@
                 <option value=<%=arrMake[0] %>><%= arrMake[0] %></option>
                 <% if(arrMake.length> 1){arrMake.shift(); arrMake.sort();} %>
                 <% for(let y=0; y < arrMake.length; y++){ %>
-                    <option value=<%= arrMake[y] %>> <%= arrMake[y] %></option> 
+                    <option value="<%= arrMake[y] %>"> <%= arrMake[y] %></option> 
                 <%} %>
                 </select>
                 </div>
@@ -158,7 +158,7 @@
             <option value=<%=arrModel[0] %>><%= arrModel[0] %></option>
             <% if(arrModel.length > 1){arrModel.shift(); arrModel.sort();} %>
                 <% for(let y=0; y < arrModel.length; y++){ %>
-                    <option value=<%= arrModel[y] %>><%= arrModel[y] %></option>
+                    <option value="<%= arrModel[y] %>"><%= arrModel[y] %></option>
                 <% } %>
                 </select>
                 </div>
@@ -177,7 +177,7 @@
                 <div class="custom-select" style="width: 180px;">
                 <select name="Car_Price" id="Price" onchange="this.form.submit()">
                     <% for(let y=0; y < arrPrice.length; y++){ %>
-                        <option value=<%=arrPrice[y] %>><%= arrPrice[y] %></option>
+                        <option value="<%=arrPrice[y] %>"><%= arrPrice[y] %></option>
                     <% } %>
                 </select>
                 </div>
@@ -199,7 +199,7 @@
                 <option value=<%=arrYear[0] %>><%= arrYear[0] %></option>
                 <% if(arrYear.length> 1){arrYear.shift(); arrYear.sort(function(a, b){return a-b});} %>
                 <% for(let y=0; y < arrYear.length; y++){ %>
-                    <option value=<%=arrYear[y] %>> <%= arrYear[y] %></option>
+                    <option value="<%=arrYear[y] %>"> <%= arrYear[y] %></option>
                 <%} %>
                 </select>
                 </div>
@@ -221,7 +221,7 @@
                 <option value=<%=arrBody[0] %>><%= arrBody[0] %></option>
                 <% if(arrBody.length> 1){arrBody.shift(); arrBody.sort();} %>
                 <% for(let y=0; y < arrBody.length; y++){ %>
-                    <option value=<%=arrBody[y] %>><%= arrBody[y] %></option>
+                    <option value="<%=arrBody[y] %>"><%= arrBody[y] %></option>
                 <% } %>
                 </select>
                 </div>
@@ -240,7 +240,7 @@
                 <div class="custom-select" style="width: 180px;">
                 <select name="Car_Mileage" id="" onchange="this.form.submit()">
                     <% for(let y=0; y < arrMileage.length; y++){ %>
-                        <option value=<%=arrMileage[y] %>><%= arrMileage[y] %></option>
+                        <option value="<%=arrMileage[y] %>"><%= arrMileage[y] %></option>
                     <% } %>
                     </select>
                     </div>
@@ -260,7 +260,7 @@
                 <select name="Car_Condition" id="Condition" onchange="this.form.submit()">
 
                 <% for(let y=0; y < arrCondition.length; y++){ %>
-                    <option value=<%=arrCondition[y] %>> <%= arrCondition[y] %></option>
+                    <option value="<%=arrCondition[y] %>"> <%= arrCondition[y] %></option>
                 <%} %>
                 </select>
                 </div>
@@ -282,7 +282,7 @@
                 <option value=<%=arrColor[0] %>><%= arrColor[0] %></option>
                 <% if(arrColor.length> 1){arrColor.shift(); arrColor.sort();} %>
                 <% for(let y=0; y < arrColor.length; y++){ %>
-                    <option value=<%=arrColor[y] %>><%= arrColor[y] %></option>
+                    <option value="<%=arrColor[y] %>"><%= arrColor[y] %></option>
                 <% } %>
                 </select>
                 </div>
