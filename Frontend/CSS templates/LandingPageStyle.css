@@ -9,43 +9,93 @@ body
   text-align: center;
   width: 100%;
 }
+
+ .nav-text {
+    display: none;
+}
+
+.nav-text-logo {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.nav-toggle{
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
 .ulForDir {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     list-style-type: none;
     overflow: hidden;
     margin: 0;
     padding: 5px;
-    z-index: 2;
-} 
-.ulForDir li{
+}
+
+.ulForDir li {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    z-index: 2;
 }
+
 .navi-li-here {
-    background-color:lightcoral;
-    z-index: 2;
+    background-color: lightcoral;
 }
-.logo{
-    width: 120px;
-    padding-top: 10px;
-    padding-right: 10px;
+
+/* Use a media query to add a breakpoint at 720px: */
+@media screen and (max-width: 980px) {
+
+    .navi-centered {
+        width: 100%;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+
+    .nav-text {
+        display: flex;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .navList {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .openNav {
+        height: auto;
+    }
+
+    .hiddenNavIcon {
+        display: none;
+    }
+
+    .ulForDir {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
-.image{
-    display: flex;
-    justify-content: center; 
-    align-items :center;
-}
+
 .navi {
     overflow: hidden;
     text-align: center;
     background-color: rgb(255, 245, 245);
-    z-index: 2;
+    position: sticky;
+    top: 0;
 }
+
 .navi-centered {
     display: inline-block;
-    z-index: 2;
 }
+
 .navi a {
     background-color: rgb(255, 245, 245);
     display: inline-block;
@@ -57,34 +107,19 @@ body
     text-align: center;
     font-size: 20px;
     font-weight: 600;
-    z-index: 2;
 }
+
 .navi a:hover {
     color: black;
     background-color: lightcoral;
-}  
-nav.sticky{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 245, 245);
-    z-index: 2;
-}
-.body-main{
-    text-align: center;
-    background-color: white;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-nav.sticky a:hover {
+}									
+
+.nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
     color: black;
     background-color: lightcoral;
 }
+
 .text-line-body-1-box {
     width: 100%;
     padding: 0;
@@ -102,6 +137,14 @@ nav.sticky a:hover {
     padding-top: 12px;
     padding-bottom: 12px;
 }
+
+.body-main {
+    text-align: center;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 .block-body-box {
     overflow: hidden;
     text-align: center;
