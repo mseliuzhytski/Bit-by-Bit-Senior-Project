@@ -15,6 +15,22 @@ body
     display: none;
 }
 
+.nav-text-logo {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    }
+
+    .nav-toggle{
+    padding-top: 15px;
+    padding-right: 15px;
+    }
+
 .ulForDir {
     display: flex;
     justify-content: center;
@@ -33,10 +49,7 @@ body
 }
 
 /* Use a media query to add a breakpoint at 720px: */
-@media screen and (max-width: 720px) {
-    .image img {
-        width: 100%;
-    }
+@media screen and (max-width: 980px) {
 
     .navi-centered {
         width: 100%;
@@ -79,6 +92,8 @@ body
     overflow: hidden;
     text-align: center;
     background-color: rgb(255, 245, 245);
+    position: sticky;
+    top: 0;
 }
 
 .navi-centered {
@@ -103,21 +118,28 @@ body
     background-color: lightcoral;
 }
 
-nav.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 245, 245);
-}
-
 .nav.sticky a:hover {
     background-color: rgb(255, 245, 245);
     color: black;
     background-color: lightcoral;
+}
+
+.text-line-body-1-box {
+    width: 100%;
+    padding: 0;
+}
+.text-line-body-1 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    background-color: lightcoral;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
       
  .body-main{
@@ -356,22 +378,6 @@ nav.sticky {
     height: 35px;
 }
 
-.text-line-body-1-box {
-    width: 100%;
-    padding: 0;
-}
-.text-line-body-1 {
-    text-align: center;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: 600;
-    color: black;
-    background-color: lightcoral;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
+
 
 
