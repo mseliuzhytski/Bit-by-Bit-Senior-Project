@@ -41,7 +41,7 @@ exports.getAllInventoryItems = function getAllInventoryItems(Car_Make, Car_Model
     if (Car_Color != "Car_Color") { Car_Color = "'" + Car_Color + "'" }
     
     db.query('SELECT * FROM Inventory WHERE Car_Make = ' + Car_Make + ' AND Car_Model = ' + Car_Model + 
-    ' AND Car_Year = ' + Car_Year + ' AND Car_Price = ' + Car_Price + ' AND Car_Mileage = ' + Car_Mileage + 
+    ' AND Car_Year = ' + Car_Year + ' AND Car_Price <= ' + Car_Price + ' AND Car_Mileage <= ' + Car_Mileage + 
     ' AND Car_BodyType = ' + Car_BodyType + ' AND Car_Condition = ' + Car_Condition + ' AND Car_Color = ' + Car_Color, 
         (error, results) => {
             if (error) throw error;
