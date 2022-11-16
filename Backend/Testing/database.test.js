@@ -35,6 +35,8 @@ const db = require('../Database/db')
 });
 
 // tested together due to dependencies
+  describe("", () => {
+  afterEach(()=>{ deleteUser("TestAccount_ME") })
   test("Testing Phone And Email: Add Number/Email and Delete Number/Email", async () =>{
     let employee = {
       username: "TestAccount_ME", 
@@ -56,6 +58,7 @@ const db = require('../Database/db')
     affectedRowsFromDelete = await deletePhone(id).then(deleteEmail(id))
     expect(await affectedRowsFromDelete).toBe(1)
   });
+  })
 
 
 
@@ -188,3 +191,11 @@ async function deleteInventory(Car_Stock_Num){
           return result.affectedRows
 }
 
+async function deleteUser(username){
+  const [result] = await db.promise().query(
+      'DELETE FROM EMPLOYEE WHERE Emp_Username= ?',
+      [username]
+    )
+  
+    return result.affectedRows
+}

@@ -16,11 +16,11 @@ async function Tester(){
     var start = await performance.now()
     var time;
     
-    await loginTestWithCorrectLogin("ABCdefGHIjklMNOpqrSTUvwxYz", "Qwerty2022", 1, "Funtional")
-    await loginTestWithCorrectLogin("loginTester", "Az1Za2Az3Za4", 2, "Funtional")
+    await loginTestWithCorrectLogin("Admin", "12345", 1, "Funtional")
+    await loginTestWithCorrectLogin("moham4321", "Qwerty12345", 2, "Funtional")
 
     await loginTestWithInvalidLogin("invalid", "Qwerty2019", 3, "Funtional")
-    await loginTestWithInvalidLogin("invalid 2", "Pass1234", 4, "Funtional")
+    await loginTestWithInvalidLogin("bookworm916", "Pass1234", 4, "Funtional")
 
 
     end = await performance.now()
@@ -42,8 +42,6 @@ async function loginTestWithCorrectLogin(user, pass, num, testType){
         await console.log("*".repeat(15))
 
         try{
-            // setups an account for the test since database isn't connected
-            await register(user,pass)
 
             await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Login.ejs");
 
@@ -56,7 +54,7 @@ async function loginTestWithCorrectLogin(user, pass, num, testType){
             await login.click()
     
             actual = await driver.getTitle()
-            expected = "Okaidi Auto Sales"
+            expected = "Landing Page"
             await assert.equal(actual,expected)
             
             passedOrFailed = "Passed"
@@ -89,7 +87,6 @@ async function loginTestWithInvalidLogin(user, pass, num, testType){
 
     try{
         // setups an account for the test since database isn't connected
-        await register(user + "j", pass)
 
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Login.ejs");
 
@@ -102,8 +99,8 @@ async function loginTestWithInvalidLogin(user, pass, num, testType){
         await login.click()
 
         actual = await driver.getTitle()
-        expected = "Okaidi Auto Sales"
-        await assert.notEqual(actual,expected)
+        expected = "Login"
+        await assert.equal(actual,expected)
         
         passedOrFailed = "Passed"
         passed += 1
@@ -125,17 +122,6 @@ async function loginTestWithInvalidLogin(user, pass, num, testType){
 
 }
  
-async function register(user, pass){
-    await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs");
-
-    let username = await driver.findElement(By.id("username"))
-    let password = await driver.findElement(By.id("password"))
-    let register = await driver.findElement(By.id("register"))
-
-    await username.sendKeys(user)
-    await password.sendKeys(pass)
-    await register.click()
-}
 
 async function printTotals(time){
     let totalTest = passed + failed
