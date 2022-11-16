@@ -141,12 +141,17 @@ body{
   input[type=submit]:hover {
     background-color: lightcoral;
 }
+.change-box{
+  display: inline-block;
+  width: 100%;
+}
+
 .Change{  
+  display: block;
         width: 400px;  
         overflow: hidden;  
-        margin: auto;  
-        margin: 50 0 0 400px;  
-        padding: 25px 450px;  
+        margin: auto;
+        padding: 30px;  
         background: white;  
         border-radius: 15px;         
 }
@@ -196,39 +201,7 @@ label{
     cursor: pointer;
     width: 100%;
 }
-.nav-admin{
-  overflow: hidden;
-  text-align: center;
-}
-.admin-dropdown{
-  display: inline-block;
-  overflow: hidden;
-  min-width: 160px;
-}
-.admin-button{
-  padding: 12px 16px;
-  text-decoration: none;
-  background-color: lightcoral;
-}
-.admin-content{
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.admin-content a{
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.admin-dropdown:hover .admin-content {
-  display: block;
-}
+
 .footer {
     width: 100%;
     background: lightcoral;
