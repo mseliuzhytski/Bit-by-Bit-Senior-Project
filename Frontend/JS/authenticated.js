@@ -4,7 +4,7 @@ var isUserAuth
 const isAuth = async () => {
 
     //local host to be changed to the actual website domain later on
-    const res = await fetch('http://localhost:8000/isAuthenticated')
+    const res = await fetch('https://bit-by-bit-auto-sales.herokuapp.com/isAuthenticated')
     return await res.json()
 }
 
