@@ -162,10 +162,18 @@ body
 
  .img-manage{
     display: flex;
-    justify-content: space-between;
+    float: left;
+    justify-content: space-evenly;
     background-color: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
+    outline: 1px solid black;
+    width: 96%;
+ }
+ .submit-half {
+    padding: 10px;
+    background-color: lightcoral;
+    border-radius: 5px;
  }
 
 .img-upload{
@@ -200,6 +208,7 @@ body
     width: 600px;
     height: 350px;
     object-fit: cover;
+    outline: 1px solid #323030;
   }
 
 .img-collection{
@@ -207,6 +216,8 @@ body
     background-color: grey;
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px;
 }
 
 .collection-item{
@@ -215,6 +226,8 @@ body
     width: 70px;
     float: left;
     margin: 7px;
+    outline: 1px solid #323030;
+    box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.30);
 }
 
 .collection-item :hover{
