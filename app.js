@@ -33,6 +33,7 @@ var inventoryPage = require('./Backend/Routes/inventoryPage');
 var adminEditPage = require('./Backend/Routes/adminEditPage');
 var editInventoryPage = require('./Backend/Routes/editInventoryPage');
 var inventory = require('./Backend/Routes/inventory');
+var editReview = require('./Backend/Routes/editReview');
 
 
 // variable declaration section
@@ -93,6 +94,7 @@ app.get('/Search.ejs', search.get);
 app.get('/InventoryPage.ejs', inventoryPage.get);
 app.get('/AdminEditPage.ejs', adminEditPage.get);
 app.get('/EditInventoryPage.ejs', editInventoryPage.get);
+app.get('/EditReview.ejs', editReview.get);
 
 // post section
 app.post('/change', change.post);
@@ -105,6 +107,7 @@ app.post('/email', email.post);
 app.post('/apply', apply.post);
 app.post('/image', upload.array('upload_file'), image.post);
 app.post('/inventory', inventory.post);
+app.post('/editReview',editReview.post);
 
 // delete section 
 app.delete('/employee', employee.delete);
