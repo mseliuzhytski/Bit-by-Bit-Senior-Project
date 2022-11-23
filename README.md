@@ -35,6 +35,10 @@ This project is to be completed by December 2022.
 * ~Host website~
 * ~Connect database to website~
 
+# To Deploy
+* Connect to the Heroku application
+* Push deployment to Heroku's git
+
 # Team Bit by Bit
 * Justin Chau, Justinchau@csus.edu
 * John Swartz, jswartz@csus.edu
