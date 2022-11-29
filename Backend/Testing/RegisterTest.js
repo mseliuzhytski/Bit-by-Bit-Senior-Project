@@ -12,12 +12,13 @@ async function RegisterUser(){
     var end;
     var start = await performance.now()
     var time;
+    await login();
     
-    await PassedReg("JoeSmith", "Password1",1,"Functional")
-    await PassedReg("Test", "Az1Za2Az3Za4", 2, "Funtional")
+    await PassedReg("JoeSmith", "Password1","Joe","Smith",1,"Functional")
+    await PassedReg("Test", "Az1Za2Az3Za4","Test","User", 2, "Funtional")
 
-    await FailedReg("invalid", "aaaa", 3, "Funtional")
-    await FailedReg("invalid 2", "iopahfnpduosfph", 4, "Funtional")
+    await FailedReg("invalid", "aaaa","a","b", 3, "Funtional")
+    await FailedReg("invalid 2", "iopahfnpduosfph","a","b", 4, "Funtional")
 
 
     end = await performance.now()
@@ -31,7 +32,7 @@ async function RegisterUser(){
 
 }
 
-async function PassedReg(user, pass, num, testType){
+async function PassedReg(user, pass,fname,lname,num, testType){
     var end;
     var passedOrFailed = "Passed"
     var start = await performance.now()
@@ -42,18 +43,22 @@ async function PassedReg(user, pass, num, testType){
 
     try{
 
-        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.html");
+        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs");
 
         let username = await driver.findElement(By.id("username"))
         let password = await driver.findElement(By.id("password"))
+        let firstname = await driver.findElement(By.id("fName"))
+        let lastname = await driver.findElement(By.id("lName"))
         let register = await driver.findElement(By.id("register"))
     
         await username.sendKeys(user)
         await password.sendKeys(pass)
+        await firstname.sendKeys(fname)
+        await lastname.sendKeys(lname)
         await register.click()
 
-        actual = await driver.getTitle()
-        expected = "Admin"
+        actual = await driver.getCurrentUrl()
+        expected = "https://bit-by-bit-auto-sales.herokuapp.com/Homepage.ejs"
         await assert.equal(actual,expected)
         
         passedOrFailed = "Passed"
@@ -76,7 +81,7 @@ async function PassedReg(user, pass, num, testType){
 
 }
 
-async function FailedReg(user, pass, num, testType){
+async function FailedReg(user, pass,fname,lname,num, testType){
     var end;
     var passedOrFailed = "Failed"
     var start = await performance.now()
@@ -87,22 +92,26 @@ async function FailedReg(user, pass, num, testType){
 
     try{
        
-        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.html");
+        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs");
 
         let username = await driver.findElement(By.id("username"))
         let password = await driver.findElement(By.id("password"))
+        let firstname = await driver.findElement(By.id("fName"))
+        let lastname = await driver.findElement(By.id("lName"))
         let register = await driver.findElement(By.id("register"))
     
         await username.sendKeys(user)
         await password.sendKeys(pass)
+        await firstname.sendKeys(fname)
+        await lastname.sendKeys(lname)
         await register.click()
 
-        actual = await driver.getTitle()
-        expected = "Admin"
+        actual = await driver.getCurrentUrl()
+        expected = "https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs"
         await assert.equal(actual,expected)
         
-        passedOrFailed = "Passed"
-        passed += 1
+        passedOrFailed = "Failed"
+        failed += 1
 
     }catch(error){
         // empty as will denote failed below
@@ -118,6 +127,28 @@ async function FailedReg(user, pass, num, testType){
     await console.log("Test Function Call: Failed Registration")
     await console.log("Time Taken: %d secs", time)
     await console.log("Passed/Failed: %s", passedOrFailed)
+}
+
+async function login(){
+    try{
+
+        await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Login.ejs");
+
+        let username = await driver.findElement(By.id("username"))
+        let password = await driver.findElement(By.id("password"))
+        let login = await driver.findElement(By.id("loginSubmit"))
+
+        await username.sendKeys("Admin")
+        await password.sendKeys("12345")
+        await login.click()
+
+        actual = await driver.getTitle()
+        expected = "Landing Page"
+        await assert.equal(actual,expected)
+
+    }catch(error){
+
+    }
 }
 
 
