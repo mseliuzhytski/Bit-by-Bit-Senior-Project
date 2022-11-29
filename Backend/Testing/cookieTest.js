@@ -52,13 +52,13 @@ async function testPublicLinksWithClearance(){
         //Search
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Search.ejs");
         actual = await driver.getTitle()
-        expected = "Search"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
         //About Us
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Aboutus.ejs");
         actual = await driver.getTitle()
-        expected = "About Us"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
         //Contact Us
@@ -110,13 +110,13 @@ async function testPublicLinksWithoutClearance(){
         //Search
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Search.ejs");
         actual = await driver.getTitle()
-        expected = "Search"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
         //About Us
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/Aboutus.ejs");
         actual = await driver.getTitle()
-        expected = "About Us"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
         //Contact Us
@@ -175,7 +175,7 @@ async function testNonPublicLinksWithClearance(){
         //Landing Page
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/LandingPage.ejs");
         actual = await driver.getTitle()
-        expected = "Landing Page"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
         //Resgister User
@@ -227,19 +227,19 @@ async function testNonPublicLinksWithOutClearance(){
         //Change Password
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/ChangePassword.ejs");
         actual = await driver.getTitle()
-        expected = "Change Password"
+        expected = "Okaidi Auto Sales"
         await assert.notEqual(actual,expected)
 
         //Edit Inventory
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/EditInventoryPage.ejs");
         actual = await driver.getTitle()
-        expected = "Search"
+        expected = "Okaidi Auto Sales"
         await assert.notEqual(actual,expected)
 
         //Landing Page
         await driver.get("https://bit-by-bit-auto-sales.herokuapp.com/LandingPage.ejs");
         actual = await driver.getTitle()
-        expected = "Landing Page"
+        expected = "Okaidi Auto Sales"
         await assert.notEqual(actual,expected)
 
         //Resgister User
@@ -280,7 +280,7 @@ async function login(){
         await login.click()
 
         actual = await driver.getTitle()
-        expected = "Landing Page"
+        expected = "Okaidi Auto Sales"
         await assert.equal(actual,expected)
 
     }catch(error){
