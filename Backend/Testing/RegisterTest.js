@@ -83,7 +83,7 @@ async function PassedReg(user, pass,fname,lname,num, testType){
 
 async function FailedReg(user, pass,fname,lname,num, testType){
     var end;
-    var passedOrFailed = "Failed"
+    var passedOrFailed = "Passed"
     var start = await performance.now()
     var time;
 
@@ -110,7 +110,7 @@ async function FailedReg(user, pass,fname,lname,num, testType){
         expected = "https://bit-by-bit-auto-sales.herokuapp.com/RegisterUser.ejs"
         await assert.equal(actual,expected)
         
-        passedOrFailed = "Failed"
+        passedOrFailed = "Passed"
         failed += 1
 
     }catch(error){
