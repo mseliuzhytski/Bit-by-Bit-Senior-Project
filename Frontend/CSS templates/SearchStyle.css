@@ -167,6 +167,7 @@ body
 
 .car-card{
     display: block;
+    justify-content: space-evenly;
     overflow: hidden;
     width: 450px;
     height: 415px;
@@ -287,9 +288,9 @@ body
 .car-color,
 .car-body,
 .car-cond{
-    display: inline;
+    display: inline-flex;
     overflow: hidden;
-    padding-right: 22px;
+    padding-right: 15px;
 }
 /*  End car inventory */
 .button-detail-submit {
@@ -406,13 +407,13 @@ body
      border-style: groove;
      text-align: left;
      float: left;
-     margin-left: 3%;
      line-height: 29px;
      font-size: 17px;
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
      margin-top: 30px;
+     margin-right: 2%;
      margin-bottom: 50px;
-     margin-right: 15px;
+     margin-left: 3%;
  }
 
  .filter-title {
