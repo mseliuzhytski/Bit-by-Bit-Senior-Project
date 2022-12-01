@@ -96,6 +96,7 @@ body {
     background-color: rgb(255, 245, 245);
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 .navi-centered {
