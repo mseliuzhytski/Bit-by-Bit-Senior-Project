@@ -39,6 +39,11 @@ This project is to be completed by December 2022.
 * Connect to the Heroku application
 * Push deployment to Heroku's git
 
+# To Test
+* For deleteUser and database tests you can run it from the testing panel on the left hand side of Visual Studio. 
+* For LoginTest, RegisterUser, PasswordTest, and cookieTest you can run it by opening a terminal and navigating to the Testing Folder with “cd ./Backend/Testing” and then type the command “node [name of test to run].js” where you fill in the name of the test within the brackets.
+
+
 # Team Bit by Bit
 * Justin Chau, Justinchau@csus.edu
 * John Swartz, jswartz@csus.edu
