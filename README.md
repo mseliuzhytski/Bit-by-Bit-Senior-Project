@@ -16,9 +16,7 @@ Visitors will also be able to find the location of the dealership via an embedde
 * Site cookies 
 
 # Milestones
-This project is to be completed by December 2022.
-* Create Maintenance Document
-* Create User Manual Document
+This project is complete!
 
 # Completed Milestones
 * ~Create Homepage~
@@ -28,12 +26,14 @@ This project is to be completed by December 2022.
 * ~Create Financing page~
 * ~Create Login for dealers~
 * ~Create Administration account to manage dealers~
-* ~Create functionality for administrative accounts~
+* ~Create functionality for dealer accounts~
 * ~Embedded google maps of the dealership~
 * ~Link social media~
 * ~Create Featured Reviews~
 * ~Host website~
 * ~Connect database to website~
+* ~Create Maintenance Manual Document~
+* ~Create User Manual Document~
 
 # To Deploy
 * Connect to the Heroku application
